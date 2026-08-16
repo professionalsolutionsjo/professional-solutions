@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Professional Solutions | Smart Luxury</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #071724;
+      color: white;
+    }
+
+    /* NAVIGATION */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 24px 7%;
+      background: rgba(5, 18, 29, 0.90);
+      backdrop-filter: blur(12px);
+    }
+
+    .logo {
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: 2px;
+    }
+
+    .logo span {
+      color: #83a6b5;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 30px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 120px 8% 80px;
+      position: relative;
+
+      background:
+        linear-gradient(
+          90deg,
+          rgba(5,18,29,.97) 0%,
+          rgba(5,18,29,.87) 45%,
+          rgba(5,18,29,.60) 100%
+        );
+    }
+
+    .hero-content {
+      max-width: 850px;
+    }
+
+    .small-title {
+      color: #83a6b5;
+      font-size: 14px;
+      letter-spacing: 5px;
+      margin-bottom: 25px;
+    }
+
+    h1 {
+      font-size: clamp(55px, 9vw, 120px);
+      line-height: .9;
+      letter-spacing: -4px;
+      margin-bottom: 30px;
+    }
+
+    h1 span {
+      color: #83a6b5;
+    }
+
+    .hero h2 {
+      font-size: clamp(22px, 3vw, 38px);
+      font-weight: 300;
+      margin-bottom: 25px;
+    }
+
+    .hero p {
+      max-width: 650px;
+      font-size: 18px;
+      line-height: 1.8;
+      color: #d3dce1;
+    }
+
+    .buttons {
+      margin-top: 40px;
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 15px 28px;
+      border: 1px solid #83a6b5;
+      text-decoration: none;
+      color: white;
+      transition: .3s;
+    }
+
+    .btn-primary {
+      background: #83a6b5;
+      color: #071724;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+    }
+
+    /* SMART LUXURY */
+    .smart {
+      padding: 110px 8%;
+      background: #f3f1ec;
+      color: #0a1c29;
+    }
+
+    .section-label {
+      color: #527787;
+      letter-spacing: 4px;
+      font-size: 13px;
+      margin-bottom: 20px;
+    }
+
+    .smart h2 {
+      font-size: clamp(38px, 6vw, 75px);
+      margin-bottom: 30px;
+    }
+
+    .smart-intro {
+      font-size: 24px;
+      max-width: 900px;
+      line-height: 1.6;
+      margin-bottom: 60px;
+    }
+
+    .smart-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .smart-card {
+      padding: 35px;
+      background: white;
+      min-height: 230px;
+    }
+
+    .smart-card h3 {
+      font-size: 21px;
+      margin-bottom: 15px;
+    }
+
+    .smart-card p {
+      color: #58656c;
+      line-height: 1.7;
+    }
+
+    /* SERVICES */
+    .services {
+      padding: 110px 8%;
+    }
+
+    .services h2 {
+      font-size: clamp(38px, 6vw, 70px);
+      margin-bottom: 50px;
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+    }
+
+    .service {
+      padding: 40px 30px;
+      background: #102736;
+      min-height: 180px;
+    }
+
+    .service span {
+      color: #83a6b5;
+      font-size: 13px;
+    }
+
+    .service h3 {
+      margin-top: 20px;
+      font-size: 22px;
+    }
+
+    /* PHILOSOPHY */
+    .philosophy {
+      padding: 120px 8%;
+      background: #0d202d;
+      text-align: center;
+    }
+
+    .philosophy h2 {
+      font-size: clamp(34px, 5vw, 65px);
+      max-width: 1000px;
+      margin: auto;
+      line-height: 1.2;
+    }
+
+    .philosophy p {
+      margin: 30px auto 0;
+      max-width: 750px;
+      color: #b9c7cd;
+      font-size: 18px;
+      line-height: 1.8;
+    }
+
+    /* CONTACT */
+    .contact {
+      padding: 100px 8%;
+      background: #f3f1ec;
+      color: #071724;
+    }
+
+    .contact h2 {
+      font-size: clamp(40px, 6vw, 70px);
+    }
+
+    .contact p {
+      margin-top: 20px;
+      font-size: 20px;
+    }
+
+    footer {
+      padding: 30px 8%;
+      background: #050f16;
+      color: #83949d;
+      font-size: 13px;
+    }
+
+    @media(max-width: 800px) {
+      nav ul {
+        display: none;
+      }
+
+      .smart-grid,
+      .service-grid {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        letter-spacing: -2px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<nav>
+  <div class="logo">
+    PROFESSIONAL <span>SOLUTIONS</span>
+  </div>
+
+  <ul>
+    <li><a href="#smart">Smart Luxury</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+
+<section class="hero">
+
+  <div class="hero-content">
+
+    <div class="small-title">
+      PROFESSIONAL SOLUTIONS
+    </div>
+
+    <h1>
+      SMART<br>
+      <span>LUXURY.</span>
+    </h1>
+
+    <h2>
+      We Start With Your Needs.
+    </h2>
+
+    <p>
+      Intelligent design. Integrated execution.
+      Maximum functionality, comfort and sustainability —
+      with refined luxury and carefully optimized cost.
+    </p>
+
+    <div class="buttons">
+      <a href="#smart" class="btn btn-primary">
+        Discover Smart Luxury
+      </a>
+
+      <a href="#services" class="btn">
+        Our Services
+      </a>
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="smart" id="smart">
+
+  <div class="section-label">
+    OUR PHILOSOPHY
+  </div>
+
+  <h2>What is Smart Luxury?</h2>
+
+  <p class="smart-intro">
+    Smart Luxury is not about spending more.
+    It is about designing better — creating a unique solution
+    around the real needs of every project while eliminating
+    unnecessary cost and wasted space.
+  </p>
+
+  <div class="smart-grid">
+
+    <div class="smart-card">
+      <h3>Designed Around Your Needs</h3>
+      <p>
+        Every project begins by understanding how the space
+        will actually be used — today and in the future.
+      </p>
+    </div>
+
+    <div class="smart-card">
+      <h3>Unique by Design</h3>
+      <p>
+        We don't copy spaces. Every project deserves its own
+        identity, character and architectural solution.
+      </p>
+    </div>
+
+    <div class="smart-card">
+      <h3>Maximum Function</h3>
+      <p>
+        Every meter and every detail is planned to improve
+        usability, movement and operational efficiency.
+      </p>
+    </div>
+
+    <div class="smart-card">
+      <h3>Easy Maintenance</h3>
+      <p>
+        Systems and finishes are designed with future
+        maintenance and accessibility in mind.
+      </p>
+    </div>
+
+    <div class="smart-card">
+      <h3>Sustainable Thinking</h3>
+      <p>
+        Smart material selection and integrated systems help
+        create spaces designed to perform for years.
+      </p>
+    </div>
+
+    <div class="smart-card">
+      <h3>Luxury Without Waste</h3>
+      <p>
+        We focus your budget where it creates real value,
+        delivering a refined result without unnecessary cost.
+      </p>
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="services" id="services">
+
+  <div class="section-label">ONE TEAM. COMPLETE SOLUTION.</div>
+
+  <h2>From Design to Delivery.</h2>
+
+  <div class="service-grid">
+
+    <div class="service">
+      <span>01</span>
+      <h3>Architecture & Design</h3>
+    </div>
+
+    <div class="service">
+      <span>02</span>
+      <h3>Construction & Civil Works</h3>
+    </div>
+
+    <div class="service">
+      <span>03</span>
+      <h3>Interior Fit-Out & Decoration</h3>
+    </div>
+
+    <div class="service">
+      <span>04</span>
+      <h3>HVAC & Ventilation</h3>
+    </div>
+
+    <div class="service">
+      <span>05</span>
+      <h3>Electrical & Plumbing</h3>
+    </div>
+
+    <div class="service">
+      <span>06</span>
+      <h3>Waterproofing & Insulation</h3>
+    </div>
+
+    <div class="service">
+      <span>07</span>
+      <h3>Facades & Metal Works</h3>
+    </div>
+
+    <div class="service">
+      <span>08</span>
+      <h3>Signage & Visual Identity</h3>
+    </div>
+
+    <div class="service">
+      <span>09</span>
+      <h3>Complete Project Execution</h3>
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="philosophy" id="projects">
+
+  <div class="section-label">EVERY PROJECT IS UNIQUE</div>
+
+  <h2>
+    We don't design spaces to look like everyone else.
+  </h2>
+
+  <p>
+    We create environments with their own identity —
+    combining function, engineering, comfort, sustainability
+    and refined design into one integrated solution.
+  </p>
+
+</section>
+
+
+<section class="contact" id="contact">
+
+  <div class="section-label">START YOUR PROJECT</div>
+
+  <h2>Let's Build Smarter.</h2>
+
+  <p>
+    Professional Solutions — Smart Luxury
+  </p>
+
+</section>
+
+
+<footer>
+  © 2026 Professional Solutions. All Rights Reserved.
+</footer>
+
+</body>
+</html>
