@@ -6,303 +6,662 @@
 
   <title>Professional Solutions | Smart Luxury</title>
 
+  <meta name="description"
+        content="Professional Solutions delivers intelligent design, integrated engineering and complete project execution through the Smart Luxury philosophy.">
+
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+
+    :root{
+      --burgundy:#9C5C6A;
+      --burgundy-dark:#713746;
+      --burgundy-light:#C58E99;
+
+      --timeless:#B8ADA4;
+      --timeless-light:#DDD6D0;
+
+      --offwhite:#F8F5F1;
+      --white:#FFFFFF;
+
+      --charcoal:#29292B;
+      --text:#353033;
+      --muted:#716A6C;
     }
 
-    html {
-      scroll-behavior: smooth;
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
     }
 
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: #071724;
-      color: white;
+    html{
+      scroll-behavior:smooth;
     }
 
-    /* NAVIGATION */
-    nav {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      z-index: 1000;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 24px 7%;
-      background: rgba(5, 18, 29, 0.90);
-      backdrop-filter: blur(12px);
+    body{
+      font-family:Arial, Helvetica, sans-serif;
+      background:var(--offwhite);
+      color:var(--text);
+      overflow-x:hidden;
     }
 
-    .logo {
-      font-size: 20px;
-      font-weight: 700;
-      letter-spacing: 2px;
+    /* =========================
+       NAVIGATION
+    ========================== */
+
+    nav{
+      position:fixed;
+      top:0;
+      left:0;
+      width:100%;
+      z-index:1000;
+
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+
+      padding:14px 7%;
+
+      background:rgba(248,245,241,.94);
+      backdrop-filter:blur(14px);
+
+      border-bottom:1px solid rgba(113,55,70,.12);
     }
 
-    .logo span {
-      color: #83a6b5;
+    .nav-logo img{
+      height:72px;
+      width:auto;
+      display:block;
     }
 
-    nav ul {
-      display: flex;
-      list-style: none;
-      gap: 30px;
+    nav ul{
+      display:flex;
+      align-items:center;
+      list-style:none;
+      gap:32px;
     }
 
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-size: 14px;
+    nav a{
+      text-decoration:none;
+      color:var(--charcoal);
+      font-size:14px;
+      font-weight:600;
+      letter-spacing:.5px;
+      transition:.3s;
     }
 
-    /* HERO */
-    .hero {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      padding: 120px 8% 80px;
-      position: relative;
+    nav a:hover{
+      color:var(--burgundy);
+    }
+
+    .language{
+      border-left:1px solid var(--timeless);
+      padding-left:25px;
+      color:var(--burgundy);
+    }
+
+    /* =========================
+       HERO
+    ========================== */
+
+    .hero{
+      min-height:100vh;
+      padding:150px 8% 90px;
+
+      display:grid;
+      grid-template-columns:1.15fr .85fr;
+      align-items:center;
+      gap:70px;
 
       background:
-        linear-gradient(
-          90deg,
-          rgba(5,18,29,.97) 0%,
-          rgba(5,18,29,.87) 45%,
-          rgba(5,18,29,.60) 100%
-        );
+      radial-gradient(circle at 85% 20%,
+      rgba(197,142,153,.18),
+      transparent 35%),
+      var(--offwhite);
     }
 
-    .hero-content {
-      max-width: 850px;
+    .hero-label{
+      letter-spacing:5px;
+      text-transform:uppercase;
+      color:var(--burgundy);
+      font-size:13px;
+      font-weight:700;
+      margin-bottom:28px;
     }
 
-    .small-title {
-      color: #83a6b5;
-      font-size: 14px;
-      letter-spacing: 5px;
-      margin-bottom: 25px;
+    .hero h1{
+      font-size:clamp(60px,8vw,120px);
+      line-height:.88;
+      letter-spacing:-5px;
+      color:var(--charcoal);
+      margin-bottom:32px;
     }
 
-    h1 {
-      font-size: clamp(55px, 9vw, 120px);
-      line-height: .9;
-      letter-spacing: -4px;
-      margin-bottom: 30px;
+    .hero h1 span{
+      color:var(--burgundy);
+      display:block;
     }
 
-    h1 span {
-      color: #83a6b5;
+    .hero h2{
+      font-size:clamp(24px,3vw,42px);
+      font-weight:400;
+      line-height:1.15;
+      margin-bottom:25px;
+      max-width:700px;
     }
 
-    .hero h2 {
-      font-size: clamp(22px, 3vw, 38px);
-      font-weight: 300;
-      margin-bottom: 25px;
+    .hero p{
+      max-width:670px;
+      color:var(--muted);
+      font-size:18px;
+      line-height:1.8;
     }
 
-    .hero p {
-      max-width: 650px;
-      font-size: 18px;
-      line-height: 1.8;
-      color: #d3dce1;
+    .hero-buttons{
+      display:flex;
+      flex-wrap:wrap;
+      gap:15px;
+      margin-top:40px;
     }
 
-    .buttons {
-      margin-top: 40px;
-      display: flex;
-      gap: 15px;
-      flex-wrap: wrap;
+    .btn{
+      display:inline-block;
+      padding:16px 30px;
+      text-decoration:none;
+      font-size:14px;
+      font-weight:700;
+      letter-spacing:.6px;
+      transition:.3s;
     }
 
-    .btn {
-      padding: 15px 28px;
-      border: 1px solid #83a6b5;
-      text-decoration: none;
-      color: white;
-      transition: .3s;
+    .btn-main{
+      background:var(--burgundy);
+      color:white;
+      border:1px solid var(--burgundy);
     }
 
-    .btn-primary {
-      background: #83a6b5;
-      color: #071724;
+    .btn-main:hover{
+      background:var(--burgundy-dark);
+      transform:translateY(-3px);
     }
 
-    .btn:hover {
-      transform: translateY(-3px);
+    .btn-outline{
+      border:1px solid var(--burgundy);
+      color:var(--burgundy);
     }
 
-    /* SMART LUXURY */
-    .smart {
-      padding: 110px 8%;
-      background: #f3f1ec;
-      color: #0a1c29;
+    .btn-outline:hover{
+      background:var(--burgundy);
+      color:white;
     }
 
-    .section-label {
-      color: #527787;
-      letter-spacing: 4px;
-      font-size: 13px;
-      margin-bottom: 20px;
+    .hero-visual{
+      display:flex;
+      justify-content:center;
+      align-items:center;
     }
 
-    .smart h2 {
-      font-size: clamp(38px, 6vw, 75px);
-      margin-bottom: 30px;
+    .hero-visual img{
+      width:min(100%,540px);
+      height:auto;
+      filter:drop-shadow(0 30px 35px rgba(90,55,60,.15));
     }
 
-    .smart-intro {
-      font-size: 24px;
-      max-width: 900px;
-      line-height: 1.6;
-      margin-bottom: 60px;
+    /* =========================
+       INTRO
+    ========================== */
+
+    .intro{
+      padding:120px 8%;
+      background:white;
+      text-align:center;
     }
 
-    .smart-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 25px;
+    .section-label{
+      color:var(--burgundy);
+      font-size:12px;
+      font-weight:700;
+      letter-spacing:5px;
+      text-transform:uppercase;
+      margin-bottom:22px;
     }
 
-    .smart-card {
-      padding: 35px;
-      background: white;
-      min-height: 230px;
+    .intro h2{
+      font-size:clamp(38px,5vw,72px);
+      max-width:1050px;
+      margin:auto;
+      line-height:1.1;
     }
 
-    .smart-card h3 {
-      font-size: 21px;
-      margin-bottom: 15px;
+    .intro h2 span{
+      color:var(--burgundy);
     }
 
-    .smart-card p {
-      color: #58656c;
-      line-height: 1.7;
+    .intro p{
+      max-width:850px;
+      margin:35px auto 0;
+      font-size:20px;
+      line-height:1.8;
+      color:var(--muted);
     }
 
-    /* SERVICES */
-    .services {
-      padding: 110px 8%;
+    /* =========================
+       PROBLEM SECTION
+    ========================== */
+
+    .problems{
+      padding:110px 8%;
+      background:var(--charcoal);
+      color:white;
     }
 
-    .services h2 {
-      font-size: clamp(38px, 6vw, 70px);
-      margin-bottom: 50px;
+    .problems h2{
+      font-size:clamp(38px,5vw,68px);
+      max-width:950px;
+      line-height:1.1;
+      margin-bottom:60px;
     }
 
-    .service-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2px;
+    .problem-grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:2px;
     }
 
-    .service {
-      padding: 40px 30px;
-      background: #102736;
-      min-height: 180px;
+    .problem{
+      padding:40px 30px;
+      min-height:240px;
+      background:#333235;
     }
 
-    .service span {
-      color: #83a6b5;
-      font-size: 13px;
+    .problem span{
+      color:var(--burgundy-light);
+      font-size:13px;
+      letter-spacing:2px;
     }
 
-    .service h3 {
-      margin-top: 20px;
-      font-size: 22px;
+    .problem h3{
+      margin-top:28px;
+      font-size:23px;
+      margin-bottom:15px;
     }
 
-    /* PHILOSOPHY */
-    .philosophy {
-      padding: 120px 8%;
-      background: #0d202d;
-      text-align: center;
+    .problem p{
+      color:#c8c4c5;
+      line-height:1.7;
+      font-size:15px;
     }
 
-    .philosophy h2 {
-      font-size: clamp(34px, 5vw, 65px);
-      max-width: 1000px;
-      margin: auto;
-      line-height: 1.2;
+    /* =========================
+       SMART LUXURY
+    ========================== */
+
+    .smart{
+      padding:120px 8%;
+      background:var(--offwhite);
     }
 
-    .philosophy p {
-      margin: 30px auto 0;
-      max-width: 750px;
-      color: #b9c7cd;
-      font-size: 18px;
-      line-height: 1.8;
+    .smart-header{
+      display:grid;
+      grid-template-columns:.8fr 1.2fr;
+      gap:70px;
+      margin-bottom:70px;
     }
 
-    /* CONTACT */
-    .contact {
-      padding: 100px 8%;
-      background: #f3f1ec;
-      color: #071724;
+    .smart-header h2{
+      font-size:clamp(45px,6vw,85px);
+      line-height:.95;
+      color:var(--burgundy);
     }
 
-    .contact h2 {
-      font-size: clamp(40px, 6vw, 70px);
+    .smart-header p{
+      font-size:21px;
+      line-height:1.8;
+      color:var(--muted);
+      align-self:end;
     }
 
-    .contact p {
-      margin-top: 20px;
-      font-size: 20px;
+    .smart-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:20px;
     }
 
-    footer {
-      padding: 30px 8%;
-      background: #050f16;
-      color: #83949d;
-      font-size: 13px;
+    .smart-card{
+      background:white;
+      padding:40px 32px;
+      min-height:270px;
+      border-top:3px solid var(--burgundy);
+      transition:.3s;
     }
 
-    @media(max-width: 800px) {
-      nav ul {
-        display: none;
+    .smart-card:hover{
+      transform:translateY(-7px);
+      box-shadow:0 22px 50px rgba(74,52,57,.09);
+    }
+
+    .smart-number{
+      font-size:12px;
+      letter-spacing:2px;
+      color:var(--burgundy);
+      font-weight:700;
+    }
+
+    .smart-card h3{
+      font-size:23px;
+      margin:25px 0 15px;
+    }
+
+    .smart-card p{
+      color:var(--muted);
+      line-height:1.75;
+    }
+
+    /* =========================
+       UNIQUE DESIGN
+    ========================== */
+
+    .unique{
+      padding:120px 8%;
+      background:var(--burgundy);
+      color:white;
+    }
+
+    .unique-inner{
+      max-width:1100px;
+    }
+
+    .unique .section-label{
+      color:#f4dfe4;
+    }
+
+    .unique h2{
+      font-size:clamp(45px,6vw,85px);
+      line-height:1;
+      max-width:1000px;
+      margin-bottom:35px;
+    }
+
+    .unique p{
+      max-width:800px;
+      font-size:20px;
+      line-height:1.8;
+      color:#f9eaed;
+    }
+
+    .unique-statement{
+      margin-top:55px;
+      font-size:clamp(28px,3vw,44px);
+      font-weight:300;
+      border-left:3px solid white;
+      padding-left:30px;
+    }
+
+    /* =========================
+       SERVICES
+    ========================== */
+
+    .services{
+      padding:120px 8%;
+      background:white;
+    }
+
+    .services-heading{
+      margin-bottom:65px;
+    }
+
+    .services h2{
+      font-size:clamp(42px,6vw,75px);
+    }
+
+    .service-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:1px;
+      background:var(--timeless-light);
+    }
+
+    .service{
+      background:white;
+      padding:36px 30px;
+      min-height:175px;
+      transition:.25s;
+    }
+
+    .service:hover{
+      background:var(--offwhite);
+    }
+
+    .service span{
+      color:var(--burgundy);
+      font-size:12px;
+      font-weight:700;
+    }
+
+    .service h3{
+      margin-top:22px;
+      font-size:21px;
+      line-height:1.3;
+    }
+
+    /* =========================
+       PROCESS
+    ========================== */
+
+    .process{
+      padding:120px 8%;
+      background:#E5DFD9;
+    }
+
+    .process h2{
+      font-size:clamp(40px,5vw,70px);
+      margin-bottom:60px;
+    }
+
+    .process-line{
+      display:grid;
+      grid-template-columns:repeat(5,1fr);
+      gap:20px;
+    }
+
+    .process-step{
+      border-top:2px solid var(--burgundy);
+      padding-top:20px;
+    }
+
+    .process-step span{
+      color:var(--burgundy);
+      font-size:12px;
+    }
+
+    .process-step h3{
+      margin-top:18px;
+      font-size:20px;
+    }
+
+    /* =========================
+       FINAL STATEMENT
+    ========================== */
+
+    .statement{
+      padding:130px 8%;
+      text-align:center;
+      background:var(--offwhite);
+    }
+
+    .statement h2{
+      font-size:clamp(40px,6vw,80px);
+      line-height:1.1;
+      max-width:1100px;
+      margin:auto;
+    }
+
+    .statement h2 span{
+      color:var(--burgundy);
+    }
+
+    .statement p{
+      margin:35px auto 0;
+      max-width:800px;
+      font-size:20px;
+      color:var(--muted);
+      line-height:1.8;
+    }
+
+    /* =========================
+       CONTACT
+    ========================== */
+
+    .contact{
+      padding:110px 8%;
+      background:var(--charcoal);
+      color:white;
+    }
+
+    .contact h2{
+      font-size:clamp(45px,6vw,80px);
+    }
+
+    .contact p{
+      margin-top:25px;
+      color:#d4d0d1;
+      font-size:19px;
+    }
+
+    .contact .btn{
+      margin-top:35px;
+    }
+
+    /* =========================
+       FOOTER
+    ========================== */
+
+    footer{
+      padding:45px 8%;
+      background:#222224;
+      color:#aaa5a7;
+
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+
+      font-size:13px;
+    }
+
+    footer strong{
+      color:white;
+    }
+
+    /* =========================
+       MOBILE
+    ========================== */
+
+    @media(max-width:900px){
+
+      nav{
+        padding:12px 5%;
+      }
+
+      .nav-logo img{
+        height:55px;
+      }
+
+      nav ul{
+        display:none;
+      }
+
+      .hero{
+        grid-template-columns:1fr;
+        padding:130px 7% 70px;
+        text-align:left;
+      }
+
+      .hero h1{
+        letter-spacing:-3px;
+      }
+
+      .hero-visual{
+        order:-1;
+      }
+
+      .hero-visual img{
+        width:280px;
+      }
+
+      .smart-header{
+        grid-template-columns:1fr;
+        gap:30px;
       }
 
       .smart-grid,
-      .service-grid {
-        grid-template-columns: 1fr;
+      .service-grid{
+        grid-template-columns:1fr;
       }
 
-      h1 {
-        letter-spacing: -2px;
+      .problem-grid{
+        grid-template-columns:1fr 1fr;
       }
+
+      .process-line{
+        grid-template-columns:1fr;
+      }
+
+      footer{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:12px;
+      }
+
     }
+
+    @media(max-width:550px){
+
+      .problem-grid{
+        grid-template-columns:1fr;
+      }
+
+      .hero h1{
+        font-size:58px;
+      }
+
+    }
+
   </style>
+
 </head>
 
 <body>
 
+<!-- NAVIGATION -->
+
 <nav>
-  <div class="logo">
-    PROFESSIONAL <span>SOLUTIONS</span>
-  </div>
+
+  <a class="nav-logo" href="#">
+    <img src="logo.png" alt="Professional Solutions Logo">
+  </a>
 
   <ul>
     <li><a href="#smart">Smart Luxury</a></li>
     <li><a href="#services">Services</a></li>
-    <li><a href="#projects">Projects</a></li>
+    <li><a href="#process">How We Work</a></li>
     <li><a href="#contact">Contact</a></li>
+    <li><a class="language" href="#">AR</a></li>
   </ul>
+
 </nav>
 
+
+<!-- HERO -->
 
 <section class="hero">
 
   <div class="hero-content">
 
-    <div class="small-title">
-      PROFESSIONAL SOLUTIONS
+    <div class="hero-label">
+      Professional Solutions
     </div>
 
     <h1>
-      SMART<br>
+      SMART
       <span>LUXURY.</span>
     </h1>
 
@@ -311,89 +670,252 @@
     </h2>
 
     <p>
-      Intelligent design. Integrated execution.
-      Maximum functionality, comfort and sustainability —
-      with refined luxury and carefully optimized cost.
+      We design and execute complete projects around the real
+      needs of the people who use them — combining comfort,
+      functionality, sustainability, easy maintenance and
+      refined luxury with carefully optimized cost.
     </p>
 
-    <div class="buttons">
-      <a href="#smart" class="btn btn-primary">
+    <div class="hero-buttons">
+
+      <a href="#smart" class="btn btn-main">
         Discover Smart Luxury
       </a>
 
-      <a href="#services" class="btn">
-        Our Services
+      <a href="#services" class="btn btn-outline">
+        Explore Our Services
       </a>
+
+    </div>
+
+  </div>
+
+
+  <div class="hero-visual">
+
+    <img src="logo.png"
+         alt="Professional Solutions Smart Luxury">
+
+  </div>
+
+</section>
+
+
+<!-- INTRO -->
+
+<section class="intro">
+
+  <div class="section-label">
+    Our Philosophy
+  </div>
+
+  <h2>
+    Luxury should not mean
+    <span>more cost.</span>
+    It should mean better decisions.
+  </h2>
+
+  <p>
+    Smart Luxury is our approach to designing, engineering and
+    executing projects intelligently — reducing waste while
+    maximizing comfort, usability, longevity and value.
+  </p>
+
+</section>
+
+
+<!-- PROBLEMS -->
+
+<section class="problems">
+
+  <div class="section-label">
+    The Real Cost Of Poor Design
+  </div>
+
+  <h2>
+    A beautiful project can still fail if it does not work.
+  </h2>
+
+  <div class="problem-grid">
+
+    <div class="problem">
+
+      <span>01</span>
+
+      <h3>Wasted Space</h3>
+
+      <p>
+        Poor planning leaves valuable areas unused and limits
+        the real potential of the project.
+      </p>
+
+    </div>
+
+
+    <div class="problem">
+
+      <span>02</span>
+
+      <h3>Unnecessary Cost</h3>
+
+      <p>
+        Spending on elements that provide little functional
+        or long-term value creates avoidable project cost.
+      </p>
+
+    </div>
+
+
+    <div class="problem">
+
+      <span>03</span>
+
+      <h3>Difficult Maintenance</h3>
+
+      <p>
+        Services that are difficult to access turn simple
+        maintenance into expensive future work.
+      </p>
+
+    </div>
+
+
+    <div class="problem">
+
+      <span>04</span>
+
+      <h3>Copied Design</h3>
+
+      <p>
+        A design created for another project cannot fully
+        reflect your needs, operation or identity.
+      </p>
+
     </div>
 
   </div>
 
 </section>
 
+
+<!-- SMART LUXURY -->
 
 <section class="smart" id="smart">
 
-  <div class="section-label">
-    OUR PHILOSOPHY
+  <div class="smart-header">
+
+    <div>
+
+      <div class="section-label">
+        What Is Smart Luxury?
+      </div>
+
+      <h2>
+        SMART<br>LUXURY
+      </h2>
+
+    </div>
+
+
+    <p>
+
+      We begin with your needs, understand how the project
+      will operate, then design every space, system and detail
+      around real use.
+
+      Smart Luxury is where intelligent design, engineering,
+      comfort, sustainability, maintainability and refined
+      aesthetics work together as one solution.
+
+    </p>
+
   </div>
 
-  <h2>What is Smart Luxury?</h2>
-
-  <p class="smart-intro">
-    Smart Luxury is not about spending more.
-    It is about designing better — creating a unique solution
-    around the real needs of every project while eliminating
-    unnecessary cost and wasted space.
-  </p>
 
   <div class="smart-grid">
 
-    <div class="smart-card">
-      <h3>Designed Around Your Needs</h3>
-      <p>
-        Every project begins by understanding how the space
-        will actually be used — today and in the future.
-      </p>
-    </div>
 
     <div class="smart-card">
-      <h3>Unique by Design</h3>
+
+      <div class="smart-number">01</div>
+
+      <h3>Your Needs First</h3>
+
       <p>
-        We don't copy spaces. Every project deserves its own
-        identity, character and architectural solution.
+        Every project starts with understanding its users,
+        purpose, operating requirements and future needs.
       </p>
+
     </div>
 
-    <div class="smart-card">
-      <h3>Maximum Function</h3>
-      <p>
-        Every meter and every detail is planned to improve
-        usability, movement and operational efficiency.
-      </p>
-    </div>
 
     <div class="smart-card">
+
+      <div class="smart-number">02</div>
+
+      <h3>Maximum Use Of Space</h3>
+
+      <p>
+        Every meter is carefully planned to improve movement,
+        usability and operational efficiency.
+      </p>
+
+    </div>
+
+
+    <div class="smart-card">
+
+      <div class="smart-number">03</div>
+
+      <h3>Comfort By Design</h3>
+
+      <p>
+        Lighting, circulation, HVAC, ventilation and spatial
+        planning work together to create better environments.
+      </p>
+
+    </div>
+
+
+    <div class="smart-card">
+
+      <div class="smart-number">04</div>
+
       <h3>Easy Maintenance</h3>
+
       <p>
-        Systems and finishes are designed with future
-        maintenance and accessibility in mind.
+        Systems are designed with access, replacement and
+        future maintenance considered from the beginning.
       </p>
+
     </div>
 
-    <div class="smart-card">
-      <h3>Sustainable Thinking</h3>
-      <p>
-        Smart material selection and integrated systems help
-        create spaces designed to perform for years.
-      </p>
-    </div>
 
     <div class="smart-card">
-      <h3>Luxury Without Waste</h3>
+
+      <div class="smart-number">05</div>
+
+      <h3>Sustainable Solutions</h3>
+
       <p>
-        We focus your budget where it creates real value,
-        delivering a refined result without unnecessary cost.
+        Better materials, better engineering and intelligent
+        systems help projects perform efficiently for longer.
       </p>
+
+    </div>
+
+
+    <div class="smart-card">
+
+      <div class="smart-number">06</div>
+
+      <h3>Optimized Cost</h3>
+
+      <p>
+        We focus the budget where it creates real value —
+        reducing waste without compromising the final result.
+      </p>
+
     </div>
 
   </div>
@@ -401,97 +923,255 @@
 </section>
 
 
+<!-- UNIQUE IDENTITY -->
+
+<section class="unique">
+
+  <div class="unique-inner">
+
+    <div class="section-label">
+      Unique By Design
+    </div>
+
+    <h2>
+      Every project deserves its own identity.
+    </h2>
+
+    <p>
+
+      We do not build projects around copied concepts.
+
+      We study the nature of the business, the users, the
+      location, operation, engineering requirements and
+      budget — then create a solution designed specifically
+      for that project.
+
+    </p>
+
+    <div class="unique-statement">
+      Different needs deserve different solutions.
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- SERVICES -->
+
 <section class="services" id="services">
 
-  <div class="section-label">ONE TEAM. COMPLETE SOLUTION.</div>
+  <div class="services-heading">
 
-  <h2>From Design to Delivery.</h2>
+    <div class="section-label">
+      Complete Project Solutions
+    </div>
+
+    <h2>
+      One Team.<br>
+      One Vision.<br>
+      Complete Execution.
+    </h2>
+
+  </div>
+
 
   <div class="service-grid">
 
+
     <div class="service">
       <span>01</span>
-      <h3>Architecture & Design</h3>
+      <h3>Architecture & Interior Design</h3>
     </div>
+
 
     <div class="service">
       <span>02</span>
       <h3>Construction & Civil Works</h3>
     </div>
 
+
     <div class="service">
       <span>03</span>
       <h3>Interior Fit-Out & Decoration</h3>
     </div>
 
+
     <div class="service">
       <span>04</span>
-      <h3>HVAC & Ventilation</h3>
+      <h3>HVAC & Ventilation Systems</h3>
     </div>
+
 
     <div class="service">
       <span>05</span>
-      <h3>Electrical & Plumbing</h3>
+      <h3>Electrical & Lighting Works</h3>
     </div>
+
 
     <div class="service">
       <span>06</span>
-      <h3>Waterproofing & Insulation</h3>
+      <h3>Plumbing & Mechanical Services</h3>
     </div>
+
 
     <div class="service">
       <span>07</span>
-      <h3>Facades & Metal Works</h3>
+      <h3>Waterproofing & Thermal Insulation</h3>
     </div>
+
 
     <div class="service">
       <span>08</span>
-      <h3>Signage & Visual Identity</h3>
+      <h3>Metal, Steel & Structural Works</h3>
     </div>
+
 
     <div class="service">
       <span>09</span>
-      <h3>Complete Project Execution</h3>
+      <h3>Facades & Exterior Finishes</h3>
     </div>
+
+
+    <div class="service">
+      <span>10</span>
+      <h3>Signage & Visual Identity</h3>
+    </div>
+
+
+    <div class="service">
+      <span>11</span>
+      <h3>Renovation & Maintenance</h3>
+    </div>
+
+
+    <div class="service">
+      <span>12</span>
+      <h3>Turnkey Project Execution</h3>
+    </div>
+
 
   </div>
 
 </section>
 
 
-<section class="philosophy" id="projects">
+<!-- PROCESS -->
 
-  <div class="section-label">EVERY PROJECT IS UNIQUE</div>
+<section class="process" id="process">
+
+  <div class="section-label">
+    Our Process
+  </div>
 
   <h2>
-    We don't design spaces to look like everyone else.
+    From Need To Reality.
+  </h2>
+
+
+  <div class="process-line">
+
+
+    <div class="process-step">
+      <span>01</span>
+      <h3>Understand</h3>
+    </div>
+
+
+    <div class="process-step">
+      <span>02</span>
+      <h3>Analyze</h3>
+    </div>
+
+
+    <div class="process-step">
+      <span>03</span>
+      <h3>Design</h3>
+    </div>
+
+
+    <div class="process-step">
+      <span>04</span>
+      <h3>Execute</h3>
+    </div>
+
+
+    <div class="process-step">
+      <span>05</span>
+      <h3>Deliver</h3>
+    </div>
+
+
+  </div>
+
+</section>
+
+
+<!-- FINAL MESSAGE -->
+
+<section class="statement">
+
+  <div class="section-label">
+    The Result
+  </div>
+
+  <h2>
+
+    More comfort.
+    Better performance.
+    Easier maintenance.
+    Greater sustainability.
+
+    <span>Refined luxury with smarter cost.</span>
+
   </h2>
 
   <p>
-    We create environments with their own identity —
-    combining function, engineering, comfort, sustainability
-    and refined design into one integrated solution.
+    This is what Smart Luxury means at Professional Solutions.
   </p>
 
 </section>
 
+
+<!-- CONTACT -->
 
 <section class="contact" id="contact">
 
-  <div class="section-label">START YOUR PROJECT</div>
+  <div class="section-label">
+    Start Your Project
+  </div>
 
-  <h2>Let's Build Smarter.</h2>
+  <h2>
+    Let's Build Smarter.
+  </h2>
 
   <p>
-    Professional Solutions — Smart Luxury
+    Tell us what your project needs. We will help you turn it
+    into an intelligent, functional and distinctive solution.
   </p>
+
+  <a href="#" class="btn btn-main">
+    Contact Professional Solutions
+  </a>
 
 </section>
 
 
+<!-- FOOTER -->
+
 <footer>
-  © 2026 Professional Solutions. All Rights Reserved.
+
+  <div>
+    <strong>PROFESSIONAL SOLUTIONS</strong>
+    — SMART LUXURY
+  </div>
+
+  <div>
+    © 2026 Professional Solutions. All Rights Reserved.
+  </div>
+
 </footer>
+
 
 </body>
 </html>
