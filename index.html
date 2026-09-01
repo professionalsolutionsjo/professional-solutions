@@ -2,72 +2,67 @@
 <html lang="en" dir="ltr">
 
 <head>
-
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
-
-<title>
-Professional Solutions Jordan | Smart Luxury
-</title>
+<title>Professional Solutions Jordan | Smart Luxury</title>
 
 <meta name="description"
-content="Professional Solutions Jordan provides Smart Luxury interior design, office fit-out, residential solutions, custom furniture, lighting, HVAC, signage, landscape, industrial facility solutions, insulation and integrated turnkey execution.">
+content="Professional Solutions Jordan provides Smart Luxury solutions for homes, offices, custom furniture, lighting, signage, landscape, HVAC, industrial facilities, insulation and turnkey project execution.">
 
-<meta name="robots"
-content="index, follow">
+<meta name="robots" content="index, follow">
 
-<link rel="canonical"
-href="https://professionalsolutionsjo.com/">
+<link rel="canonical" href="https://professionalsolutionsjo.com/">
 
 <link rel="stylesheet"
 href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
-
-<meta property="og:type"
-content="website">
-
-<meta property="og:title"
-content="Professional Solutions | Smart Luxury">
-
+<meta property="og:type" content="website">
+<meta property="og:title" content="Professional Solutions | Smart Luxury">
 <meta property="og:description"
 content="Plan. Design. Execute. Integrated design and execution solutions in Jordan.">
+<meta property="og:url" content="https://professionalsolutionsjo.com/">
+<meta property="og:site_name" content="Professional Solutions">
 
-<meta property="og:url"
-content="https://professionalsolutionsjo.com/">
-
-<meta property="og:site_name"
-content="Professional Solutions">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Professional Solutions",
+  "url": "https://professionalsolutionsjo.com/",
+  "email": "info@professionalsolutionsjo.com",
+  "telephone": "+962790390555",
+  "areaServed": {
+    "@type": "Country",
+    "name": "Jordan"
+  }
+}
+</script>
 
 
 <style>
 
 /* =========================================================
-   COLORS
+   BRAND
 ========================================================= */
 
 :root{
+  --burgundy:#8C4A5A;
+  --burgundy-dark:#66343F;
+  --burgundy-light:#B77A87;
+  --burgundy-soft:#D9B7BF;
 
-    --burgundy:#8C4A5A;
-    --burgundy-dark:#66343F;
-    --burgundy-light:#B77A87;
-    --burgundy-soft:#D9B7BF;
+  --ivory:#F7F3EE;
+  --white:#FFFFFF;
 
-    --navy:#1F3442;
+  --charcoal:#29282A;
+  --charcoal-light:#373438;
 
-    --taupe:#B7ADA4;
-    --taupe-light:#DED7D1;
+  --taupe:#B7ADA4;
+  --soft:#E8E2DD;
 
-    --ivory:#F7F3EE;
-    --white:#FFFFFF;
-
-    --charcoal:#29282A;
-    --charcoal-light:#393639;
-
-    --text:#373235;
-    --muted:#746D70;
-
+  --text:#373235;
+  --muted:#716A6C;
 }
 
 
@@ -76,563 +71,375 @@ content="Professional Solutions">
 ========================================================= */
 
 *{
-
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
 }
-
 
 html{
-
-    scroll-behavior:smooth;
-
+  scroll-behavior:smooth;
 }
-
 
 body{
-
-    background:var(--ivory);
-
-    color:var(--text);
-
-    font-family:
-    Arial,
-    Helvetica,
-    sans-serif;
-
-    overflow-x:hidden;
-
+  background:var(--ivory);
+  color:var(--text);
+  font-family:Arial,Helvetica,sans-serif;
+  overflow-x:hidden;
 }
-
 
 body.ar{
-
-    direction:rtl;
-
-    font-family:
-    Tahoma,
-    Arial,
-    sans-serif;
-
+  direction:rtl;
+  font-family:Tahoma,Arial,sans-serif;
 }
-
 
 a{
-
-    color:inherit;
-    text-decoration:none;
-
+  color:inherit;
+  text-decoration:none;
 }
-
 
 img{
-
-    display:block;
-
-    width:100%;
-    max-width:100%;
-
+  display:block;
+  max-width:100%;
 }
 
 
 /* =========================================================
-   GLOBAL
+   GENERAL
 ========================================================= */
 
-.container{
-
-    width:min(1380px,88%);
-
-    margin:auto;
-
-}
-
-
 .section{
-
-    padding:125px 0;
-
+  padding:125px 7%;
 }
-
 
 .section-label{
-
-    margin-bottom:20px;
-
-    color:var(--burgundy);
-
-    font-size:13px;
-
-    font-weight:700;
-
-    letter-spacing:3px;
-
-    text-transform:uppercase;
-
+  margin-bottom:20px;
+  color:var(--burgundy);
+  font-size:13px;
+  font-weight:700;
+  letter-spacing:3px;
+  text-transform:uppercase;
 }
-
 
 body.ar .section-label{
-
-    font-size:18px;
-
-    letter-spacing:0;
-
+  font-size:18px;
+  letter-spacing:0;
 }
-
 
 .section-title{
-
-    font-size:clamp(
-        44px,
-        5.2vw,
-        76px
-    );
-
-    line-height:1.03;
-
-    letter-spacing:-2.8px;
-
+  font-size:clamp(44px,5vw,74px);
+  line-height:1.05;
+  letter-spacing:-2.5px;
 }
-
 
 body.ar .section-title{
-
-    letter-spacing:0;
-
-    line-height:1.2;
-
+  letter-spacing:0;
+  line-height:1.2;
 }
 
-
-.section-text{
-
-    color:var(--muted);
-
-    font-size:18px;
-
-    line-height:1.9;
-
+.section-description{
+  color:var(--muted);
+  font-size:18px;
+  line-height:1.9;
 }
-
 
 .btn{
+  min-height:52px;
+  padding:0 27px;
 
-    min-height:52px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:9px;
 
-    padding:0 27px;
+  border:1px solid transparent;
 
-    display:inline-flex;
+  font-size:14px;
+  font-weight:700;
 
-    align-items:center;
-    justify-content:center;
-
-    gap:10px;
-
-    border:1px solid transparent;
-
-    font-size:14px;
-
-    font-weight:700;
-
-    transition:.3s ease;
-
+  transition:.3s ease;
 }
-
 
 .btn-primary{
-
-    background:var(--burgundy);
-
-    color:white;
-
-    border-color:var(--burgundy);
-
+  background:var(--burgundy);
+  color:white;
+  border-color:var(--burgundy);
 }
-
 
 .btn-primary:hover{
-
-    background:var(--burgundy-dark);
-
-    border-color:var(--burgundy-dark);
-
-    transform:translateY(-2px);
-
+  background:var(--burgundy-dark);
+  border-color:var(--burgundy-dark);
+  transform:translateY(-2px);
 }
 
-
-.btn-outline{
-
-    border-color:var(--burgundy);
-
-    color:var(--burgundy);
-
+.btn-light{
+  border-color:rgba(255,255,255,.75);
+  color:white;
 }
 
-
-.btn-outline:hover{
-
-    background:var(--burgundy);
-
-    color:white;
-
+.btn-light:hover{
+  background:white;
+  color:var(--charcoal);
 }
 
 
 /* =========================================================
-   NAVBAR
+   NAVIGATION
 ========================================================= */
 
 .navbar{
+  position:fixed;
+  top:0;
+  left:0;
 
-    position:fixed;
+  z-index:10000;
 
-    top:0;
-    left:0;
+  width:100%;
+  height:88px;
 
-    z-index:9999;
+  padding:0 6%;
 
-    width:100%;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
 
-    height:90px;
+  background:rgba(247,243,238,.94);
+  backdrop-filter:blur(16px);
 
-    padding:0 6%;
-
-    display:flex;
-
-    align-items:center;
-    justify-content:space-between;
-
-    background:
-    rgba(247,243,238,.94);
-
-    backdrop-filter:blur(15px);
-
-    border-bottom:
-    1px solid
-    rgba(140,74,90,.12);
-
+  border-bottom:1px solid rgba(140,74,90,.12);
 }
 
+.logo{
+  display:flex;
+  align-items:center;
+}
 
 .logo img{
-
-    width:auto;
-
-    height:68px;
-
-    object-fit:contain;
-
+  width:auto;
+  height:67px;
+  object-fit:contain;
 }
-
 
 .nav-menu{
+  display:flex;
+  align-items:center;
+  gap:28px;
 
-    display:flex;
-
-    align-items:center;
-
-    gap:27px;
-
-    list-style:none;
-
+  list-style:none;
 }
-
 
 .nav-menu a{
+  position:relative;
 
-    font-size:13px;
+  font-size:13px;
+  font-weight:700;
 
-    font-weight:700;
-
-    transition:.25s;
-
+  transition:.25s;
 }
-
 
 .nav-menu a:hover{
-
-    color:var(--burgundy);
-
+  color:var(--burgundy);
 }
-
 
 .language-btn{
+  min-width:63px;
 
-    min-width:63px;
+  padding:10px 14px;
 
-    padding:10px 15px;
+  border:1px solid var(--burgundy);
 
-    background:transparent;
+  background:transparent;
+  color:var(--burgundy);
 
-    border:
-    1px solid
-    var(--burgundy);
+  font-weight:700;
+  cursor:pointer;
 
-    color:var(--burgundy);
-
-    font-weight:700;
-
-    cursor:pointer;
-
-    transition:.25s;
-
+  transition:.25s;
 }
 
-
 .language-btn:hover{
-
-    background:var(--burgundy);
-
-    color:white;
-
+  background:var(--burgundy);
+  color:white;
 }
 
 
 /* =========================================================
-   HERO
+   HERO VIDEO
 ========================================================= */
 
 .hero{
+  position:relative;
 
-    position:relative;
+  min-height:100vh;
 
-    min-height:100vh;
+  display:flex;
+  align-items:center;
 
-    padding:
-    155px 7%
-    85px;
+  overflow:hidden;
 
-    display:flex;
-
-    align-items:center;
-
-    overflow:hidden;
-
-    color:white;
-
-    background:
-
-    radial-gradient(
-        circle at 80% 30%,
-        rgba(140,74,90,.42),
-        transparent 30%
-    ),
-
-    radial-gradient(
-        circle at 95% 90%,
-        rgba(183,122,135,.2),
-        transparent 30%
-    ),
-
-    linear-gradient(
-        135deg,
-        #242225,
-        #302B2F
-    );
-
+  background:var(--charcoal);
+  color:white;
 }
 
+.hero-video{
+  position:absolute;
 
-.hero:before{
+  inset:0;
 
-    content:"";
+  width:100%;
+  height:100%;
 
-    position:absolute;
+  object-fit:cover;
 
-    right:-120px;
-    top:130px;
-
-    width:450px;
-    height:450px;
-
-    border:
-    1px solid
-    rgba(255,255,255,.10);
-
-    transform:rotate(45deg);
-
+  z-index:0;
 }
 
+.hero-overlay{
+  position:absolute;
+  inset:0;
 
-.hero:after{
+  z-index:1;
 
-    content:"";
-
-    position:absolute;
-
-    right:110px;
-    top:220px;
-
-    width:280px;
-    height:280px;
-
-    background:
-    rgba(140,74,90,.20);
-
-    transform:rotate(45deg);
-
+  background:
+  linear-gradient(
+    90deg,
+    rgba(19,17,18,.87) 0%,
+    rgba(25,21,23,.70) 46%,
+    rgba(20,18,19,.32) 100%
+  );
 }
 
+.hero-overlay:after{
+  content:"";
+
+  position:absolute;
+  inset:0;
+
+  background:
+  linear-gradient(
+    0deg,
+    rgba(25,20,22,.45),
+    transparent 45%
+  );
+}
 
 .hero-content{
+  position:relative;
 
-    position:relative;
+  z-index:3;
 
-    z-index:5;
+  width:min(1150px,86%);
 
-    width:min(1120px,100%);
+  margin:auto;
 
+  padding-top:90px;
 }
-
 
 .hero-kicker{
+  margin-bottom:26px;
 
-    margin-bottom:26px;
+  color:#E7C6CE;
 
-    color:var(--burgundy-soft);
-
-    font-size:13px;
-
-    font-weight:700;
-
-    letter-spacing:4px;
-
+  font-size:13px;
+  font-weight:700;
+  letter-spacing:4px;
 }
-
 
 body.ar .hero-kicker{
-
-    letter-spacing:0;
-
-    font-size:18px;
-
+  font-size:18px;
+  letter-spacing:0;
 }
-
 
 .hero h1{
+  max-width:1050px;
 
-    max-width:1000px;
+  font-size:clamp(70px,9.5vw,138px);
 
-    font-size:
-    clamp(
-        67px,
-        9vw,
-        132px
-    );
-
-    line-height:.82;
-
-    letter-spacing:-7px;
-
+  line-height:.81;
+  letter-spacing:-7px;
 }
-
 
 .hero h1 span{
-
-    display:block;
-
-    color:var(--burgundy-light);
-
+  display:block;
+  color:var(--burgundy-light);
 }
-
 
 body.ar .hero h1{
-
-    letter-spacing:0;
-
-    line-height:1;
-
+  letter-spacing:0;
+  line-height:1;
 }
 
+.hero h2{
+  margin-top:37px;
 
-.hero-subtitle{
+  font-size:clamp(28px,3vw,43px);
 
-    margin-top:38px;
-
-    font-size:
-    clamp(
-        28px,
-        3.1vw,
-        44px
-    );
-
-    font-weight:400;
-
+  font-weight:400;
 }
 
+body.ar .hero h2{
+  font-weight:700;
+}
 
 .hero-description{
+  max-width:820px;
 
-    max-width:810px;
+  margin-top:24px;
 
-    margin-top:25px;
+  color:#E0DBDD;
 
-    color:#D7D2D4;
-
-    font-size:18px;
-
-    line-height:1.9;
-
+  font-size:18px;
+  line-height:1.9;
 }
-
 
 .hero-values{
+  margin-top:26px;
 
-    margin-top:27px;
+  color:#E7C1C9;
 
-    color:#E4BAC4;
+  font-size:12px;
+  font-weight:700;
 
-    font-size:12px;
-
-    font-weight:700;
-
-    line-height:1.8;
-
-    letter-spacing:2px;
-
+  letter-spacing:2px;
+  line-height:1.7;
 }
-
 
 body.ar .hero-values{
-
-    letter-spacing:0;
-
+  letter-spacing:0;
 }
-
 
 .hero-buttons{
+  margin-top:38px;
 
-    margin-top:38px;
-
-    display:flex;
-
-    gap:12px;
-
-    flex-wrap:wrap;
-
+  display:flex;
+  flex-wrap:wrap;
+  gap:13px;
 }
 
+.hero-scroll{
+  position:absolute;
 
-.hero .btn-outline{
+  z-index:3;
 
-    border-color:
-    rgba(255,255,255,.7);
+  bottom:29px;
+  left:50%;
 
-    color:white;
+  transform:translateX(-50%);
 
+  color:rgba(255,255,255,.78);
+
+  font-size:20px;
+
+  animation:scrollMove 1.8s infinite;
 }
 
+@keyframes scrollMove{
+  0%,100%{
+    transform:translate(-50%,0);
+  }
 
-.hero .btn-outline:hover{
-
-    background:white;
-
-    color:var(--charcoal);
-
+  50%{
+    transform:translate(-50%,8px);
+  }
 }
 
 
@@ -640,142 +447,37 @@ body.ar .hero-values{
    SMART LUXURY
 ========================================================= */
 
-.smart-luxury{
+.smart{
+  padding:135px 8%;
 
-    padding:130px 7%;
+  background:white;
 
-    text-align:center;
-
-    background:white;
-
+  text-align:center;
 }
 
+.smart h2{
+  max-width:1120px;
 
-.smart-luxury h2{
+  margin:auto;
 
-    max-width:1100px;
+  font-size:clamp(45px,5.7vw,80px);
 
-    margin:auto;
-
-    font-size:
-    clamp(
-        44px,
-        5.5vw,
-        78px
-    );
-
-    line-height:1.08;
-
+  line-height:1.08;
 }
 
-
-.smart-luxury h2 span{
-
-    color:var(--burgundy);
-
+.smart h2 span{
+  color:var(--burgundy);
 }
 
+.smart p{
+  max-width:930px;
 
-.smart-luxury p{
+  margin:36px auto 0;
 
-    max-width:920px;
+  color:var(--muted);
 
-    margin:
-    34px auto 0;
-
-    color:var(--muted);
-
-    font-size:20px;
-
-    line-height:1.9;
-
-}
-
-
-/* =========================================================
-   DESIGN PRINCIPLES
-========================================================= */
-
-.principles{
-
-    padding:125px 7%;
-
-    background:var(--charcoal);
-
-    color:white;
-
-}
-
-
-.principles .section-label{
-
-    color:var(--burgundy-soft);
-
-}
-
-
-.principles-title{
-
-    max-width:900px;
-
-    margin-bottom:60px;
-
-}
-
-
-.principles-grid{
-
-    display:grid;
-
-    grid-template-columns:
-    repeat(3,1fr);
-
-    gap:2px;
-
-}
-
-
-.principle{
-
-    min-height:255px;
-
-    padding:34px 28px;
-
-    background:#353336;
-
-}
-
-
-.principle-number{
-
-    color:var(--burgundy-light);
-
-    font-size:12px;
-
-    font-weight:700;
-
-}
-
-
-.principle h3{
-
-    margin-top:28px;
-
-    font-size:23px;
-
-}
-
-
-.principle p{
-
-    margin-top:14px;
-
-    color:#CCC7C9;
-
-    font-size:15px;
-
-    line-height:1.8;
-
+  font-size:20px;
+  line-height:1.9;
 }
 
 
@@ -784,540 +486,335 @@ body.ar .hero-values{
 ========================================================= */
 
 .solutions{
+  padding:130px 7%;
 
-    padding:130px 7%;
-
-    background:var(--ivory);
-
+  background:var(--ivory);
 }
 
+.solutions-header{
+  margin-bottom:62px;
 
-.section-header{
+  display:grid;
+  grid-template-columns:1.15fr .85fr;
 
-    margin-bottom:60px;
+  gap:70px;
 
-    display:grid;
-
-    grid-template-columns:
-    1.15fr .85fr;
-
-    gap:70px;
-
-    align-items:end;
-
+  align-items:end;
 }
 
-
-.section-header .section-text{
-
-    max-width:550px;
-
+.solutions-header p{
+  max-width:590px;
 }
-
 
 .solutions-grid{
+  display:grid;
 
-    display:grid;
+  grid-template-columns:repeat(2,1fr);
 
-    grid-template-columns:
-    repeat(2,1fr);
-
-    gap:18px;
-
+  gap:18px;
 }
 
 
 /* =========================================================
-   IMAGE CARD
+   SOLUTION CARD
 ========================================================= */
 
-.image-card{
+.solution-card{
+  position:relative;
 
-    position:relative;
+  height:470px;
 
-    height:470px;
+  overflow:hidden;
 
-    overflow:hidden;
-
-    background:
-
-    linear-gradient(
-        135deg,
-        #393438,
-        #272527
-    );
-
+  background:
+  linear-gradient(
+    135deg,
+    #393438,
+    #252326
+  );
 }
 
-
-.image-card img{
-
-    width:100%;
-    height:100%;
-
-    object-fit:cover;
-
-    transition:
-    transform .7s ease,
-    opacity .3s ease;
-
+.solution-card.wide{
+  grid-column:1 / -1;
+  height:550px;
 }
 
+.solution-card img{
+  width:100%;
+  height:100%;
 
-.image-card:hover img{
+  object-fit:cover;
 
-    transform:scale(1.045);
-
+  transition:.7s ease;
 }
 
-
-.image-card:after{
-
-    content:"";
-
-    position:absolute;
-
-    inset:0;
-
-    background:
-
-    linear-gradient(
-        180deg,
-        rgba(15,12,14,.03) 20%,
-        rgba(20,15,18,.88) 100%
-    );
-
-    pointer-events:none;
-
+.solution-card:hover img{
+  transform:scale(1.045);
 }
 
+.solution-card:after{
+  content:"";
 
-.image-card.image-error:before{
+  position:absolute;
 
-    content:"PROFESSIONAL SOLUTIONS";
+  inset:0;
 
-    position:absolute;
+  z-index:2;
 
-    inset:0;
-
-    display:flex;
-
-    align-items:center;
-    justify-content:center;
-
-    color:
-    rgba(255,255,255,.17);
-
-    font-size:20px;
-
-    font-weight:700;
-
-    letter-spacing:3px;
-
+  background:
+  linear-gradient(
+    180deg,
+    rgba(16,13,15,.03) 15%,
+    rgba(18,13,16,.87) 100%
+  );
 }
 
-
-body.ar .image-card.image-error:before{
-
-    content:"PROFESSIONAL SOLUTIONS";
-
+.solution-card.wide:after{
+  background:
+  linear-gradient(
+    90deg,
+    rgba(20,15,18,.80) 0%,
+    rgba(20,15,18,.36) 58%,
+    rgba(20,15,18,.12) 100%
+  ),
+  linear-gradient(
+    0deg,
+    rgba(18,13,16,.55),
+    transparent 55%
+  );
 }
 
-
-.card-arrow{
-
-    position:absolute;
-
-    z-index:4;
-
-    top:23px;
-
-    right:23px;
-
-    width:46px;
-    height:46px;
-
-    display:flex;
-
-    align-items:center;
-    justify-content:center;
-
-    border-radius:50%;
-
-    border:
-    1px solid
-    rgba(255,255,255,.7);
-
-    background:
-    rgba(30,25,27,.25);
-
-    backdrop-filter:blur(7px);
-
-    color:white;
-
-    font-size:19px;
-
-    transition:.3s;
-
+.solution-card.image-error img{
+  display:none;
 }
 
+.solution-card.image-error:before{
+  content:"PROFESSIONAL SOLUTIONS";
 
-body.ar .card-arrow{
+  position:absolute;
+  inset:0;
 
-    right:auto;
-    left:23px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
 
+  color:rgba(255,255,255,.11);
+
+  font-size:20px;
+  font-weight:700;
+  letter-spacing:3px;
 }
 
+.solution-arrow{
+  position:absolute;
 
-.image-card:hover .card-arrow{
+  z-index:5;
 
-    background:var(--burgundy);
+  top:23px;
+  right:23px;
 
-    border-color:var(--burgundy);
+  width:47px;
+  height:47px;
 
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  border:1px solid rgba(255,255,255,.65);
+  border-radius:50%;
+
+  background:rgba(25,21,23,.20);
+  backdrop-filter:blur(7px);
+
+  color:white;
+
+  font-size:19px;
+
+  transition:.3s;
 }
 
-
-.card-content{
-
-    position:absolute;
-
-    z-index:4;
-
-    left:31px;
-    right:31px;
-    bottom:31px;
-
-    color:white;
-
+body.ar .solution-arrow{
+  right:auto;
+  left:23px;
 }
 
-
-.card-number{
-
-    color:#E6BDC6;
-
-    font-size:11px;
-
-    font-weight:700;
-
-    letter-spacing:2px;
-
+.solution-card:hover .solution-arrow{
+  background:var(--burgundy);
+  border-color:var(--burgundy);
 }
 
+.solution-content{
+  position:absolute;
 
-.card-content h3{
+  z-index:5;
 
-    margin-top:11px;
+  left:31px;
+  right:31px;
+  bottom:31px;
 
-    font-size:28px;
-
-    line-height:1.2;
-
+  color:white;
 }
 
+.solution-card.wide .solution-content{
+  max-width:650px;
 
-.card-content p{
+  bottom:45px;
+  left:45px;
+}
 
-    max-width:630px;
+body.ar .solution-card.wide .solution-content{
+  left:auto;
+  right:45px;
+}
 
-    margin-top:11px;
+.solution-number{
+  color:#E8BDC7;
 
-    color:#EEE9EB;
+  font-size:11px;
+  font-weight:700;
 
-    font-size:14px;
+  letter-spacing:2px;
+}
 
-    line-height:1.7;
+.solution-content h3{
+  margin-top:11px;
 
+  font-size:29px;
+  line-height:1.2;
+}
+
+.solution-card.wide h3{
+  font-size:38px;
+}
+
+.solution-content p{
+  max-width:620px;
+
+  margin-top:12px;
+
+  color:#EDE8EA;
+
+  font-size:15px;
+  line-height:1.75;
 }
 
 
 /* =========================================================
-   INSULATION PLACEHOLDER
+   INSULATION CARD WITHOUT IMAGE
 ========================================================= */
 
-.insulation-card{
-
-    background:
-
-    radial-gradient(
-        circle at 80% 15%,
-        rgba(183,122,135,.35),
-        transparent 35%
-    ),
-
-    linear-gradient(
-        135deg,
-        #263541,
-        #252225
-    );
-
+.insulation{
+  background:
+  radial-gradient(
+    circle at 80% 20%,
+    rgba(183,122,135,.34),
+    transparent 35%
+  ),
+  linear-gradient(
+    135deg,
+    #273540,
+    #282529
+  );
 }
 
+.insulation-symbol{
+  position:absolute;
 
-.insulation-icon{
+  z-index:1;
 
-    position:absolute;
+  top:50%;
+  right:12%;
 
-    top:50%;
+  transform:translateY(-50%);
 
-    left:50%;
+  color:rgba(255,255,255,.08);
 
-    transform:
-    translate(-50%,-50%);
+  font-size:145px;
+}
 
-    font-size:110px;
-
-    color:
-    rgba(255,255,255,.09);
-
+body.ar .insulation-symbol{
+  right:auto;
+  left:12%;
 }
 
 
 /* =========================================================
-   EXPLORE BY SPACE
+   WHY US
 ========================================================= */
 
-.explore{
+.why{
+  padding:130px 7%;
 
-    padding:130px 7%;
+  background:var(--charcoal);
 
-    background:white;
-
+  color:white;
 }
 
-
-.explore-grid{
-
-    display:grid;
-
-    grid-template-columns:
-    repeat(2,1fr);
-
-    gap:18px;
-
+.why .section-label{
+  color:var(--burgundy-soft);
 }
 
+.why-header{
+  max-width:930px;
 
-.explore-card{
-
-    position:relative;
-
-    height:530px;
-
-    overflow:hidden;
-
-    background:#302D30;
-
+  margin-bottom:62px;
 }
 
+.why-grid{
+  display:grid;
 
-.explore-card img{
+  grid-template-columns:repeat(4,1fr);
 
-    width:100%;
-    height:100%;
-
-    object-fit:cover;
-
-    transition:.7s;
-
+  gap:2px;
 }
 
+.why-card{
+  min-height:285px;
 
-.explore-card:hover img{
+  padding:34px 28px;
 
-    transform:scale(1.045);
+  background:#353336;
 
+  border-top:2px solid transparent;
+
+  transition:.3s;
 }
 
-
-.explore-card:after{
-
-    content:"";
-
-    position:absolute;
-
-    inset:0;
-
-    background:
-
-    linear-gradient(
-        180deg,
-        rgba(15,12,14,.04) 25%,
-        rgba(18,13,16,.87) 100%
-    );
-
+.why-card:hover{
+  border-color:var(--burgundy-light);
+  background:#3A3639;
 }
 
+.why-icon{
+  width:50px;
+  height:50px;
 
-.explore-content{
+  display:flex;
+  align-items:center;
+  justify-content:center;
 
-    position:absolute;
+  border-radius:50%;
 
-    z-index:5;
+  background:rgba(183,122,135,.12);
 
-    left:32px;
-    right:32px;
-    bottom:32px;
+  color:var(--burgundy-light);
 
-    color:white;
-
+  font-size:23px;
 }
 
+.why-card h3{
+  margin-top:28px;
 
-.explore-tag{
-
-    display:inline-block;
-
-    padding:
-    8px 12px;
-
-    margin-bottom:15px;
-
-    border:
-    1px solid
-    rgba(255,255,255,.6);
-
-    border-radius:999px;
-
-    background:
-    rgba(20,20,20,.22);
-
-    backdrop-filter:blur(6px);
-
-    font-size:10px;
-
-    font-weight:700;
-
-    letter-spacing:1.5px;
-
+  font-size:22px;
 }
 
+.why-card p{
+  margin-top:14px;
 
-body.ar .explore-tag{
+  color:#CDC8CA;
 
-    letter-spacing:0;
-
-}
-
-
-.explore-content h3{
-
-    font-size:34px;
-
-}
-
-
-.explore-content p{
-
-    max-width:630px;
-
-    margin-top:12px;
-
-    color:#E9E6E7;
-
-    font-size:15px;
-
-    line-height:1.75;
-
-}
-
-
-/* =========================================================
-   HOME PREVIEW
-========================================================= */
-
-.home-preview{
-
-    padding:130px 7%;
-
-    background:var(--ivory);
-
-}
-
-
-.home-grid{
-
-    margin-top:58px;
-
-    display:grid;
-
-    grid-template-columns:
-    repeat(3,1fr);
-
-    gap:14px;
-
-}
-
-
-.home-item{
-
-    position:relative;
-
-    height:365px;
-
-    overflow:hidden;
-
-    background:#302E30;
-
-}
-
-
-.home-item img{
-
-    width:100%;
-    height:100%;
-
-    object-fit:cover;
-
-    transition:.6s;
-
-}
-
-
-.home-item:hover img{
-
-    transform:scale(1.045);
-
-}
-
-
-.home-item:after{
-
-    content:"";
-
-    position:absolute;
-
-    inset:0;
-
-    background:
-
-    linear-gradient(
-        180deg,
-        transparent 38%,
-        rgba(18,14,16,.82)
-    );
-
-}
-
-
-.home-title{
-
-    position:absolute;
-
-    z-index:4;
-
-    left:24px;
-    right:24px;
-    bottom:23px;
-
-    color:white;
-
-    font-size:22px;
-
-    font-weight:700;
-
+  font-size:15px;
+  line-height:1.8;
 }
 
 
@@ -1326,182 +823,55 @@ body.ar .explore-tag{
 ========================================================= */
 
 .statement{
+  padding:135px 8%;
 
-    padding:135px 8%;
+  background:var(--burgundy);
 
-    background:var(--burgundy);
-
-    color:white;
-
+  color:white;
 }
-
 
 .statement .section-label{
-
-    color:#F1D7DD;
-
+  color:#F0D5DB;
 }
-
 
 .statement h2{
+  max-width:1100px;
 
-    max-width:1100px;
+  font-size:clamp(48px,6vw,84px);
 
-    font-size:
-    clamp(
-        48px,
-        6vw,
-        84px
-    );
-
-    line-height:1.04;
-
+  line-height:1.04;
 }
-
 
 .statement p{
+  max-width:900px;
 
-    max-width:900px;
+  margin-top:34px;
 
-    margin-top:34px;
+  color:#F7E9EC;
 
-    color:#F5E8EB;
-
-    font-size:20px;
-
-    line-height:1.9;
-
+  font-size:20px;
+  line-height:1.9;
 }
 
+.statement-quote{
+  max-width:980px;
 
-.statement-line{
+  margin-top:50px;
 
-    max-width:950px;
+  padding-left:28px;
 
-    margin-top:50px;
+  border-left:3px solid white;
 
-    padding-left:27px;
-
-    border-left:
-    3px solid white;
-
-    font-size:
-    clamp(
-        27px,
-        3vw,
-        41px
-    );
-
-    line-height:1.3;
-
+  font-size:clamp(27px,3vw,42px);
+  line-height:1.35;
 }
 
+body.ar .statement-quote{
+  padding-left:0;
+  padding-right:28px;
 
-body.ar .statement-line{
-
-    padding-left:0;
-
-    padding-right:27px;
-
-    border-left:none;
-
-    border-right:
-    3px solid white;
-
-}
-
-
-/* =========================================================
-   TECHNICAL
-========================================================= */
-
-.technical{
-
-    padding:125px 7%;
-
-    background:var(--charcoal);
-
-    color:white;
-
-}
-
-
-.technical .section-label{
-
-    color:var(--burgundy-soft);
-
-}
-
-
-.technical-layout{
-
-    display:grid;
-
-    grid-template-columns:
-    .9fr 1.1fr;
-
-    gap:75px;
-
-    align-items:center;
-
-}
-
-
-.technical-description{
-
-    margin-top:27px;
-
-    color:#D0CBCD;
-
-    font-size:18px;
-
-    line-height:1.9;
-
-}
-
-
-.technical-grid{
-
-    display:grid;
-
-    grid-template-columns:
-    repeat(2,1fr);
-
-    gap:12px;
-
-}
-
-
-.tech-card{
-
-    min-height:185px;
-
-    padding:28px;
-
-    background:#373437;
-
-    border-top:
-    2px solid
-    var(--burgundy-light);
-
-}
-
-
-.tech-card i{
-
-    color:var(--burgundy-light);
-
-    font-size:29px;
-
-}
-
-
-.tech-card h3{
-
-    margin-top:23px;
-
-    font-size:20px;
-
+  border-left:none;
+  border-right:3px solid white;
 }
 
 
@@ -1510,112 +880,85 @@ body.ar .statement-line{
 ========================================================= */
 
 .process{
+  padding:130px 7%;
 
-    padding:125px 7%;
-
-    background:#E3DCD6;
-
+  background:#E5DED8;
 }
-
 
 .process-grid{
+  margin-top:60px;
 
-    margin-top:60px;
+  display:grid;
 
-    display:grid;
+  grid-template-columns:repeat(5,1fr);
 
-    grid-template-columns:
-    repeat(5,1fr);
-
-    gap:20px;
-
+  gap:20px;
 }
-
 
 .process-step{
+  padding-top:22px;
 
-    padding-top:20px;
-
-    border-top:
-    2px solid
-    var(--burgundy);
-
+  border-top:2px solid var(--burgundy);
 }
-
 
 .process-step span{
+  color:var(--burgundy);
 
-    color:var(--burgundy);
-
-    font-size:11px;
-
-    font-weight:700;
-
+  font-size:11px;
+  font-weight:700;
 }
 
-
 .process-step h3{
+  margin-top:18px;
 
-    margin-top:18px;
+  font-size:21px;
+}
 
-    font-size:21px;
+.process-step p{
+  margin-top:11px;
 
+  color:var(--muted);
+
+  font-size:14px;
+  line-height:1.7;
 }
 
 
 /* =========================================================
-   CTA
+   FINAL CTA
 ========================================================= */
 
-.cta{
+.final-cta{
+  padding:130px 8%;
 
-    padding:130px 7%;
+  background:white;
 
-    text-align:center;
-
-    background:white;
-
+  text-align:center;
 }
 
+.final-cta h2{
+  max-width:1120px;
 
-.cta h2{
+  margin:auto;
 
-    max-width:1100px;
+  font-size:clamp(45px,5.7vw,78px);
 
-    margin:auto;
-
-    font-size:
-    clamp(
-        45px,
-        5.6vw,
-        78px
-    );
-
-    line-height:1.08;
-
+  line-height:1.08;
 }
 
-
-.cta h2 span{
-
-    color:var(--burgundy);
-
+.final-cta h2 span{
+  color:var(--burgundy);
 }
 
+.final-cta p{
+  max-width:850px;
 
-.cta p{
+  margin:32px auto 0;
 
-    max-width:850px;
+  color:var(--muted);
 
-    margin:
-    32px auto 0;
-
-    color:var(--muted);
-
-    font-size:19px;
-
-    line-height:1.9;
-
+  font-size:19px;
+  line-height:1.9;
 }
 
 
@@ -1624,150 +967,92 @@ body.ar .statement-line{
 ========================================================= */
 
 .contact{
+  padding:125px 7%;
 
-    padding:125px 7%;
+  background:var(--burgundy);
 
-    text-align:center;
+  color:white;
 
-    background:var(--burgundy);
-
-    color:white;
-
+  text-align:center;
 }
-
 
 .contact .section-label{
-
-    color:#F0D6DC;
-
+  color:#F0D5DB;
 }
-
 
 .contact h2{
-
-    font-size:
-    clamp(
-        48px,
-        6vw,
-        82px
-    );
-
+  font-size:clamp(48px,6vw,83px);
 }
 
+.contact p{
+  max-width:820px;
 
-.contact-description{
+  margin:28px auto 0;
 
-    max-width:800px;
+  color:#F6E8EB;
 
-    margin:
-    27px auto 0;
-
-    color:#F4E8EA;
-
-    font-size:18px;
-
-    line-height:1.9;
-
+  font-size:18px;
+  line-height:1.9;
 }
-
 
 .contact-buttons{
+  margin-top:38px;
 
-    margin-top:38px;
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
 
-    display:flex;
-
-    justify-content:center;
-
-    flex-wrap:wrap;
-
-    gap:13px;
-
+  gap:13px;
 }
-
 
 .contact .btn-primary{
+  background:white;
+  border-color:white;
 
-    background:white;
-
-    border-color:white;
-
-    color:var(--burgundy);
-
+  color:var(--burgundy);
 }
-
 
 .contact .btn-primary:hover{
-
-    background:var(--ivory);
-
+  background:var(--ivory);
 }
 
-
-.contact .btn-outline{
-
-    color:white;
-
-    border-color:white;
-
+.contact .btn-light:hover{
+  color:var(--burgundy);
 }
 
+.social{
+  margin-top:38px;
 
-.contact .btn-outline:hover{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
 
-    color:var(--burgundy);
-
-    background:white;
-
+  gap:10px;
 }
 
+.social a{
+  width:46px;
+  height:46px;
 
-.social-links{
+  display:flex;
+  align-items:center;
+  justify-content:center;
 
-    margin-top:38px;
+  border:1px solid rgba(255,255,255,.55);
+  border-radius:50%;
 
-    display:flex;
+  color:white;
 
-    justify-content:center;
+  font-size:18px;
 
-    flex-wrap:wrap;
-
-    gap:10px;
-
+  transition:.25s;
 }
 
+.social a:hover{
+  background:white;
+  color:var(--burgundy);
 
-.social-link{
-
-    width:46px;
-    height:46px;
-
-    border:
-    1px solid
-    rgba(255,255,255,.55);
-
-    border-radius:50%;
-
-    display:flex;
-
-    align-items:center;
-    justify-content:center;
-
-    color:white;
-
-    transition:.25s;
-
-}
-
-
-.social-link:hover{
-
-    background:white;
-
-    color:var(--burgundy);
-
-    transform:translateY(-2px);
-
+  transform:translateY(-2px);
 }
 
 
@@ -1776,113 +1061,82 @@ body.ar .statement-line{
 ========================================================= */
 
 footer{
+  padding:43px 7%;
 
-    padding:42px 7%;
+  display:flex;
+  justify-content:space-between;
 
-    display:flex;
+  gap:30px;
 
-    justify-content:space-between;
+  background:#232225;
 
-    gap:30px;
+  color:#AAA5A7;
 
-    background:#242225;
-
-    color:#AAA5A7;
-
-    font-size:13px;
-
-    line-height:1.8;
-
+  font-size:13px;
+  line-height:1.8;
 }
-
 
 footer strong{
-
-    color:white;
-
+  color:white;
 }
 
-
 footer a:hover{
-
-    color:white;
-
+  color:white;
 }
 
 
 /* =========================================================
-   FLOATING BUTTONS
+   FLOATING CONTACT
 ========================================================= */
 
 .floating-contact{
+  position:fixed;
 
-    position:fixed;
+  z-index:9999;
 
-    z-index:9998;
+  right:22px;
+  bottom:22px;
 
-    right:22px;
-    bottom:22px;
+  display:flex;
+  flex-direction:column;
 
-    display:flex;
-
-    flex-direction:column;
-
-    gap:10px;
-
+  gap:10px;
 }
-
 
 body.ar .floating-contact{
-
-    right:auto;
-    left:22px;
-
+  right:auto;
+  left:22px;
 }
 
+.float-button{
+  width:55px;
+  height:55px;
 
-.float-btn{
+  display:flex;
+  align-items:center;
+  justify-content:center;
 
-    width:56px;
-    height:56px;
+  border-radius:50%;
 
-    display:flex;
+  color:white;
 
-    align-items:center;
-    justify-content:center;
+  font-size:22px;
 
-    border-radius:50%;
+  box-shadow:0 9px 27px rgba(0,0,0,.22);
 
-    color:white;
-
-    font-size:23px;
-
-    box-shadow:
-    0 9px 27px
-    rgba(0,0,0,.22);
-
-    transition:.25s;
-
+  transition:.25s;
 }
 
-
-.float-btn:hover{
-
-    transform:translateY(-3px);
-
+.float-button:hover{
+  transform:translateY(-3px);
 }
 
-
-.call-btn{
-
-    background:var(--burgundy);
-
+.float-call{
+  background:var(--burgundy);
 }
 
-
-.whatsapp-btn{
-
-    background:#25D366;
-
+.float-whatsapp{
+  background:#25D366;
 }
 
 
@@ -1890,45 +1144,24 @@ body.ar .floating-contact{
    TABLET
 ========================================================= */
 
-@media(max-width:1000px){
+@media(max-width:1050px){
 
-    .nav-menu li:not(:last-child){
+  .nav-menu li:not(:last-child){
+    display:none;
+  }
 
-        display:none;
+  .solutions-header{
+    grid-template-columns:1fr;
+    gap:25px;
+  }
 
-    }
+  .why-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
 
-
-    .principles-grid{
-
-        grid-template-columns:
-        repeat(2,1fr);
-
-    }
-
-
-    .section-header{
-
-        grid-template-columns:1fr;
-
-        gap:25px;
-
-    }
-
-
-    .technical-layout{
-
-        grid-template-columns:1fr;
-
-    }
-
-
-    .process-grid{
-
-        grid-template-columns:
-        repeat(2,1fr);
-
-    }
+  .process-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
 
 }
 
@@ -1939,2167 +1172,1358 @@ body.ar .floating-contact{
 
 @media(max-width:720px){
 
-    .navbar{
+  .navbar{
+    height:78px;
+    padding:0 5%;
+  }
 
-        height:78px;
+  .logo img{
+    height:57px;
+  }
 
-        padding:0 5%;
+  .hero{
+    min-height:100svh;
+  }
 
-    }
+  .hero-content{
+    width:88%;
+    padding-top:80px;
+  }
 
+  .hero h1{
+    font-size:58px;
+    letter-spacing:-3px;
+  }
 
-    .logo img{
+  body.ar .hero h1{
+    font-size:49px;
+    letter-spacing:0;
+  }
 
-        height:58px;
+  .hero-description{
+    font-size:16px;
+  }
 
-    }
+  .hero-overlay{
+    background:
+    linear-gradient(
+      90deg,
+      rgba(19,17,18,.83),
+      rgba(19,17,18,.58)
+    );
+  }
 
+  .solutions-grid,
+  .why-grid,
+  .process-grid{
+    grid-template-columns:1fr;
+  }
 
-    .hero{
+  .solution-card,
+  .solution-card.wide{
+    grid-column:auto;
+    height:420px;
+  }
 
-        min-height:94vh;
+  .solution-card.wide .solution-content{
+    left:27px;
+    right:27px;
+    bottom:29px;
+  }
 
-        padding:
-        125px 6%
-        70px;
+  body.ar .solution-card.wide .solution-content{
+    left:27px;
+    right:27px;
+  }
 
-    }
+  .solution-card.wide h3{
+    font-size:29px;
+  }
 
+  .why-card{
+    min-height:230px;
+  }
 
-    .hero h1{
+  footer{
+    flex-direction:column;
+  }
 
-        font-size:58px;
+  .floating-contact{
+    right:14px;
+    bottom:16px;
+  }
 
-        letter-spacing:-3px;
+  body.ar .floating-contact{
+    right:auto;
+    left:14px;
+  }
 
-    }
+  .float-button{
+    width:51px;
+    height:51px;
+  }
 
-
-    body.ar .hero h1{
-
-        font-size:49px;
-
-        letter-spacing:0;
-
-    }
-
-
-    .hero-description{
-
-        font-size:16px;
-
-    }
-
-
-    .principles-grid,
-    .solutions-grid,
-    .explore-grid,
-    .home-grid,
-    .technical-grid,
-    .process-grid{
-
-        grid-template-columns:1fr;
-
-    }
-
-
-    .image-card{
-
-        height:420px;
-
-    }
-
-
-    .explore-card{
-
-        height:450px;
-
-    }
-
-
-    .home-item{
-
-        height:400px;
-
-    }
-
-
-    .section{
-
-        padding:90px 0;
-
-    }
-
-
-    footer{
-
-        flex-direction:column;
-
-    }
+}
 
 
-    .floating-contact{
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
 
-        right:14px;
-        bottom:16px;
+@media(prefers-reduced-motion:reduce){
 
-    }
+  html{
+    scroll-behavior:auto;
+  }
 
+  .hero-video{
+    display:none;
+  }
 
-    body.ar .floating-contact{
-
-        right:auto;
-        left:14px;
-
-    }
-
-
-    .float-btn{
-
-        width:51px;
-        height:51px;
-
-    }
+  *{
+    animation:none !important;
+    transition:none !important;
+  }
 
 }
 
 </style>
-
 </head>
-
 
 
 <body>
 
 
-<!-- =====================================================
-     NAVBAR
-===================================================== -->
+<!-- ======================================================
+     NAVIGATION
+====================================================== -->
 
 <header class="navbar">
 
-<a href="/" class="logo">
-
-<img
-src="logo.png"
-alt="Professional Solutions">
-
-</a>
+  <a href="/" class="logo">
+    <img
+    src="logo.png"
+    alt="Professional Solutions">
+  </a>
 
 
-<ul class="nav-menu">
+  <ul class="nav-menu">
 
-<li>
+    <li>
+      <a
+      href="#smart"
+      data-en="Smart Luxury"
+      data-ar="الفخامة الذكية">
+      Smart Luxury
+      </a>
+    </li>
 
-<a
-href="#smart"
-data-en="Smart Luxury"
-data-ar="الفخامة الذكية">
+    <li>
+      <a
+      href="#solutions"
+      data-en="Solutions"
+      data-ar="الحلول">
+      Solutions
+      </a>
+    </li>
 
-Smart Luxury
+    <li>
+      <a
+      href="#why"
+      data-en="Why Us"
+      data-ar="لماذا نحن">
+      Why Us
+      </a>
+    </li>
 
-</a>
+    <li>
+      <a
+      href="#process"
+      data-en="Process"
+      data-ar="منهجية العمل">
+      Process
+      </a>
+    </li>
 
-</li>
+    <li>
+      <a
+      href="#contact"
+      data-en="Contact"
+      data-ar="تواصل معنا">
+      Contact
+      </a>
+    </li>
 
+    <li>
+      <button
+      id="languageButton"
+      class="language-btn"
+      onclick="toggleLanguage()">
+      عربي
+      </button>
+    </li>
 
-<li>
-
-<a
-href="#solutions"
-data-en="Solutions"
-data-ar="الحلول">
-
-Solutions
-
-</a>
-
-</li>
-
-
-<li>
-
-<a
-href="#explore"
-data-en="Projects"
-data-ar="المشاريع">
-
-Projects
-
-</a>
-
-</li>
-
-
-<li>
-
-<a
-href="#process"
-data-en="Process"
-data-ar="منهجية العمل">
-
-Process
-
-</a>
-
-</li>
-
-
-<li>
-
-<a
-href="#contact"
-data-en="Contact"
-data-ar="تواصل معنا">
-
-Contact
-
-</a>
-
-</li>
-
-
-<li>
-
-<button
-id="languageButton"
-class="language-btn"
-onclick="toggleLanguage()">
-
-عربي
-
-</button>
-
-</li>
-
-</ul>
+  </ul>
 
 </header>
 
 
 
-<!-- =====================================================
-     HERO
-===================================================== -->
+<!-- ======================================================
+     HERO VIDEO
+====================================================== -->
 
 <section class="hero">
 
-<div class="hero-content">
+  <video
+  class="hero-video"
+  autoplay
+  muted
+  loop
+  playsinline
+  preload="metadata"
+  aria-hidden="true">
 
-<div
-class="hero-kicker"
-data-en="PROFESSIONAL SOLUTIONS • JORDAN"
-data-ar="الحلول الاحترافية • الأردن">
+    <source
+    src="videos/hero-video.mp4"
+    type="video/mp4">
 
-PROFESSIONAL SOLUTIONS • JORDAN
-
-</div>
-
-
-<h1>
-
-SMART
-
-<span>LUXURY.</span>
-
-</h1>
+  </video>
 
 
-<h2
-class="hero-subtitle"
-data-en="We Start With Your Needs."
-data-ar="نبدأ باحتياجاتك.">
-
-We Start With Your Needs.
-
-</h2>
+  <div class="hero-overlay"></div>
 
 
-<p
-class="hero-description"
-data-en="We plan, design and execute spaces around real human and operational needs — combining intelligent planning, functionality, comfort, durability, easy maintenance and refined aesthetics within a carefully optimized budget."
-data-ar="نخطط ونصمم وننفذ المساحات انطلاقًا من الاحتياجات الحقيقية للمستخدم والتشغيل، لنحقق التخطيط الذكي والوظيفة والراحة والمتانة وسهولة الصيانة وجمال التفاصيل ضمن ميزانية مدروسة.">
+  <div class="hero-content">
 
-We plan, design and execute spaces around real human and operational needs.
-
-</p>
-
-
-<div
-class="hero-values"
-data-en="PLAN • DESIGN • EXECUTE • FUNCTION • COMFORT • VALUE"
-data-ar="تخطيط • تصميم • تنفيذ • وظيفة • راحة • قيمة">
-
-PLAN • DESIGN • EXECUTE • FUNCTION • COMFORT • VALUE
-
-</div>
+    <div
+    class="hero-kicker"
+    data-en="PROFESSIONAL SOLUTIONS • JORDAN"
+    data-ar="الحلول الاحترافية • الأردن">
+    PROFESSIONAL SOLUTIONS • JORDAN
+    </div>
 
 
-<div class="hero-buttons">
-
-<a
-href="#explore"
-class="btn btn-primary"
-data-en="Explore Our Work"
-data-ar="استكشف حلولنا">
-
-Explore Our Work
-
-</a>
+    <h1>
+      SMART
+      <span>LUXURY.</span>
+    </h1>
 
 
-<a
-href="#contact"
-class="btn btn-outline"
-data-en="Start Your Project"
-data-ar="ابدأ مشروعك">
+    <h2
+    data-en="We Start With Your Needs."
+    data-ar="نبدأ باحتياجاتك.">
+    We Start With Your Needs.
+    </h2>
 
-Start Your Project
 
-</a>
+    <p
+    class="hero-description"
+    data-en="We plan, design and execute spaces around real human and operational needs — creating better function, greater comfort, lasting quality and refined aesthetics within a carefully optimized budget."
+    data-ar="نخطط ونصمم وننفذ المساحات انطلاقًا من احتياجات المستخدم والتشغيل الفعلية، لتحقيق وظيفة أفضل وراحة أكبر وجودة تدوم وجمال مدروس ضمن ميزانية محسوبة.">
+    We plan, design and execute spaces around real human and operational needs.
+    </p>
 
-</div>
 
-</div>
+    <div
+    class="hero-values"
+    data-en="PLAN • DESIGN • EXECUTE"
+    data-ar="نخطط • نصمم • ننفذ">
+    PLAN • DESIGN • EXECUTE
+    </div>
+
+
+    <div class="hero-buttons">
+
+      <a
+      href="#solutions"
+      class="btn btn-primary"
+      data-en="Explore Our Solutions"
+      data-ar="استكشف حلولنا">
+      Explore Our Solutions
+      </a>
+
+
+      <a
+      href="#contact"
+      class="btn btn-light"
+      data-en="Start Your Project"
+      data-ar="ابدأ مشروعك">
+      Start Your Project
+      </a>
+
+    </div>
+
+  </div>
+
+
+  <a href="#smart" class="hero-scroll" aria-label="Scroll down">
+    <i class="bi bi-chevron-down"></i>
+  </a>
 
 </section>
 
 
 
-<!-- =====================================================
+<!-- ======================================================
      SMART LUXURY
-===================================================== -->
+====================================================== -->
 
 <section
-class="smart-luxury"
+class="smart"
 id="smart">
 
-<div
-class="section-label"
-data-en="OUR PHILOSOPHY"
-data-ar="فلسفتنا">
-
-OUR PHILOSOPHY
-
-</div>
+  <div
+  class="section-label"
+  data-en="OUR PHILOSOPHY"
+  data-ar="فلسفتنا">
+  OUR PHILOSOPHY
+  </div>
 
 
-<h2
-data-en="Luxury isn't about spending more. It's about <span>designing smarter.</span>"
-data-ar="الفخامة ليست أن تنفق أكثر، بل أن <span>تصمم بذكاء.</span>">
-
-Luxury isn't about spending more.
-It's about <span>designing smarter.</span>
-
-</h2>
+  <h2
+  data-en="Luxury isn't about spending more. It's about <span>designing smarter.</span>"
+  data-ar="الفخامة ليست أن تنفق أكثر، بل أن <span>تصمم بذكاء.</span>">
+  Luxury isn't about spending more.
+  It's about <span>designing smarter.</span>
+  </h2>
 
 
-<p
-data-en="Smart Luxury is the balance between intelligent planning, functionality, comfort, durability, refined aesthetics and cost-conscious execution."
-data-ar="Smart Luxury هي التوازن بين التخطيط الذكي والوظيفة والراحة والمتانة وجمال التفاصيل والتنفيذ المدروس من حيث الكلفة.">
-
-Smart Luxury is the balance between intelligent planning, functionality, comfort, durability, refined aesthetics and cost-conscious execution.
-
-</p>
+  <p
+  data-en="Smart Luxury brings together intelligent planning, functionality, comfort, durability, refined aesthetics and cost-conscious execution. Every decision should add real value to the project."
+  data-ar="Smart Luxury تجمع بين التخطيط الذكي والوظيفة والراحة والمتانة وجمال التفاصيل والتنفيذ المدروس من حيث الكلفة. كل قرار في المشروع يجب أن يضيف قيمة حقيقية.">
+  Smart Luxury brings together intelligent planning, functionality,
+  comfort, durability, refined aesthetics and cost-conscious execution.
+  </p>
 
 </section>
 
 
 
-<!-- =====================================================
-     PRINCIPLES
-===================================================== -->
-
-<section class="principles">
-
-<div
-class="section-label"
-data-en="DESIGNED WITH PURPOSE"
-data-ar="تصميم له غاية">
-
-DESIGNED WITH PURPOSE
-
-</div>
-
-
-<div class="principles-title">
-
-<h2
-class="section-title"
-data-en="Every decision should improve the way the project works."
-data-ar="كل قرار في المشروع يجب أن يحسن طريقة استخدامه وتشغيله.">
-
-Every decision should improve the way the project works.
-
-</h2>
-
-</div>
-
-
-<div class="principles-grid">
-
-
-<div class="principle">
-
-<div class="principle-number">01</div>
-
-<h3
-data-en="Needs First"
-data-ar="الاحتياجات أولًا">
-
-Needs First
-
-</h3>
-
-<p
-data-en="We begin with users, purpose, workflow and real project requirements."
-data-ar="نبدأ بالمستخدم والغاية وطريقة التشغيل والاحتياجات الفعلية للمشروع.">
-
-</p>
-
-</div>
-
-
-<div class="principle">
-
-<div class="principle-number">02</div>
-
-<h3
-data-en="Maximum Use"
-data-ar="الاستخدام الأمثل">
-
-Maximum Use
-
-</h3>
-
-<p
-data-en="Every meter is studied to improve movement, storage and functionality."
-data-ar="ندرس كل متر لتحسين الحركة والتخزين وكفاءة الاستخدام.">
-
-</p>
-
-</div>
-
-
-<div class="principle">
-
-<div class="principle-number">03</div>
-
-<h3
-data-en="Comfort"
-data-ar="الراحة">
-
-Comfort
-
-</h3>
-
-<p
-data-en="Lighting, climate, furniture, materials and circulation work together."
-data-ar="تعمل الإنارة والتكييف والأثاث والخامات والحركة معًا لتحقيق الراحة.">
-
-</p>
-
-</div>
-
-
-<div class="principle">
-
-<div class="principle-number">04</div>
-
-<h3
-data-en="Easy Maintenance"
-data-ar="سهولة الصيانة">
-
-Easy Maintenance
-
-</h3>
-
-<p
-data-en="Cleaning, servicing and future access are considered from the beginning."
-data-ar="نراعي التنظيف والصيانة والوصول المستقبلي منذ مرحلة التخطيط.">
-
-</p>
-
-</div>
-
-
-<div class="principle">
-
-<div class="principle-number">05</div>
-
-<h3
-data-en="Durability"
-data-ar="المتانة">
-
-Durability
-
-</h3>
-
-<p
-data-en="Materials and systems are selected according to actual operating conditions."
-data-ar="يتم اختيار الخامات والأنظمة وفق ظروف الاستخدام والتشغيل الفعلية.">
-
-</p>
-
-</div>
-
-
-<div class="principle">
-
-<div class="principle-number">06</div>
-
-<h3
-data-en="Smart Cost"
-data-ar="الكلفة الذكية">
-
-Smart Cost
-
-</h3>
-
-<p
-data-en="Budget is directed toward decisions that create real long-term value."
-data-ar="يتم توجيه الميزانية إلى القرارات التي تحقق قيمة حقيقية طويلة الأمد.">
-
-</p>
-
-</div>
-
-
-</div>
-
-</section>
-
-
-
-<!-- =====================================================
-     SOLUTIONS
-===================================================== -->
+<!-- ======================================================
+     OUR SOLUTIONS — NO DUPLICATION
+====================================================== -->
 
 <section
 class="solutions"
 id="solutions">
 
-<div class="section-header">
+  <div class="solutions-header">
 
-<div>
+    <div>
 
-<div
-class="section-label"
-data-en="WHAT WE DO"
-data-ar="ماذا نقدم">
+      <div
+      class="section-label"
+      data-en="OUR SOLUTIONS"
+      data-ar="حلولنا">
+      OUR SOLUTIONS
+      </div>
 
-WHAT WE DO
+      <h2
+      class="section-title"
+      data-en="Different Needs.<br>Integrated Solutions."
+      data-ar="احتياجات مختلفة.<br>وحلول متكاملة.">
+      Different Needs.<br>
+      Integrated Solutions.
+      </h2>
 
-</div>
+    </div>
 
 
-<h2
-class="section-title"
-data-en="Integrated Solutions.<br>One Vision."
-data-ar="حلول متكاملة.<br>ورؤية واحدة.">
+    <p
+    class="section-description"
+    data-en="From homes and workplaces to outdoor and industrial environments, we connect planning, design, technical systems and execution within one project vision."
+    data-ar="من المنازل وبيئات العمل إلى المساحات الخارجية والمنشآت الصناعية، نربط التخطيط والتصميم والأنظمة الفنية والتنفيذ ضمن رؤية واحدة للمشروع.">
+    From homes and workplaces to outdoor and industrial environments,
+    we connect planning, design, technical systems and execution.
+    </p>
 
-Integrated Solutions.<br>
-One Vision.
+  </div>
 
-</h2>
 
-</div>
 
+  <div class="solutions-grid">
 
-<p
-class="section-text"
-data-en="From interior environments to technical systems and complete execution, every part of the project is considered as part of one integrated solution."
-data-ar="من التصميم الداخلي إلى الأنظمة الفنية والتنفيذ المتكامل، نتعامل مع كل جزء من المشروع ضمن حل واحد متكامل.">
 
-From interior environments to technical systems and complete execution.
+    <!-- ==================================================
+         01 HOMES
+    =================================================== -->
 
-</p>
+    <a
+    href="homes-gallery.html"
+    class="solution-card wide">
 
-</div>
+      <img
+      src="images/images/living-rooms/living-room-01.jpg"
+      alt="Residential Interior Design and Home Solutions Jordan"
+      loading="lazy"
+      onerror="imageError(this)">
 
+      <div class="solution-arrow">
+        <i class="bi bi-arrow-up-right"></i>
+      </div>
 
+      <div class="solution-content">
 
-<div class="solutions-grid">
+        <div class="solution-number">01</div>
 
+        <h3
+        data-en="Homes"
+        data-ar="المنازل">
+        Homes
+        </h3>
 
-<!-- INTERIOR DESIGN -->
+        <p
+        data-en="Living rooms, bedrooms, kitchens, bathrooms, wardrobes, custom details and complete residential interior solutions."
+        data-ar="غرف معيشة ونوم ومطابخ وحمامات وخزائن وتفاصيل مصممة خصيصًا وحلول داخلية متكاملة للمنازل.">
+        Living rooms, bedrooms, kitchens, bathrooms, wardrobes and complete residential solutions.
+        </p>
 
-<a href="interior-design.html">
+      </div>
 
-<div class="image-card">
+    </a>
 
-<img
-src="images/images/living-rooms/living-room-01.jpg"
-alt="Interior Design Jordan"
-loading="lazy"
-onerror="imageError(this)">
 
-<div class="card-arrow">
-<i class="bi bi-arrow-up-right"></i>
-</div>
 
-<div class="card-content">
+    <!-- ==================================================
+         02 OFFICES
+    =================================================== -->
 
-<div class="card-number">01</div>
+    <a
+    href="office-workspace.html"
+    class="solution-card">
 
-<h3
-data-en="Interior Design & Fit-Out"
-data-ar="التصميم الداخلي والتشطيبات">
+      <img
+      src="images/images/offices/office-01.jpg"
+      alt="Office Workspace Solutions Jordan"
+      loading="lazy"
+      onerror="imageError(this)">
 
-Interior Design & Fit-Out
+      <div class="solution-arrow">
+        <i class="bi bi-arrow-up-right"></i>
+      </div>
 
-</h3>
+      <div class="solution-content">
 
-<p
-data-en="Interior environments shaped around function, movement, comfort, materials and identity."
-data-ar="مساحات داخلية مصممة حول الوظيفة والحركة والراحة والخامات وهوية المشروع.">
-</p>
+        <div class="solution-number">02</div>
 
-</div>
+        <h3
+        data-en="Offices & Workspaces"
+        data-ar="المكاتب وبيئات العمل">
+        Offices & Workspaces
+        </h3>
 
-</div>
+        <p
+        data-en="Efficient workplaces integrating planning, ergonomics, privacy, furniture, lighting and technology."
+        data-ar="بيئات عمل فعالة تدمج التخطيط وراحة المستخدم والخصوصية والأثاث والإنارة والتكنولوجيا.">
+        Efficient workplaces integrating planning, furniture, lighting and technology.
+        </p>
 
-</a>
+      </div>
 
+    </a>
 
 
-<!-- SMART FURNITURE -->
 
-<a href="smart-furniture.html">
+    <!-- ==================================================
+         03 SMART FURNITURE
+    =================================================== -->
 
-<div class="image-card">
+    <a
+    href="smart-furniture.html"
+    class="solution-card">
 
-<img
-src="images/images/smart-furniture/smart-furniture-01.jpg"
-alt="Smart Furniture Jordan"
-loading="lazy"
-onerror="imageError(this)">
+      <img
+      src="images/images/smart-furniture/smart-furniture-01.jpg"
+      alt="Smart Furniture Custom Furniture Jordan"
+      loading="lazy"
+      onerror="imageError(this)">
 
-<div class="card-arrow">
-<i class="bi bi-arrow-up-right"></i>
-</div>
+      <div class="solution-arrow">
+        <i class="bi bi-arrow-up-right"></i>
+      </div>
 
-<div class="card-content">
+      <div class="solution-content">
 
-<div class="card-number">02</div>
+        <div class="solution-number">03</div>
 
-<h3
-data-en="Smart Furniture"
-data-ar="الأثاث الذكي">
+        <h3
+        data-en="Smart Furniture"
+        data-ar="الأثاث الذكي">
+        Smart Furniture
+        </h3>
 
-Smart Furniture
+        <p
+        data-en="Custom-made furniture, built-in storage and multifunctional solutions designed around the space and user."
+        data-ar="أثاث مصمم خصيصًا وحلول تخزين مدمجة ومتعددة الوظائف يتم تطويرها وفق المساحة والمستخدم.">
+        Custom furniture and built-in solutions designed around the space and user.
+        </p>
 
-</h3>
+      </div>
 
-<p
-data-en="Custom furniture and built-in solutions developed around dimensions, storage and daily use."
-data-ar="أثاث مخصص وحلول مدمجة يتم تطويرها وفق الأبعاد والتخزين وطبيعة الاستخدام اليومي.">
-</p>
+    </a>
 
-</div>
 
-</div>
 
-</a>
+    <!-- ==================================================
+         04 LIGHTING
+    =================================================== -->
 
+    <a
+    href="lighting-solutions.html"
+    class="solution-card">
 
+      <img
+      src="images/images/lighting/lighting-01.jpg"
+      alt="Architectural Lighting Solutions Jordan"
+      loading="lazy"
+      onerror="imageError(this)">
 
-<!-- OFFICES -->
+      <div class="solution-arrow">
+        <i class="bi bi-arrow-up-right"></i>
+      </div>
 
-<a href="office-workspace.html">
+      <div class="solution-content">
 
-<div class="image-card">
+        <div class="solution-number">04</div>
 
-<img
-src="images/images/offices/office-01.jpg"
-alt="Office Workspace Design Jordan"
-loading="lazy"
-onerror="imageError(this)">
+        <h3
+        data-en="Lighting Solutions"
+        data-ar="حلول الإنارة">
+        Lighting Solutions
+        </h3>
 
-<div class="card-arrow">
-<i class="bi bi-arrow-up-right"></i>
-</div>
+        <p
+        data-en="Architectural, functional, decorative, facade and landscape lighting integrated into the project."
+        data-ar="إنارة معمارية ووظيفية وزخرفية وإنارة واجهات ولاندسكيب متكاملة ضمن المشروع.">
+        Architectural, functional, decorative and exterior lighting.
+        </p>
 
-<div class="card-content">
+      </div>
 
-<div class="card-number">03</div>
+    </a>
 
-<h3
-data-en="Office & Workspace Solutions"
-data-ar="المكاتب وبيئات العمل">
 
-Office & Workspace Solutions
 
-</h3>
+    <!-- ==================================================
+         05 SIGNAGE
+    =================================================== -->
 
-<p
-data-en="Efficient workspaces integrating planning, ergonomics, privacy, furniture, lighting and technology."
-data-ar="بيئات عمل فعالة تدمج التخطيط وراحة المستخدم والخصوصية والأثاث والإنارة والتكنولوجيا.">
-</p>
+    <a
+    href="signage-branding.html"
+    class="solution-card">
 
-</div>
+      <img
+      src="images/images/signage/signage-01.jpg"
+      alt="Signage and Branding Jordan"
+      loading="lazy"
+      onerror="imageError(this)">
 
-</div>
+      <div class="solution-arrow">
+        <i class="bi bi-arrow-up-right"></i>
+      </div>
 
-</a>
+      <div class="solution-content">
 
+        <div class="solution-number">05</div>
 
+        <h3
+        data-en="Signage & Branding"
+        data-ar="اللوحات والهوية البصرية">
+        Signage & Branding
+        </h3>
 
-<!-- HVAC -->
+        <p
+        data-en="Exterior and interior signage, illuminated signs, dimensional letters and branded environments."
+        data-ar="لوحات داخلية وخارجية وحروف مضيئة ومجسمة وحلول متكاملة للهوية البصرية.">
+        Exterior and interior signage, dimensional letters and branded environments.
+        </p>
 
-<a href="hvac-ventilation.html">
+      </div>
 
-<div class="image-card">
+    </a>
 
-<img
-src="images/hvac/hvac-01.jpg"
-alt="HVAC Ventilation Jordan"
-loading="lazy"
-onerror="imageError(this)">
 
-<div class="card-arrow">
-<i class="bi bi-arrow-up-right"></i>
-</div>
 
-<div class="card-content">
+    <!-- ==================================================
+         06 LANDSCAPE
+    =================================================== -->
 
-<div class="card-number">04</div>
+    <a
+    href="landscape-facades.html"
+    class="solution-card">
 
-<h3
-data-en="HVAC & Ventilation"
-data-ar="التكييف والتهوية">
+      <img
+      src="images/images/landscape/landscape-01.jpg"
+      alt="Landscape Outdoor Spaces Jordan"
+      loading="lazy"
+      onerror="imageError(this)">
 
-HVAC & Ventilation
+      <div class="solution-arrow">
+        <i class="bi bi-arrow-up-right"></i>
+      </div>
 
-</h3>
+      <div class="solution-content">
 
-<p
-data-en="Air-conditioning and ventilation solutions coordinated with architecture and operational needs."
-data-ar="حلول تكييف وتهوية يتم تنسيقها مع التصميم المعماري ومتطلبات التشغيل.">
-</p>
+        <div class="solution-number">06</div>
 
-</div>
+        <h3
+        data-en="Landscape & Outdoor Spaces"
+        data-ar="اللاندسكيب والمساحات الخارجية">
+        Landscape & Outdoor Spaces
+        </h3>
 
-</div>
+        <p
+        data-en="Outdoor environments combining planting, circulation, seating, shading, water features and lighting."
+        data-ar="مساحات خارجية تجمع الزراعة والحركة والجلسات والمظلات والعناصر المائية والإنارة.">
+        Outdoor environments combining greenery, seating, shading, water and light.
+        </p>
 
-</a>
+      </div>
 
+    </a>
 
 
-<!-- LIGHTING -->
 
-<a href="lighting-solutions.html">
+    <!-- ==================================================
+         07 HVAC
+    =================================================== -->
 
-<div class="image-card">
+    <a
+    href="hvac-ventilation.html"
+    class="solution-card">
 
-<img
-src="images/images/lighting/lighting-01.jpg"
-alt="Lighting Solutions Jordan"
-loading="lazy"
-onerror="imageError(this)">
+      <img
+      src="images/hvac/hvac-01.jpg"
+      alt="HVAC and Ventilation Solutions Jordan"
+      loading="lazy"
+      onerror="imageError(this)">
 
-<div class="card-arrow">
-<i class="bi bi-arrow-up-right"></i>
-</div>
+      <div class="solution-arrow">
+        <i class="bi bi-arrow-up-right"></i>
+      </div>
 
-<div class="card-content">
+      <div class="solution-content">
 
-<div class="card-number">05</div>
+        <div class="solution-number">07</div>
 
-<h3
-data-en="Lighting Solutions"
-data-ar="حلول الإنارة">
+        <h3
+        data-en="HVAC & Ventilation"
+        data-ar="التكييف والتهوية">
+        HVAC & Ventilation
+        </h3>
 
-Lighting Solutions
+        <p
+        data-en="Climate and ventilation solutions coordinated with the space, operation and maintenance requirements."
+        data-ar="حلول التكييف والتهوية المتكاملة مع المساحة ومتطلبات التشغيل والصيانة.">
+        Climate and ventilation solutions coordinated with project requirements.
+        </p>
 
-</h3>
+      </div>
 
-<p
-data-en="Architectural, functional, decorative and exterior lighting integrated into the project."
-data-ar="إنارة معمارية ووظيفية وزخرفية وخارجية يتم دمجها ضمن التصميم العام للمشروع.">
-</p>
+    </a>
 
-</div>
 
-</div>
 
-</a>
+    <!-- ==================================================
+         08 INDUSTRIAL
+    =================================================== -->
 
+    <a
+    href="industrial-facility-solutions.html"
+    class="solution-card wide">
 
+      <img
+      src="images/images/industrial/industrial-01.jpg"
+      alt="Industrial Facility Solutions Jordan"
+      loading="lazy"
+      onerror="imageError(this)">
 
-<!-- SIGNAGE -->
+      <div class="solution-arrow">
+        <i class="bi bi-arrow-up-right"></i>
+      </div>
 
-<a href="signage-branding.html">
+      <div class="solution-content">
 
-<div class="image-card">
+        <div class="solution-number">08</div>
 
-<img
-src="images/images/signage/signage-01.jpg"
-alt="Signage Branding Jordan"
-loading="lazy"
-onerror="imageError(this)">
+        <h3
+        data-en="Industrial Facility Solutions"
+        data-ar="حلول المنشآت الصناعية">
+        Industrial Facility Solutions
+        </h3>
 
-<div class="card-arrow">
-<i class="bi bi-arrow-up-right"></i>
-</div>
+        <p
+        data-en="Facility improvements involving industrial flooring, hygienic surfaces, cooling, ventilation, drainage, insulation and preparation around operational and quality requirements."
+        data-ar="حلول تطوير المنشآت وتشمل الأرضيات الصناعية والأسطح الصحية والتبريد والتهوية والصرف والعزل والتجهيز وفق متطلبات التشغيل والجودة.">
+        Industrial environments developed around durability, hygiene, workflow and maintainability.
+        </p>
 
-<div class="card-content">
+      </div>
 
-<div class="card-number">06</div>
+    </a>
 
-<h3
-data-en="Signage & Branding"
-data-ar="اللوحات والهوية البصرية">
 
-Signage & Branding
 
-</h3>
+    <!-- ==================================================
+         09 TURNKEY
+    =================================================== -->
 
-<p
-data-en="Exterior and interior signage, dimensional letters, illuminated signs and branded environments."
-data-ar="لوحات داخلية وخارجية وحروف مجسمة ومضيئة وحلول متكاملة للهوية البصرية.">
-</p>
+    <a
+    href="turnkey-projects.html"
+    class="solution-card">
 
-</div>
+      <img
+      src="images/turnkey/turnkey-01.jpg"
+      alt="Turnkey Project Execution Jordan"
+      loading="lazy"
+      onerror="imageError(this)">
 
-</div>
+      <div class="solution-arrow">
+        <i class="bi bi-arrow-up-right"></i>
+      </div>
 
-</a>
+      <div class="solution-content">
 
+        <div class="solution-number">09</div>
 
+        <h3
+        data-en="Integrated & Turnkey Execution"
+        data-ar="التنفيذ المتكامل وتسليم المفتاح">
+        Integrated & Turnkey Execution
+        </h3>
 
-<!-- LANDSCAPE -->
+        <p
+        data-en="Coordinated execution from site preparation and fit-out to finishes, furniture and final delivery."
+        data-ar="تنفيذ منسق يبدأ من تجهيز الموقع والأعمال الداخلية وحتى التشطيبات والأثاث والتسليم النهائي.">
+        Coordinated execution from preparation through final delivery.
+        </p>
 
-<a href="landscape-facades.html">
+      </div>
 
-<div class="image-card">
+    </a>
 
-<img
-src="images/images/landscape/landscape-01.jpg"
-alt="Landscape Outdoor Spaces Jordan"
-loading="lazy"
-onerror="imageError(this)">
 
-<div class="card-arrow">
-<i class="bi bi-arrow-up-right"></i>
-</div>
 
-<div class="card-content">
+    <!-- ==================================================
+         10 INSULATION
+    =================================================== -->
 
-<div class="card-number">07</div>
+    <a
+    href="insulation-solutions.html"
+    class="solution-card insulation">
 
-<h3
-data-en="Landscape & Outdoor Spaces"
-data-ar="اللاندسكيب والمساحات الخارجية">
+      <i class="bi bi-shield-check insulation-symbol"></i>
 
-Landscape & Outdoor Spaces
+      <div class="solution-arrow">
+        <i class="bi bi-arrow-up-right"></i>
+      </div>
 
-</h3>
+      <div class="solution-content">
 
-<p
-data-en="Planting, pathways, seating, shading, water features and exterior lighting."
-data-ar="زراعة وممرات وجلسات ومظلات وعناصر مائية وإنارة خارجية ضمن تصميم متكامل.">
-</p>
+        <div class="solution-number">10</div>
 
-</div>
+        <h3
+        data-en="Insulation Solutions"
+        data-ar="حلول العزل">
+        Insulation Solutions
+        </h3>
 
-</div>
+        <p
+        data-en="Waterproofing, thermal and acoustic solutions selected according to the substrate, environment and performance requirements."
+        data-ar="حلول العزل المائي والحراري والصوتي التي يتم اختيارها وفق طبيعة السطح والبيئة ومتطلبات الأداء.">
+        Waterproofing, thermal and acoustic solutions for different project conditions.
+        </p>
 
-</a>
+      </div>
 
+    </a>
 
 
-<!-- TURNKEY -->
-
-<a href="turnkey-projects.html">
-
-<div class="image-card">
-
-<img
-src="images/turnkey/turnkey-01.jpg"
-alt="Turnkey Execution Jordan"
-loading="lazy"
-onerror="imageError(this)">
-
-<div class="card-arrow">
-<i class="bi bi-arrow-up-right"></i>
-</div>
-
-<div class="card-content">
-
-<div class="card-number">08</div>
-
-<h3
-data-en="Integrated & Turnkey Execution"
-data-ar="التنفيذ المتكامل وتسليم المفتاح">
-
-Integrated & Turnkey Execution
-
-</h3>
-
-<p
-data-en="Coordinated execution from preparation and fit-out through finishes, furniture and delivery."
-data-ar="تنفيذ منسق يبدأ من تجهيز الموقع والأعمال الداخلية وحتى التشطيبات والأثاث والتسليم.">
-</p>
-
-</div>
-
-</div>
-
-</a>
-
-
-
-<!-- INDUSTRIAL -->
-
-<a href="industrial-facility-solutions.html">
-
-<div class="image-card">
-
-<img
-src="images/images/industrial/industrial-01.jpg"
-alt="Industrial Facility Solutions Jordan"
-loading="lazy"
-onerror="imageError(this)">
-
-<div class="card-arrow">
-<i class="bi bi-arrow-up-right"></i>
-</div>
-
-<div class="card-content">
-
-<div class="card-number">09</div>
-
-<h3
-data-en="Industrial Facility Solutions"
-data-ar="حلول المنشآت الصناعية">
-
-Industrial Facility Solutions
-
-</h3>
-
-<p
-data-en="Facility improvements involving flooring, hygienic surfaces, cooling, ventilation, insulation and operational requirements."
-data-ar="تطوير المنشآت من خلال الأرضيات والأسطح الصحية والتبريد والتهوية والعزل ومتطلبات التشغيل.">
-</p>
-
-</div>
-
-</div>
-
-</a>
-
-
-
-<!-- INSULATION -->
-
-<div class="image-card insulation-card">
-
-<i class="bi bi-shield-check insulation-icon"></i>
-
-<div class="card-content">
-
-<div class="card-number">10</div>
-
-<h3
-data-en="Insulation Solutions"
-data-ar="حلول العزل">
-
-Insulation Solutions
-
-</h3>
-
-<p
-data-en="Waterproofing, thermal and acoustic solutions selected according to the building and environmental requirements."
-data-ar="حلول العزل المائي والحراري والصوتي التي يتم اختيارها وفق طبيعة المبنى ومتطلبات البيئة المحيطة.">
-</p>
-
-</div>
-
-</div>
-
-
-</div>
+  </div>
 
 </section>
 
 
 
-<!-- =====================================================
-     EXPLORE BY SPACE
-===================================================== -->
+<!-- ======================================================
+     WHY PROFESSIONAL SOLUTIONS
+====================================================== -->
 
 <section
-class="explore"
-id="explore">
+class="why"
+id="why">
 
-<div class="section-header">
+  <div class="why-header">
 
-<div>
+    <div
+    class="section-label"
+    data-en="WHY PROFESSIONAL SOLUTIONS"
+    data-ar="لماذا PROFESSIONAL SOLUTIONS">
+    WHY PROFESSIONAL SOLUTIONS
+    </div>
 
-<div
-class="section-label"
-data-en="EXPLORE BY SPACE"
-data-ar="استكشف حسب المساحة">
 
-EXPLORE BY SPACE
+    <h2
+    class="section-title"
+    data-en="Better Decisions.<br>Better Projects."
+    data-ar="قرارات أفضل.<br>مشاريع أفضل.">
+    Better Decisions.<br>
+    Better Projects.
+    </h2>
 
-</div>
+  </div>
 
 
-<h2
-class="section-title"
-data-en="Spaces Designed<br>Around Real Needs."
-data-ar="مساحات مصممة<br>حول الاحتياجات الحقيقية.">
+  <div class="why-grid">
 
-Spaces Designed<br>
-Around Real Needs.
 
-</h2>
+    <div class="why-card">
 
-</div>
+      <div class="why-icon">
+        <i class="bi bi-grid"></i>
+      </div>
 
+      <h3
+      data-en="Smart Planning"
+      data-ar="تخطيط ذكي">
+      Smart Planning
+      </h3>
 
-<p
-class="section-text"
-data-en="Every environment has different requirements. Explore our residential, workplace, furniture, lighting, outdoor and industrial solutions."
-data-ar="لكل بيئة متطلبات مختلفة. استكشف حلولنا للمنازل والمكاتب والأثاث والإنارة والمساحات الخارجية والمنشآت الصناعية.">
+      <p
+      data-en="Space, movement, storage and technical requirements are considered before execution begins."
+      data-ar="ندرس المساحة والحركة والتخزين والمتطلبات الفنية قبل بدء التنفيذ.">
+      </p>
 
-Every environment has different requirements.
+    </div>
 
-</p>
 
-</div>
 
+    <div class="why-card">
 
+      <div class="why-icon">
+        <i class="bi bi-person-check"></i>
+      </div>
 
-<div class="explore-grid">
+      <h3
+      data-en="Function & Comfort"
+      data-ar="الوظيفة والراحة">
+      Function & Comfort
+      </h3>
 
+      <p
+      data-en="The project is developed around the people who will actually use and operate the space."
+      data-ar="يتم تطوير المشروع حول الأشخاص الذين سيستخدمون ويشغلون المساحة فعليًا.">
+      </p>
 
-<!-- OFFICES -->
+    </div>
 
-<a href="office-workspace.html">
 
-<div class="explore-card">
 
-<img
-src="images/images/offices/office-02.jpg"
-alt="Office Workspace"
-loading="lazy"
-onerror="imageError(this)">
+    <div class="why-card">
 
-<div class="explore-content">
+      <div class="why-icon">
+        <i class="bi bi-shield-check"></i>
+      </div>
 
-<div
-class="explore-tag"
-data-en="WORKSPACES"
-data-ar="بيئات العمل">
+      <h3
+      data-en="Durability"
+      data-ar="المتانة">
+      Durability
+      </h3>
 
-WORKSPACES
+      <p
+      data-en="Materials and solutions are selected according to actual usage, maintenance and operating conditions."
+      data-ar="يتم اختيار الخامات والحلول وفق ظروف الاستخدام والصيانة والتشغيل الحقيقية.">
+      </p>
 
-</div>
+    </div>
 
-<h3
-data-en="Offices"
-data-ar="المكاتب">
 
-Offices
 
-</h3>
+    <div class="why-card">
 
-<p
-data-en="Workstations, executive offices, reception areas, meeting rooms and integrated workplace solutions."
-data-ar="محطات عمل ومكاتب تنفيذية واستقبال وقاعات اجتماعات وحلول متكاملة لبيئات العمل.">
-</p>
+      <div class="why-icon">
+        <i class="bi bi-graph-up-arrow"></i>
+      </div>
 
-</div>
+      <h3
+      data-en="Smarter Value"
+      data-ar="قيمة أكثر ذكاءً">
+      Smarter Value
+      </h3>
 
-</div>
+      <p
+      data-en="Budget is directed toward decisions that improve performance, experience and long-term value."
+      data-ar="يتم توجيه الميزانية نحو القرارات التي تحسن الأداء وتجربة الاستخدام والقيمة طويلة الأمد.">
+      </p>
 
-</a>
+    </div>
 
 
-
-<!-- HOMES -->
-
-<a href="homes-gallery.html">
-
-<div class="explore-card">
-
-<img
-src="images/images/living-rooms/living-room-01.jpg"
-alt="Residential Interior Design"
-loading="lazy"
-onerror="imageError(this)">
-
-<div class="explore-content">
-
-<div
-class="explore-tag"
-data-en="RESIDENTIAL"
-data-ar="سكني">
-
-RESIDENTIAL
-
-</div>
-
-<h3
-data-en="Homes"
-data-ar="المنازل">
-
-Homes
-
-</h3>
-
-<p
-data-en="Living rooms, bedrooms, kitchens, bathrooms, wardrobes and custom residential details."
-data-ar="غرف معيشة ونوم ومطابخ وحمامات وخزائن وتفاصيل سكنية مصممة خصيصًا.">
-</p>
-
-</div>
-
-</div>
-
-</a>
-
-
-
-<!-- SMART FURNITURE -->
-
-<a href="smart-furniture.html">
-
-<div class="explore-card">
-
-<img
-src="images/images/smart-furniture/smart-furniture-02.jpg"
-alt="Custom Smart Furniture"
-loading="lazy"
-onerror="imageError(this)">
-
-<div class="explore-content">
-
-<div
-class="explore-tag"
-data-en="CUSTOM MADE"
-data-ar="تصميم خاص">
-
-CUSTOM MADE
-
-</div>
-
-<h3
-data-en="Smart Furniture"
-data-ar="الأثاث الذكي">
-
-Smart Furniture
-
-</h3>
-
-<p
-data-en="Built-in furniture, storage, counters, workstations and multifunctional solutions."
-data-ar="أثاث مدمج وحلول تخزين وكاونترات ومحطات عمل وأثاث متعدد الوظائف.">
-</p>
-
-</div>
-
-</div>
-
-</a>
-
-
-
-<!-- LIGHTING -->
-
-<a href="lighting-solutions.html">
-
-<div class="explore-card">
-
-<img
-src="images/images/lighting/lighting-02.jpg"
-alt="Architectural Lighting"
-loading="lazy"
-onerror="imageError(this)">
-
-<div class="explore-content">
-
-<div
-class="explore-tag"
-data-en="LIGHTING"
-data-ar="الإنارة">
-
-LIGHTING
-
-</div>
-
-<h3
-data-en="Lighting Solutions"
-data-ar="حلول الإنارة">
-
-Lighting Solutions
-
-</h3>
-
-<p
-data-en="Lighting designed to improve atmosphere, visibility, comfort and architectural character."
-data-ar="إنارة مصممة لتحسين الأجواء والرؤية والراحة وإبراز الطابع المعماري.">
-</p>
-
-</div>
-
-</div>
-
-</a>
-
-
-
-<!-- LANDSCAPE -->
-
-<a href="landscape-facades.html">
-
-<div class="explore-card">
-
-<img
-src="images/images/landscape/landscape-03.jpg"
-alt="Landscape Outdoor Design"
-loading="lazy"
-onerror="imageError(this)">
-
-<div class="explore-content">
-
-<div
-class="explore-tag"
-data-en="OUTDOOR"
-data-ar="خارجي">
-
-OUTDOOR
-
-</div>
-
-<h3
-data-en="Landscape"
-data-ar="اللاندسكيب">
-
-Landscape
-
-</h3>
-
-<p
-data-en="Outdoor spaces combining greenery, circulation, seating, shading, water and light."
-data-ar="مساحات خارجية تجمع الزراعة والحركة والجلسات والظلال والماء والإنارة.">
-</p>
-
-</div>
-
-</div>
-
-</a>
-
-
-
-<!-- INDUSTRIAL -->
-
-<a href="industrial-facility-solutions.html">
-
-<div class="explore-card">
-
-<img
-src="images/images/industrial/industrial-03.jpg"
-alt="Industrial Facilities"
-loading="lazy"
-onerror="imageError(this)">
-
-<div class="explore-content">
-
-<div
-class="explore-tag"
-data-en="INDUSTRIAL"
-data-ar="صناعي">
-
-INDUSTRIAL
-
-</div>
-
-<h3
-data-en="Industrial Facilities"
-data-ar="المنشآت الصناعية">
-
-Industrial Facilities
-
-</h3>
-
-<p
-data-en="Facility environments developed around durability, workflow, hygiene, cooling and maintainability."
-data-ar="بيئات منشآت يتم تطويرها حول المتانة ومسارات التشغيل والنظافة والتبريد وسهولة الصيانة.">
-</p>
-
-</div>
-
-</div>
-
-</a>
-
-
-</div>
+  </div>
 
 </section>
 
 
 
-<!-- =====================================================
-     HOME PREVIEW
-===================================================== -->
-
-<section class="home-preview">
-
-<div class="section-header">
-
-<div>
-
-<div
-class="section-label"
-data-en="RESIDENTIAL SOLUTIONS"
-data-ar="الحلول السكنية">
-
-RESIDENTIAL SOLUTIONS
-
-</div>
-
-
-<h2
-class="section-title"
-data-en="One Home.<br>One Design Language."
-data-ar="منزل واحد.<br>وهوية تصميم متكاملة.">
-
-One Home.<br>
-One Design Language.
-
-</h2>
-
-</div>
-
-
-<p
-class="section-text"
-data-en="Living areas, bedrooms, kitchens, bathrooms and storage should work together as one complete residential environment."
-data-ar="يجب أن تعمل غرف المعيشة والنوم والمطابخ والحمامات وحلول التخزين معًا ضمن بيئة سكنية واحدة متكاملة.">
-
-Living areas, bedrooms, kitchens, bathrooms and storage should work together.
-
-</p>
-
-</div>
-
-
-
-<div class="home-grid">
-
-
-<!-- LIVING -->
-
-<div class="home-item">
-
-<img
-src="images/images/living-rooms/living-room-02.jpg"
-alt="Living Room"
-loading="lazy"
-onerror="imageError(this)">
-
-<div
-class="home-title"
-data-en="Living Rooms"
-data-ar="غرف المعيشة">
-
-Living Rooms
-
-</div>
-
-</div>
-
-
-
-<!-- KITCHEN -->
-
-<div class="home-item">
-
-<img
-src="images/images/kitchens/kitchen-01.jpg"
-alt="Kitchen Design"
-loading="lazy"
-onerror="imageError(this)">
-
-<div
-class="home-title"
-data-en="Kitchens"
-data-ar="المطابخ">
-
-Kitchens
-
-</div>
-
-</div>
-
-
-
-<!-- BATHROOM -->
-
-<div class="home-item">
-
-<img
-src="images/bathrooms/bathroom-01.jpg"
-alt="Bathroom Design"
-loading="lazy"
-onerror="imageError(this)">
-
-<div
-class="home-title"
-data-en="Bathrooms"
-data-ar="الحمامات">
-
-Bathrooms
-
-</div>
-
-</div>
-
-
-
-<!-- BEDROOM -->
-
-<div class="home-item">
-
-<img
-src="images/images/bedrooms/bedroom-01.jpg"
-alt="Bedroom Design"
-loading="lazy"
-onerror="imageError(this)">
-
-<div
-class="home-title"
-data-en="Bedrooms"
-data-ar="غرف النوم">
-
-Bedrooms
-
-</div>
-
-</div>
-
-
-
-<!-- WARDROBE -->
-
-<div class="home-item">
-
-<img
-src="images/images/wardrobes/wardrobe-01.jpg"
-alt="Wardrobes Dressing Rooms"
-loading="lazy"
-onerror="imageError(this)">
-
-<div
-class="home-title"
-data-en="Wardrobes & Dressing"
-data-ar="الخزائن وغرف الملابس">
-
-Wardrobes & Dressing
-
-</div>
-
-</div>
-
-
-
-<!-- DETAILS -->
-
-<div class="home-item">
-
-<img
-src="images/images/kitchens/kitchen-03.jpg"
-alt="Custom Residential Details"
-loading="lazy"
-onerror="imageError(this)">
-
-<div
-class="home-title"
-data-en="Custom Details"
-data-ar="التفاصيل الخاصة">
-
-Custom Details
-
-</div>
-
-</div>
-
-
-</div>
-
-</section>
-
-
-
-<!-- =====================================================
-     STATEMENT
-===================================================== -->
+<!-- ======================================================
+     BRAND STATEMENT
+====================================================== -->
 
 <section class="statement">
 
-<div
-class="section-label"
-data-en="UNIQUE BY DESIGN"
-data-ar="هوية خاصة لكل مشروع">
-
-UNIQUE BY DESIGN
-
-</div>
+  <div
+  class="section-label"
+  data-en="UNIQUE BY DESIGN"
+  data-ar="هوية خاصة لكل مشروع">
+  UNIQUE BY DESIGN
+  </div>
 
 
-<h2
-data-en="Different needs deserve different solutions."
-data-ar="الاحتياجات المختلفة تستحق حلولًا مختلفة.">
-
-Different needs deserve different solutions.
-
-</h2>
+  <h2
+  data-en="Different needs deserve different solutions."
+  data-ar="الاحتياجات المختلفة تستحق حلولًا مختلفة.">
+  Different needs deserve different solutions.
+  </h2>
 
 
-<p
-data-en="We don't start with a copied design. We start with the project — its users, location, operation, dimensions, technical requirements, maintenance needs and budget."
-data-ar="لا نبدأ بتصميم منسوخ. نبدأ بالمشروع نفسه: مستخدميه وموقعه وتشغيله وأبعاده ومتطلباته الفنية والصيانة والميزانية.">
-
-We don't start with a copied design.
-
-</p>
+  <p
+  data-en="We don't begin with a copied design. We begin with the project — its users, location, dimensions, operation, technical requirements, maintenance needs and budget."
+  data-ar="لا نبدأ بتصميم منسوخ. نبدأ بالمشروع نفسه: مستخدميه وموقعه وأبعاده وطريقة تشغيله ومتطلباته الفنية والصيانة والميزانية.">
+  We don't begin with a copied design. We begin with the project.
+  </p>
 
 
-<div
-class="statement-line"
-data-en="Smart Luxury is not one style. It is a smarter way to make project decisions."
-data-ar="Smart Luxury ليست نمط تصميم واحدًا، بل طريقة أكثر ذكاءً لاتخاذ قرارات المشروع.">
-
-Smart Luxury is not one style.
-It is a smarter way to make project decisions.
-
-</div>
+  <div
+  class="statement-quote"
+  data-en="Smart Luxury is not one style. It is a smarter way to make project decisions."
+  data-ar="Smart Luxury ليست نمط تصميم واحدًا، بل طريقة أكثر ذكاءً لاتخاذ قرارات المشروع.">
+  Smart Luxury is not one style.
+  It is a smarter way to make project decisions.
+  </div>
 
 </section>
 
 
 
-<!-- =====================================================
-     TECHNICAL
-===================================================== -->
-
-<section class="technical">
-
-<div class="technical-layout">
-
-
-<div>
-
-<div
-class="section-label"
-data-en="BEYOND WHAT YOU SEE"
-data-ar="أكثر مما تراه">
-
-BEYOND WHAT YOU SEE
-
-</div>
-
-
-<h2
-class="section-title"
-data-en="Technical systems are part of the design."
-data-ar="الأنظمة الفنية جزء من التصميم.">
-
-Technical systems are part of the design.
-
-</h2>
-
-
-<p
-class="technical-description"
-data-en="HVAC, ventilation, electrical services, plumbing, drainage, insulation and maintenance access should be coordinated before they become site problems."
-data-ar="يجب تنسيق التكييف والتهوية والكهرباء والأعمال الصحية والصرف والعزل والوصول للصيانة قبل أن تتحول إلى مشاكل أثناء التنفيذ.">
-
-HVAC, ventilation, electrical services, plumbing and maintenance access should be coordinated from the beginning.
-
-</p>
-
-</div>
-
-
-
-<div class="technical-grid">
-
-
-<div class="tech-card">
-
-<i class="bi bi-wind"></i>
-
-<h3
-data-en="HVAC & Ventilation"
-data-ar="التكييف والتهوية">
-
-HVAC & Ventilation
-
-</h3>
-
-</div>
-
-
-<div class="tech-card">
-
-<i class="bi bi-lightbulb"></i>
-
-<h3
-data-en="Lighting & Electrical"
-data-ar="الإنارة والكهرباء">
-
-Lighting & Electrical
-
-</h3>
-
-</div>
-
-
-<div class="tech-card">
-
-<i class="bi bi-droplet"></i>
-
-<h3
-data-en="Waterproofing & Drainage"
-data-ar="العزل والصرف">
-
-Waterproofing & Drainage
-
-</h3>
-
-</div>
-
-
-<div class="tech-card">
-
-<i class="bi bi-tools"></i>
-
-<h3
-data-en="Maintenance Access"
-data-ar="سهولة الصيانة">
-
-Maintenance Access
-
-</h3>
-
-</div>
-
-
-</div>
-
-</div>
-
-</section>
-
-
-
-<!-- =====================================================
+<!-- ======================================================
      PROCESS
-===================================================== -->
+====================================================== -->
 
 <section
 class="process"
 id="process">
 
-<div
-class="section-label"
-data-en="OUR PROCESS"
-data-ar="منهجية العمل">
-
-OUR PROCESS
-
-</div>
+  <div
+  class="section-label"
+  data-en="OUR PROCESS"
+  data-ar="منهجية العمل">
+  OUR PROCESS
+  </div>
 
 
-<h2
-class="section-title"
-data-en="From Need to Reality."
-data-ar="من الاحتياج إلى الواقع.">
-
-From Need to Reality.
-
-</h2>
+  <h2
+  class="section-title"
+  data-en="From Need to Reality."
+  data-ar="من الاحتياج إلى الواقع.">
+  From Need to Reality.
+  </h2>
 
 
-<div class="process-grid">
+  <div class="process-grid">
 
 
-<div class="process-step">
+    <div class="process-step">
 
-<span>01</span>
+      <span>01</span>
 
-<h3
-data-en="Understand"
-data-ar="نفهم">
+      <h3
+      data-en="Understand"
+      data-ar="نفهم">
+      Understand
+      </h3>
 
-Understand
+      <p
+      data-en="Needs, users, priorities and budget."
+      data-ar="الاحتياجات والمستخدمون والأولويات والميزانية.">
+      </p>
 
-</h3>
-
-</div>
-
-
-<div class="process-step">
-
-<span>02</span>
-
-<h3
-data-en="Plan"
-data-ar="نخطط">
-
-Plan
-
-</h3>
-
-</div>
+    </div>
 
 
-<div class="process-step">
 
-<span>03</span>
+    <div class="process-step">
 
-<h3
-data-en="Design"
-data-ar="نصمم">
+      <span>02</span>
 
-Design
+      <h3
+      data-en="Plan"
+      data-ar="نخطط">
+      Plan
+      </h3>
 
-</h3>
+      <p
+      data-en="Space, workflow and technical requirements."
+      data-ar="المساحة ومسارات الاستخدام والمتطلبات الفنية.">
+      </p>
 
-</div>
-
-
-<div class="process-step">
-
-<span>04</span>
-
-<h3
-data-en="Execute"
-data-ar="ننفذ">
-
-Execute
-
-</h3>
-
-</div>
+    </div>
 
 
-<div class="process-step">
 
-<span>05</span>
+    <div class="process-step">
 
-<h3
-data-en="Deliver"
-data-ar="نسلّم">
+      <span>03</span>
 
-Deliver
+      <h3
+      data-en="Design"
+      data-ar="نصمم">
+      Design
+      </h3>
 
-</h3>
+      <p
+      data-en="Function, materials, details and identity."
+      data-ar="الوظيفة والخامات والتفاصيل والهوية.">
+      </p>
 
-</div>
+    </div>
 
 
-</div>
+
+    <div class="process-step">
+
+      <span>04</span>
+
+      <h3
+      data-en="Execute"
+      data-ar="ننفذ">
+      Execute
+      </h3>
+
+      <p
+      data-en="Coordinated implementation and quality control."
+      data-ar="تنفيذ منسق ومتابعة لجودة الأعمال.">
+      </p>
+
+    </div>
+
+
+
+    <div class="process-step">
+
+      <span>05</span>
+
+      <h3
+      data-en="Deliver"
+      data-ar="نسلّم">
+      Deliver
+      </h3>
+
+      <p
+      data-en="A finished space ready for its purpose."
+      data-ar="مساحة مكتملة وجاهزة للغرض الذي صممت من أجله.">
+      </p>
+
+    </div>
+
+
+  </div>
 
 </section>
 
 
 
-<!-- =====================================================
+<!-- ======================================================
      RESULT
-===================================================== -->
+====================================================== -->
 
-<section class="cta">
+<section class="final-cta">
 
-<div
-class="section-label"
-data-en="THE RESULT"
-data-ar="النتيجة">
-
-THE RESULT
-
-</div>
+  <div
+  class="section-label"
+  data-en="THE RESULT"
+  data-ar="النتيجة">
+  THE RESULT
+  </div>
 
 
-<h2
-data-en="More comfort. Better performance. Easier maintenance. Greater durability. <span>Smarter value.</span>"
-data-ar="راحة أكبر. أداء أفضل. صيانة أسهل. متانة أعلى. <span>وقيمة أكثر ذكاءً.</span>">
-
-More comfort.
-Better performance.
-Easier maintenance.
-Greater durability.
-<span>Smarter value.</span>
-
-</h2>
+  <h2
+  data-en="More comfort. Better performance. Greater durability. <span>Smarter value.</span>"
+  data-ar="راحة أكبر. أداء أفضل. متانة أعلى. <span>وقيمة أكثر ذكاءً.</span>">
+  More comfort.
+  Better performance.
+  Greater durability.
+  <span>Smarter value.</span>
+  </h2>
 
 
-<p
-data-en="That is what Smart Luxury means at Professional Solutions."
-data-ar="هذا هو مفهوم Smart Luxury لدى Professional Solutions.">
-
-That is what Smart Luxury means at Professional Solutions.
-
-</p>
+  <p
+  data-en="That is what Smart Luxury means at Professional Solutions."
+  data-ar="هذا هو مفهوم Smart Luxury لدى Professional Solutions.">
+  That is what Smart Luxury means at Professional Solutions.
+  </p>
 
 </section>
 
 
 
-<!-- =====================================================
+<!-- ======================================================
      CONTACT
-===================================================== -->
+====================================================== -->
 
 <section
 class="contact"
 id="contact">
 
-<div
-class="section-label"
-data-en="START YOUR PROJECT"
-data-ar="ابدأ مشروعك">
-
-START YOUR PROJECT
-
-</div>
+  <div
+  class="section-label"
+  data-en="START YOUR PROJECT"
+  data-ar="ابدأ مشروعك">
+  START YOUR PROJECT
+  </div>
 
 
-<h2
-data-en="Let's Build Smarter."
-data-ar="لنصنع مشروعًا أكثر ذكاءً.">
-
-Let's Build Smarter.
-
-</h2>
+  <h2
+  data-en="Let's Build Smarter."
+  data-ar="لنصنع مشروعًا أكثر ذكاءً.">
+  Let's Build Smarter.
+  </h2>
 
 
-<p
-class="contact-description"
-data-en="Tell us about your project, your space, your needs and your budget. We'll help organize them into one integrated solution."
-data-ar="أخبرنا عن مشروعك ومساحتك واحتياجاتك وميزانيتك، وسنساعدك في تنظيمها ضمن حل واحد متكامل.">
-
-Tell us about your project.
-
-</p>
+  <p
+  data-en="Tell us about your space, needs and project goals. We'll help turn them into a clear, integrated solution."
+  data-ar="أخبرنا عن مساحتك واحتياجاتك وأهداف مشروعك، وسنساعدك في تحويلها إلى حل واضح ومتكامل.">
+  Tell us about your space, needs and project goals.
+  </p>
 
 
-<div class="contact-buttons">
+  <div class="contact-buttons">
+
+    <a
+    href="https://wa.me/962790390555?text=Hello%20Professional%20Solutions%2C%20I%20would%20like%20to%20discuss%20a%20project."
+    target="_blank"
+    rel="noopener noreferrer"
+    class="btn btn-primary"
+    data-en="WhatsApp Us"
+    data-ar="تواصل عبر واتساب">
+    WhatsApp Us
+    </a>
 
 
-<a
-href="https://wa.me/962790390555?text=Hello%20Professional%20Solutions%2C%20I%20would%20like%20to%20discuss%20a%20project."
-target="_blank"
-rel="noopener noreferrer"
-class="btn btn-primary"
-data-en="WhatsApp Us"
-data-ar="تواصل عبر واتساب">
-
-WhatsApp Us
-
-</a>
+    <a
+    href="tel:+962790390555"
+    class="btn btn-light"
+    data-en="Call Us"
+    data-ar="اتصل بنا">
+    Call Us
+    </a>
 
 
-<a
-href="tel:+962790390555"
-class="btn btn-outline"
-data-en="Call Us"
-data-ar="اتصل بنا">
+    <a
+    href="mailto:info@professionalsolutionsjo.com"
+    class="btn btn-light"
+    data-en="Email Us"
+    data-ar="راسلنا">
+    Email Us
+    </a>
 
-Call Us
-
-</a>
-
-
-<a
-href="mailto:info@professionalsolutionsjo.com"
-class="btn btn-outline"
-data-en="Email Us"
-data-ar="راسلنا">
-
-Email Us
-
-</a>
+  </div>
 
 
-</div>
+  <div class="social">
 
+    <a
+    href="https://www.facebook.com/profile.php?id=61593292388617"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Facebook">
+      <i class="bi bi-facebook"></i>
+    </a>
 
+    <a
+    href="https://www.instagram.com/professionalsolutionsjo"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Instagram">
+      <i class="bi bi-instagram"></i>
+    </a>
 
-<div class="social-links">
+    <a
+    href="https://www.tiktok.com/@professional_solutionsjo"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="TikTok">
+      <i class="bi bi-tiktok"></i>
+    </a>
 
+    <a
+    href="https://www.snapchat.com/add/smart.luxury"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Snapchat">
+      <i class="bi bi-snapchat"></i>
+    </a>
 
-<a
-class="social-link"
-href="https://www.facebook.com/profile.php?id=61593292388617"
-target="_blank"
-rel="noopener noreferrer">
+    <a
+    href="https://www.youtube.com/@professionalsolutionsjo"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="YouTube">
+      <i class="bi bi-youtube"></i>
+    </a>
 
-<i class="bi bi-facebook"></i>
-
-</a>
-
-
-<a
-class="social-link"
-href="https://www.instagram.com/professionalsolutionsjo"
-target="_blank"
-rel="noopener noreferrer">
-
-<i class="bi bi-instagram"></i>
-
-</a>
-
-
-<a
-class="social-link"
-href="https://www.tiktok.com/@professional_solutionsjo"
-target="_blank"
-rel="noopener noreferrer">
-
-<i class="bi bi-tiktok"></i>
-
-</a>
-
-
-<a
-class="social-link"
-href="https://www.snapchat.com/add/smart.luxury"
-target="_blank"
-rel="noopener noreferrer">
-
-<i class="bi bi-snapchat"></i>
-
-</a>
-
-
-<a
-class="social-link"
-href="https://www.youtube.com/@professionalsolutionsjo"
-target="_blank"
-rel="noopener noreferrer">
-
-<i class="bi bi-youtube"></i>
-
-</a>
-
-
-</div>
+  </div>
 
 </section>
 
 
 
-<!-- =====================================================
+<!-- ======================================================
      FOOTER
-===================================================== -->
+====================================================== -->
 
 <footer>
 
-<div>
+  <div>
 
-<strong>
-PROFESSIONAL SOLUTIONS
-</strong>
+    <strong>
+      PROFESSIONAL SOLUTIONS
+    </strong>
 
-<br>
+    <br>
 
-SMART LUXURY
+    SMART LUXURY
 
-<br><br>
+    <br><br>
 
-<a href="tel:+962790390555">
-+962 79 039 0555
-</a>
+    <a href="tel:+962790390555">
+      +962 79 039 0555
+    </a>
 
-<br>
+    <br>
 
-<a href="mailto:info@professionalsolutionsjo.com">
-info@professionalsolutionsjo.com
-</a>
+    <a href="mailto:info@professionalsolutionsjo.com">
+      info@professionalsolutionsjo.com
+    </a>
 
-</div>
+  </div>
 
 
-<div
-data-en="© 2026 Professional Solutions. All Rights Reserved."
-data-ar="© 2026 Professional Solutions. جميع الحقوق محفوظة.">
-
-© 2026 Professional Solutions.
-All Rights Reserved.
-
-</div>
+  <div
+  data-en="© 2026 Professional Solutions. All Rights Reserved."
+  data-ar="© 2026 Professional Solutions. جميع الحقوق محفوظة.">
+  © 2026 Professional Solutions. All Rights Reserved.
+  </div>
 
 </footer>
 
 
 
-<!-- =====================================================
+<!-- ======================================================
      FLOATING CONTACT
-===================================================== -->
+====================================================== -->
 
 <div class="floating-contact">
 
+  <a
+  href="tel:+962790390555"
+  class="float-button float-call"
+  aria-label="Call Professional Solutions">
 
-<a
-href="tel:+962790390555"
-class="float-btn call-btn"
-aria-label="Call">
+    <i class="bi bi-telephone-fill"></i>
 
-<i class="bi bi-telephone-fill"></i>
-
-</a>
+  </a>
 
 
-<a
-href="https://wa.me/962790390555?text=Hello%20Professional%20Solutions%2C%20I%20would%20like%20to%20discuss%20a%20project."
-target="_blank"
-rel="noopener noreferrer"
-class="float-btn whatsapp-btn"
-aria-label="WhatsApp">
+  <a
+  href="https://wa.me/962790390555?text=Hello%20Professional%20Solutions%2C%20I%20would%20like%20to%20discuss%20a%20project."
+  target="_blank"
+  rel="noopener noreferrer"
+  class="float-button float-whatsapp"
+  aria-label="WhatsApp Professional Solutions">
 
-<i class="bi bi-whatsapp"></i>
+    <i class="bi bi-whatsapp"></i>
 
-</a>
-
+  </a>
 
 </div>
 
 
 
-<!-- =====================================================
+<!-- ======================================================
      JAVASCRIPT
-===================================================== -->
+====================================================== -->
 
 <script>
 
-/* =========================================================
-   IMAGE FALLBACK
-========================================================= */
+/* IMAGE FALLBACK */
 
 function imageError(image){
 
-    const parent =
-    image.parentElement;
+  const card = image.closest(".solution-card");
 
-    if(parent){
+  if(card){
+    card.classList.add("image-error");
+  }
 
-        parent.classList.add(
-            "image-error"
-        );
-
-    }
-
-    image.style.display =
-    "none";
-
+  image.style.display = "none";
 }
 
 
-/* =========================================================
-   LANGUAGE
-========================================================= */
+/* LANGUAGE */
 
-let currentLanguage =
-"en";
+let currentLanguage = "en";
 
 
 function toggleLanguage(){
 
+  currentLanguage =
+  currentLanguage === "en"
+  ? "ar"
+  : "en";
 
-    currentLanguage =
+
+  document
+  .querySelectorAll("[data-en]")
+  .forEach(function(element){
+
+    const value =
     currentLanguage === "en"
-    ? "ar"
-    : "en";
+    ? element.getAttribute("data-en")
+    : element.getAttribute("data-ar");
+
+    element.innerHTML = value;
+
+  });
 
 
-    document
-    .querySelectorAll(
-        "[data-en]"
-    )
-    .forEach(function(element){
+  const button =
+  document.getElementById("languageButton");
 
 
-        const content =
-        currentLanguage === "en"
-        ?
-        element.getAttribute(
-            "data-en"
-        )
-        :
-        element.getAttribute(
-            "data-ar"
-        );
+  if(currentLanguage === "ar"){
 
+    document.documentElement.lang = "ar";
+    document.documentElement.dir = "rtl";
 
-        element.innerHTML =
-        content;
+    document.body.classList.add("ar");
 
+    button.textContent = "EN";
 
-    });
+  }else{
 
+    document.documentElement.lang = "en";
+    document.documentElement.dir = "ltr";
 
-    const button =
-    document.getElementById(
-        "languageButton"
-    );
+    document.body.classList.remove("ar");
 
-
-    if(
-        currentLanguage === "ar"
-    ){
-
-
-        document.documentElement.lang =
-        "ar";
-
-
-        document.documentElement.dir =
-        "rtl";
-
-
-        document.body.classList.add(
-            "ar"
-        );
-
-
-        button.textContent =
-        "EN";
-
-
-    }else{
-
-
-        document.documentElement.lang =
-        "en";
-
-
-        document.documentElement.dir =
-        "ltr";
-
-
-        document.body.classList.remove(
-            "ar"
-        );
-
-
-        button.textContent =
-        "عربي";
-
-
-    }
-
+    button.textContent = "عربي";
+  }
 }
 
 </script>
 
 
 </body>
-
 </html>
