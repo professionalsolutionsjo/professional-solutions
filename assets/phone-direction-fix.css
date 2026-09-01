@@ -1,6 +1,28 @@
-a[href^="tel:"], .phone-number {
+a[href^="tel:"],
+a[href^="mailto:"],
+.phone-number,
+.email-address,
+.latin-number,
+.num,
+.step > span,
+.footer .contact-detail,
+.footer bdi {
   direction: ltr !important;
   unicode-bidi: isolate !important;
   display: inline-block !important;
   text-align: left !important;
+  font-variant-numeric: tabular-nums;
+}
+
+body.ar a[href^="tel:"],
+body.ar a[href^="mailto:"],
+body.ar .phone-number,
+body.ar .email-address,
+body.ar .latin-number,
+body.ar .num,
+body.ar .step > span,
+body.ar .footer .contact-detail,
+body.ar .footer bdi {
+  direction: ltr !important;
+  unicode-bidi: isolate !important;
 }
