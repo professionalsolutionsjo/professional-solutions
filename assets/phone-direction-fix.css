@@ -14,6 +14,18 @@ a[href^="mailto:"],
   font-variant-numeric: tabular-nums;
 }
 
+/* Keep contact details readable in RTL pages even when the phone/email
+   are plain text inside the footer rather than wrapped in their own span. */
+.footer > div:first-child {
+  unicode-bidi: isolate !important;
+}
+
+body.ar .footer > div:first-child {
+  direction: ltr !important;
+  unicode-bidi: isolate !important;
+  text-align: right !important;
+}
+
 body.ar a[href^="tel:"],
 body.ar a[href^="mailto:"],
 body.ar .phone-number,
