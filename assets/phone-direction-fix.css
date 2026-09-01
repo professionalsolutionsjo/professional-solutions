@@ -1,0 +1,6 @@
+a[href^="tel:"], .phone-number {
+  direction: ltr !important;
+  unicode-bidi: isolate !important;
+  display: inline-block !important;
+  text-align: left !important;
+}
