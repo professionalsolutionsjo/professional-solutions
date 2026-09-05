@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>تقييم جاهزية المنشأة | الحلول الاحترافية</title>
+  <meta name="description" content="تقييم مبدئي لتجهيز المنشآت الغذائية والتجميلية: الأسطح والمساحات والتهوية والتخزين. اكتشف فرص التحسين واطلب زيارة فنية.">
+  <link rel="stylesheet" href="assets/home.css"><link rel="stylesheet" href="assets/assessment.css">
+</head>
+<body class="ar assessment">
+  <header class="assessment-nav"><a href="index.html"><img src="logo.png" alt="الحلول الاحترافية" width="150" height="60"></a><a href="index.html">العودة للموقع</a></header>
+  <main>
+    <div class="intro"><p class="label">الحلول الاحترافية · تجهيز المنشآت</p><h1>ما الذي تحتاجه منشأتك؟</h1><p>قيّم تجهيز المساحة وحدد أولويات التحسين ضمن الأعمال التي ننفذها.</p></div>
+    <aside class="notice">تقييم ذاتي مبدئي للتجهيز فقط، وليس شهادة مطابقة أو تقييمًا شاملًا للتصنيع الجيد (GMP). لا يشمل الاعتماد أو التأهيل أو إجراءات التشغيل والتوثيق والتتبع والاستدعاء.</aside>
+    <form id="assessment-form">
+      <section class="panel settings" aria-label="بيانات التقييم">
+        <label>نوع المنشأة<select id="sector"><option value="food">منشأة غذائية</option><option value="cosmetics">تصنيع مستحضرات التجميل والعناية الشخصية</option><option value="other">منشأة صناعية أو تجارية أخرى</option></select></label>
+        <label>نوع المراجعة<select id="basis"><option value="readiness">جاهزية التجهيز ودعم التصنيع الجيد (GMP)</option><option value="jordan">المتطلبات الرقابية الأردنية</option></select></label>
+        <label>طبيعة التجهيز<select id="process"><option value="dry">تشغيل جاف دون تبريد خاص</option><option value="wet">تشغيل رطب أو تنظيف بالماء</option><option value="cold">تشغيل يتطلب تبريدًا</option><option value="both">تشغيل رطب وتبريد</option></select></label>
+      </section>
+      <section id="regulatory" class="panel" hidden>
+        <h2>مراجعة مرتبطة بنشاطك المحدد</h2><p>قاعدة المتطلبات الأردنية التفصيلية لم تُستكمل بعد. لا يحسب هذا المسار نسبة مطابقة أو يثبت استيفاء شروط الترخيص. يلزم تحديد النشاط والمنتج ومراجعة النصوص النافذة قبل تقييمه.</p>
+        <label>الجهة المطلوب مراجعة متطلباتها<select id="authority"><option>المؤسسة العامة للغذاء والدواء</option><option>وزارة الصحة</option><option>جهة أخرى بحسب النشاط</option></select></label>
+        <p>اختيار الجهة لا يعني أنها الجهة المختصة حصريًا بنشاطك.</p><p><a href="https://www.jfda.jo/" target="_blank" rel="noopener">الغذاء والدواء الأردنية</a> · <a href="https://moh.gov.jo/" target="_blank" rel="noopener">وزارة الصحة الأردنية</a></p>
+        <a id="regulatory-contact" class="action" href="https://wa.me/962790390555" target="_blank" rel="noopener">طلب مراجعة الاحتياجات الفنية</a>
+      </section>
+      <div id="questionnaire"><div class="progress"><span id="progress-text" aria-live="polite"></span><progress id="progress" value="0" max="100" aria-label="الأسئلة المجابة"></progress></div><p class="hint">اختر الحالة الفعلية. «لا أعرف» لا تُحسب كاستيفاء. «لا ينطبق» تحتاج تأكيدًا في الزيارة الفنية.</p><div id="questions"></div><p id="form-error" role="alert"></p><button type="submit" class="action">عرض نتيجة التجهيز</button></div>
+    </form>
+    <section id="result" class="panel" tabindex="-1" hidden aria-labelledby="result-title"><h2 id="result-title">نتيجة التقييم المبدئي</h2><div id="summary"></div><h3>أولويات التحسين والتحقق</h3><ul id="recommendations"></ul><div class="result-actions"><a id="contact-result" class="action" target="_blank" rel="noopener">طلب زيارة عبر واتساب</a><button type="button" id="print-result">طباعة النتيجة</button><button type="button" id="edit-result">تعديل الإجابات</button></div><p class="hint">الإجابات لا تُرسل تلقائيًا ولا تُحفظ على خادم. زر واتساب يفتح ملخصًا لتراجعه وترسله بنفسك.</p></section>
+    <details class="panel"><summary>حدود التقييم ومصادره</summary><p>هذه نسخة أولية لبنود التجهيز، لا مخزن شامل لجميع المتطلبات. الأوزان متساوية وهي مؤشر داخلي لترتيب الأعمال، وليست أوزانًا رقابية. الإرشادات الدولية أدناه ليست بديلًا للتشريعات الأردنية. آخر مراجعة للمصادر: 5 سبتمبر 2026.</p><ul><li><a href="https://openknowledge.fao.org/server/api/core/bitstreams/6866dc55-d2c0-48dd-a528-a4d634f1b0b4/content" target="_blank" rel="noopener">الدستور الغذائي: المبادئ العامة لنظافة الأغذية (CXC 1-1969)</a> — بنود المباني والتصميم والتجهيز.</li><li><a href="https://www.fda.gov/cosmetics/cosmetics-guidance-documents/good-manufacturing-practice-gmp-guidelinesinspection-checklist-cosmetics" target="_blank" rel="noopener">إرشادات FDA لتجهيز مباني تصنيع مستحضرات التجميل</a> — مرجع إرشادي أمريكي، وليس تشريعًا أردنيًا.</li></ul><p>للأنشطة الأخرى، الأسئلة استرشادية عامة للتجهيز دون نسبة تصنيع جيد. يحتاج أي اقتراح إلى معاينة ومواصفات مناسبة للنشاط قبل التسعير أو التنفيذ.</p></details>
+    <noscript><p class="notice">فعّل JavaScript لاستخدام النموذج، أو اتصل على <bdi>+962790390555</bdi>.</p></noscript>
+  </main><footer class="assessment-footer">الحلول الاحترافية · الأردن · <a href="tel:+962790390555"><bdi>+962 790 390 555</bdi></a></footer>
+  <script src="assets/assessment.js"></script>
+</body></html>
