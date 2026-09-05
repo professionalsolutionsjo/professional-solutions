@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Facility Readiness Assessment | Professional Solutions Jordan</title>
+  <meta name="description" content="A preliminary physical facility readiness assessment for Good Manufacturing Practice (GMP) requirements in Jordan.">
+  <link rel="canonical" href="https://professionalsolutionsjo.com/gmp-assessment.html">
+  <link rel="stylesheet" href="assets/internal.css?v=20260901">
+  <link rel="stylesheet" href="assets/gmp-assessment.css?v=20260905">
+</head>
+<body class="gmp-assessment-page">
+
+<header class="nav">
+  <a class="brand" href="index.html"><img src="logo.png" alt="Professional Solutions"></a>
+  <ul class="navlinks">
+    <li><a href="index.html" data-en="Home" data-ar="الرئيسية">Home</a></li>
+    <li><a href="#assessment" data-en="Assessment" data-ar="التقييم">Assessment</a></li>
+    <li><a href="#scope" data-en="Scope" data-ar="النطاق">Scope</a></li>
+    <li><a href="#contact" data-en="Contact" data-ar="تواصل معنا">Contact</a></li>
+    <li><button class="lang" id="langBtn" onclick="toggleLanguage()">عربي</button></li>
+  </ul>
+</header>
+
+<section class="assessment-hero">
+  <img src="images/industrial/industrial-01.jpg" alt="Industrial facility readiness" onerror="imageError(this)">
+  <div class="hero-content">
+    <div class="eyebrow" data-en="FACILITY READINESS • JORDAN" data-ar="جاهزية المنشأة • الأردن">FACILITY READINESS • JORDAN</div>
+    <h1 data-en="Good Manufacturing Practice (GMP) Readiness" data-ar="جاهزية المنشأة لمتطلبات ممارسات التصنيع الجيد (GMP)">Good Manufacturing Practice (GMP) Readiness</h1>
+    <p data-en="A practical first assessment of the physical environment: layout, surfaces, airflow, drainage, storage and hygiene-related facility details." data-ar="تقييم أولي عملي للبيئة المادية للمنشأة: التخطيط والأسطح والهواء والصرف والتخزين والتفاصيل المرتبطة بالنظافة.">A practical first assessment of the physical environment.</p>
+    <div class="hero-actions">
+      <a class="btn primary" href="#assessment" data-en="Start Assessment" data-ar="ابدأ التقييم">Start Assessment</a>
+      <a class="btn outline" href="#scope" data-en="Understand the Scope" data-ar="تعرّف على النطاق">Understand the Scope</a>
+    </div>
+  </div>
+  <div class="hero-badge">
+    <span data-en="PRELIMINARY" data-ar="أولي">PRELIMINARY</span>
+    <strong data-en="Physical readiness only" data-ar="جاهزية التجهيزات فقط">Physical readiness only</strong>
+    <small data-en="No certification or approval decision" data-ar="لا يتضمن شهادة أو قرار موافقة">No certification or approval decision</small>
+  </div>
+</section>
+
+<section class="assessment-section" id="assessment">
+  <div class="section-head">
+    <div>
+      <div class="label" data-en="ASSESSMENT TOOL" data-ar="أداة التقييم">ASSESSMENT TOOL</div>
+      <h2 class="title" data-en="See Where the Facility Stands." data-ar="اعرف مستوى جاهزية منشأتك.">See Where the Facility Stands.</h2>
+    </div>
+    <p data-en="Choose the activity and, if relevant, add a Jordanian regulatory reference. The questions are limited to physical facility elements that can be planned, prepared or executed." data-ar="اختر نوع النشاط، وأضف عند الحاجة مرجعية رقابية أردنية. تقتصر الأسئلة على عناصر المنشأة المادية التي يمكن تخطيطها أو تجهيزها أو تنفيذها.">Choose the activity and regulatory reference that apply to your facility.</p>
+  </div>
+
+  <div class="assessment-layout">
+    <aside class="assessment-side">
+      <div class="side-card">
+        <div class="side-label" data-en="HOW IT WORKS" data-ar="كيف يعمل التقييم">HOW IT WORKS</div>
+        <ol class="progress-list">
+          <li class="active" data-step-indicator="1"><span>01</span><b data-en="Facility profile" data-ar="بيانات المنشأة">Facility profile</b></li>
+          <li data-step-indicator="2"><span>02</span><b data-en="Physical questions" data-ar="الأسئلة الفنية">Physical questions</b></li>
+          <li data-step-indicator="3"><span>03</span><b data-en="Readiness result" data-ar="النتيجة">Readiness result</b></li>
+        </ol>
+      </div>
+      <div class="side-note">
+        <strong data-en="Built for practical decisions" data-ar="مصمم لقرارات عملية">Built for practical decisions</strong>
+        <p data-en="The result highlights facility gaps that may connect to planning, hygienic finishes, HVAC, drainage, storage and custom fabrication." data-ar="توضح النتيجة فجوات المنشأة التي قد ترتبط بالتخطيط والتشطيبات الصحية والتهوية والصرف والتخزين والتصنيع المخصص.">The result highlights practical facility gaps.</p>
+      </div>
+    </aside>
+
+    <main class="assessment-card">
+      <form id="assessmentForm" novalidate>
+        <fieldset class="form-step active" data-form-step="1">
+          <div class="step-kicker" data-en="STEP 01" data-ar="الخطوة 01">STEP 01</div>
+          <h3 data-en="Tell us about the facility" data-ar="عرّفنا بالمنشأة">Tell us about the facility</h3>
+          <p class="step-intro" data-en="This helps select the relevant physical requirements." data-ar="تساعدنا هذه البيانات على اختيار المتطلبات المادية المناسبة.">This helps select the relevant physical requirements.</p>
+
+          <label class="field-label" for="facilityType" data-en="Activity type" data-ar="نوع النشاط">Activity type</label>
+          <select id="facilityType" required>
+            <option value="" data-en="Choose an activity" data-ar="اختر نوع النشاط">Choose an activity</option>
+            <option value="food" data-en="Food and beverage production" data-ar="الصناعات الغذائية والمشروبات">Food and beverage production</option>
+            <option value="dairy" data-en="Dairy, meat and poultry processing" data-ar="الألبان واللحوم والدواجن">Dairy, meat and poultry processing</option>
+            <option value="bakery" data-en="Bakery and confectionery" data-ar="المخابز والحلويات">Bakery and confectionery</option>
+            <option value="pharma" data-en="Pharmaceutical or veterinary products" data-ar="المنتجات الدوائية أو البيطرية">Pharmaceutical or veterinary products</option>
+            <option value="cosmetics" data-en="Cosmetics and personal care" data-ar="مستحضرات التجميل والعناية الشخصية">Cosmetics and personal care</option>
+            <option value="supplements" data-en="Nutritional supplements" data-ar="المكملات الغذائية">Nutritional supplements</option>
+            <option value="medical" data-en="Medical devices and supplies" data-ar="الأجهزة والمستلزمات الطبية">Medical devices and supplies</option>
+            <option value="packaging" data-en="Food-contact packaging" data-ar="مواد التغليف الملامسة للغذاء">Food-contact packaging</option>
+            <option value="water" data-en="Bottled water and filling" data-ar="المياه والتعبئة">Bottled water and filling</option>
+            <option value="warehouse" data-en="Storage and distribution facility" data-ar="منشأة التخزين والتوزيع">Storage and distribution facility</option>
+          </select>
+
+          <label class="field-label" for="facilityStatus" data-en="Facility status" data-ar="حالة المنشأة">Facility status</label>
+          <select id="facilityStatus">
+            <option value="new" data-en="New or under design" data-ar="جديدة أو تحت التصميم">New or under design</option>
+            <option value="existing" data-en="Existing and operating" data-ar="قائمة وتعمل حاليًا">Existing and operating</option>
+            <option value="upgrade" data-en="Existing and planned for upgrade" data-ar="قائمة وتحتاج إلى تطوير">Existing and planned for upgrade</option>
+          </select>
+
+          <div class="field-label" data-en="Optional Jordanian regulatory reference" data-ar="مرجعية رقابية أردنية اختيارية">Optional Jordanian regulatory reference</div>
+          <p class="field-help" data-en="Select only the references relevant to the activity. The tool checks physical readiness related to the selected reference; it does not issue a license or approval." data-ar="اختر المرجعيات المرتبطة بالنشاط فقط. تفحص الأداة الجاهزية المادية المرتبطة بالمرجعية، ولا تصدر ترخيصًا أو موافقة.">Select only the references relevant to the activity.</p>
+          <div class="regulatory-grid">
+            <label class="check-option"><input type="checkbox" value="jfda" name="regulator"><span><b data-en="Food and Drug Administration" data-ar="الغذاء والدواء">Food and Drug Administration</b><small data-en="Food, medicines, cosmetics and supplies" data-ar="الغذاء والأدوية والتجميل والمستلزمات">Food, medicines, cosmetics and supplies</small></span></label>
+            <label class="check-option"><input type="checkbox" value="moh" name="regulator"><span><b data-en="Ministry of Health" data-ar="وزارة الصحة">Ministry of Health</b><small data-en="Health-related facility environments" data-ar="البيئات المرتبطة بالمنشآت الصحية">Health-related facility environments</small></span></label>
+            <label class="check-option"><input type="checkbox" value="civil" name="regulator"><span><b data-en="Civil Defense / safety" data-ar="الدفاع المدني / السلامة">Civil Defense / safety</b><small data-en="Access, movement and emergency layout" data-ar="الوصول والحركة والتخطيط للطوارئ">Access, movement and emergency layout</small></span></label>
+            <label class="check-option"><input type="checkbox" value="municipality" name="regulator"><span><b data-en="Municipality / professional licensing" data-ar="البلدية / رخص المهن">Municipality / professional licensing</b><small data-en="Use, layout and site-related items" data-ar="الاستخدام والتخطيط والعناصر المرتبطة بالموقع">Use, layout and site-related items</small></span></label>
+            <label class="check-option"><input type="checkbox" value="jsmo" name="regulator"><span><b data-en="Standards and Metrology" data-ar="المواصفات والمقاييس">Standards and Metrology</b><small data-en="Materials and conformity reference" data-ar="مرجعية المواد والمطابقة">Materials and conformity reference</small></span></label>
+          </div>
+
+          <div class="form-actions">
+            <button class="btn primary dark-btn" type="button" id="startQuestions" data-en="Continue to questions" data-ar="الانتقال إلى الأسئلة">Continue to questions</button>
+          </div>
+          <p class="form-error" id="profileError" role="alert"></p>
+        </fieldset>
+
+        <fieldset class="form-step" data-form-step="2">
+          <div class="step-kicker" data-en="STEP 02" data-ar="الخطوة 02">STEP 02</div>
+          <h3 data-en="Review the physical readiness points" data-ar="راجع نقاط الجاهزية المادية">Review the physical readiness points</h3>
+          <p class="step-intro" data-en="Answer based on the current or planned condition. Select Not applicable when the point does not apply." data-ar="أجب وفق الحالة الحالية أو المخططة. اختر «غير منطبق» عندما لا ينطبق البند.">Answer based on the current or planned condition.</p>
+          <div class="answer-legend">
+            <span><i class="dot good"></i><b data-en="Available" data-ar="متوفر">Available</b></span>
+            <span><i class="dot partial"></i><b data-en="Partial" data-ar="جزئي">Partial</b></span>
+            <span><i class="dot gap"></i><b data-en="Gap" data-ar="فجوة">Gap</b></span>
+            <span><i class="dot na"></i><b data-en="N/A" data-ar="غير منطبق">N/A</b></span>
+          </div>
+          <div id="questions" class="questions"></div>
+          <div class="form-actions split-actions">
+            <button class="btn secondary-btn" type="button" id="backToProfile" data-en="Back" data-ar="رجوع">Back</button>
+            <button class="btn primary dark-btn" type="button" id="showResult" data-en="View preliminary result" data-ar="عرض النتيجة الأولية">View preliminary result</button>
+          </div>
+          <p class="form-error" id="questionsError" role="alert"></p>
+        </fieldset>
+      </form>
+    </main>
+  </div>
+</section>
+
+<section class="results-section" id="results" hidden>
+  <div class="results-wrap">
+    <div class="results-top">
+      <div>
+        <div class="label" data-en="YOUR PRELIMINARY RESULT" data-ar="نتيجتك الأولية">YOUR PRELIMINARY RESULT</div>
+        <h2 class="title" data-en="A clearer starting point for the facility." data-ar="بداية أوضح لتطوير المنشأة.">A clearer starting point for the facility.</h2>
+        <p id="resultIntro"></p>
+      </div>
+      <div class="score-card">
+        <div class="score-ring"><strong id="resultScore">0</strong><span>/100</span></div>
+        <b id="resultBand"></b>
+        <small data-en="Physical readiness estimate" data-ar="تقدير الجاهزية المادية">Physical readiness estimate</small>
+      </div>
+    </div>
+
+    <div class="results-grid">
+      <div class="result-panel">
+        <h3 data-en="Readiness by area" data-ar="الجاهزية حسب المجال">Readiness by area</h3>
+        <div id="domainResults" class="domain-results"></div>
+      </div>
+      <div class="result-panel">
+        <h3 data-en="Priority facility gaps" data-ar="أولويات تطوير المنشأة">Priority facility gaps</h3>
+        <ul id="gapResults" class="gap-results"></ul>
+      </div>
+    </div>
+
+    <div class="result-disclaimer" data-en="This is a preliminary physical readiness estimate based on the answers provided. It does not replace a site survey, design review or any official decision by a competent authority." data-ar="هذا تقدير أولي للجاهزية المادية مبني على الإجابات المقدمة. لا يغني عن معاينة الموقع أو مراجعة التصميم أو أي قرار رسمي من الجهة المختصة.">This is a preliminary physical readiness estimate.</div>
+
+    <div class="lead-capture">
+      <div>
+        <div class="label" data-en="NEXT STEP" data-ar="الخطوة التالية">NEXT STEP</div>
+        <h3 data-en="Turn the gaps into an execution plan." data-ar="حوّل الفجوات إلى خطة تنفيذ.">Turn the gaps into an execution plan.</h3>
+        <p data-en="Share your contact details if you would like the solutions team to review the result and discuss suitable facility works." data-ar="شارك بيانات التواصل إذا رغبت في أن يراجع فريق الحلول النتيجة ويناقش أعمال التجهيز المناسبة للمنشأة.">Share your contact details for a practical discussion.</p>
+      </div>
+      <form id="leadForm" class="lead-form">
+        <input id="leadName" type="text" placeholder="Name" data-placeholder-en="Name" data-placeholder-ar="الاسم" aria-label="Name">
+        <input id="leadPhone" type="tel" placeholder="Phone" data-placeholder-en="Phone" data-placeholder-ar="رقم الهاتف" aria-label="Phone">
+        <input id="leadEmail" type="email" placeholder="Email" data-placeholder-en="Email" data-placeholder-ar="البريد الإلكتروني" aria-label="Email">
+        <div class="lead-actions">
+          <button class="btn primary" type="submit" data-en="Request a facility discussion" data-ar="اطلب مناقشة متطلبات المنشأة">Request a facility discussion</button>
+          <button class="btn outline-dark" type="button" id="printResult" data-en="Print result" data-ar="طباعة النتيجة">Print result</button>
+        </div>
+        <p class="form-error" id="leadError" role="alert"></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="scope-section" id="scope">
+  <div class="section-head">
+    <div>
+      <div class="label" data-en="CLEAR SCOPE" data-ar="نطاق واضح">CLEAR SCOPE</div>
+      <h2 class="title" data-en="Focused on what we can design and execute." data-ar="نركز على ما نستطيع تصميمه وتنفيذه.">Focused on what we can design and execute.</h2>
+    </div>
+    <p data-en="The assessment is intentionally focused on physical facility readiness and the practical improvements Professional Solutions can coordinate and execute." data-ar="صُمم التقييم ليركز على جاهزية المنشأة المادية والتحسينات العملية التي تستطيع الحلول الاحترافية تنسيقها وتنفيذها.">Focused on practical physical readiness.</p>
+  </div>
+  <div class="scope-grid">
+    <article><span>01</span><h3 data-en="Planning & zoning" data-ar="التخطيط وتقسيم المناطق">Planning & zoning</h3><p data-en="Movement, separation, access and functional relationships between facility areas." data-ar="الحركة والفصل والوصول والعلاقات الوظيفية بين مناطق المنشأة.">Movement, separation and access.</p></article>
+    <article><span>02</span><h3 data-en="Hygienic finishes" data-ar="التشطيبات الصحية">Hygienic finishes</h3><p data-en="Floors, epoxy, walls, ceilings, joints and surfaces selected for practical cleaning." data-ar="الأرضيات والإيبوكسي والجدران والأسقف والفواصل والأسطح المناسبة للتنظيف العملي.">Floors, walls, ceilings and surfaces.</p></article>
+    <article><span>03</span><h3 data-en="Air, water & drainage" data-ar="الهواء والمياه والصرف">Air, water & drainage</h3><p data-en="HVAC, ventilation, humidity, condensation, drainage and waterproofing coordination." data-ar="تنسيق التكييف والتهوية والرطوبة والتكاثف والصرف والعزل المائي.">HVAC, ventilation, drainage and waterproofing.</p></article>
+    <article><span>04</span><h3 data-en="Storage & fabrication" data-ar="التخزين والتصنيع المخصص">Storage & fabrication</h3><p data-en="Storage zones, custom furniture, stainless details and maintainable facility elements." data-ar="مناطق التخزين والأثاث المخصص وتفاصيل الستانلس والعناصر القابلة للصيانة.">Storage zones and custom fabrication.</p></article>
+  </div>
+  <div class="scope-note">
+    <strong data-en="Outside this tool:" data-ar="خارج نطاق هذه الأداة:">Outside this tool:</strong>
+    <span data-en="quality-system documents, operational traceability, complaint and recall systems, laboratory testing, validation, certification and official approvals." data-ar="وثائق نظام الجودة، والتتبع التشغيلي، وأنظمة الشكاوى والاستدعاء، والفحوصات المخبرية، والتحقق، والشهادات والموافقات الرسمية.">quality-system documents, operational traceability, complaint and recall systems, laboratory testing, validation, certification and official approvals.</span>
+  </div>
+</section>
+
+<section class="regulatory-section">
+  <div class="regulatory-copy">
+    <div class="label" data-en="JORDANIAN REFERENCES" data-ar="المرجعيات الأردنية">JORDANIAN REFERENCES</div>
+    <h2 class="title" data-en="A reference path, not a promise of approval." data-ar="مرجعية تساعدك، وليست وعدًا بالموافقة.">A reference path, not a promise of approval.</h2>
+    <p data-en="The selected authority helps the tool organize the relevant physical questions. Actual licensing, inspection and approval remain with the competent authority and depend on the full activity, site, product and regulatory file." data-ar="تساعد الجهة المختارة الأداة على تنظيم الأسئلة المادية ذات الصلة. أما الترخيص والكشف والموافقة الفعلية فتظل من اختصاص الجهة المختصة وتعتمد على النشاط والموقع والمنتج والملف الرقابي الكامل.">The selected authority organizes the relevant physical questions.</p>
+  </div>
+  <div class="regulatory-links">
+    <a href="https://www.jfda.jo/" target="_blank" rel="noopener"><b data-en="Food and Drug Administration" data-ar="الغذاء والدواء">Food and Drug Administration</b><span>jfda.jo ↗</span></a>
+    <a href="https://www.moh.gov.jo/" target="_blank" rel="noopener"><b data-en="Ministry of Health" data-ar="وزارة الصحة">Ministry of Health</b><span>moh.gov.jo ↗</span></a>
+    <a href="https://psd.gov.jo/ar-jo/" target="_blank" rel="noopener"><b data-en="Civil Defense / safety" data-ar="الدفاع المدني / السلامة">Civil Defense / safety</b><span>psd.gov.jo ↗</span></a>
+    <a href="https://www.amman.jo/" target="_blank" rel="noopener"><b data-en="Greater Amman Municipality" data-ar="أمانة عمّان الكبرى">Greater Amman Municipality</b><span>amman.jo ↗</span></a>
+    <a href="https://www.jsmo.gov.jo/" target="_blank" rel="noopener"><b data-en="Standards and Metrology" data-ar="المواصفات والمقاييس">Standards and Metrology</b><span>jsmo.gov.jo ↗</span></a>
+  </div>
+</section>
+
+<section class="cta" id="contact">
+  <div class="label" data-en="READY TO IMPROVE THE FACILITY?" data-ar="جاهز لتطوير المنشأة؟">READY TO IMPROVE THE FACILITY?</div>
+  <h2 data-en="Start With the Physical Condition." data-ar="ابدأ من الحالة المادية للمنشأة.">Start With the Physical Condition.</h2>
+  <p data-en="Send us the result or describe the facility, and we will help define a practical scope for planning and execution." data-ar="أرسل لنا النتيجة أو صف حالة المنشأة، وسنساعدك على تحديد نطاق عملي للتخطيط والتنفيذ.">Send us the result and we can define the practical scope.</p>
+  <div class="hero-actions">
+    <a class="btn primary" href="https://wa.me/962790390555" target="_blank" rel="noopener" data-en="WhatsApp Us" data-ar="تواصل عبر واتساب">WhatsApp Us</a>
+    <a class="btn outline" href="tel:+962790390555" data-en="Call Us" data-ar="اتصل بنا">Call Us</a>
+  </div>
+</section>
+
+<footer class="footer">
+  <div><strong>PROFESSIONAL SOLUTIONS</strong><br>SMART LUXURY<br>+962 79 039 0555<br>info@professionalsolutionsjo.com</div>
+  <div>© <span data-year></span> Professional Solutions</div>
+</footer>
+
+<div class="floating">
+  <a class="call" href="tel:+962790390555" aria-label="Call">☎</a>
+  <a class="wa" href="https://wa.me/962790390555" target="_blank" rel="noopener" aria-label="WhatsApp">✆</a>
+</div>
+
+<script src="assets/internal.js?v=20260901"></script>
+<script src="assets/gmp-assessment.js?v=20260905"></script>
+</body>
+</html>
