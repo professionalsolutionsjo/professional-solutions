@@ -1,0 +1,30 @@
+'use strict';
+// Jordanian reference bank. This is a traceable screening aid, not a licensing decision.
+const regulatorySources = [
+  {id:'jfda-food-gmp',title:'دليل ممارسات التصنيع الجيد في الغذاء (GMP)',authority:'المؤسسة العامة للغذاء والدواء',date:'29/12/2015',url:'https://jfda.jo/ebv4.0/root_storage/ar/eb_list_page/دليل_ممارسات_التصنيع_الجيد_في_الغذاء.pdf',scope:'المصانع والمعامل والمشاغل الغذائية، بما فيها المنشآت الجديدة وإضافة خطوط الإنتاج.',loc:'المواد 1-4، وبنود الموقع والبناء والصالات والأرضيات والجدران والأسقف والتهوية والإنارة والتخزين.'},
+  {id:'jfda-food-health',title:'الشروط الصحية العامة لترخيص المعامل والمصانع الغذائية',authority:'المؤسسة العامة للغذاء والدواء',date:'وثيقة منشورة في بوابة الأدلة',url:'https://jfda.jo/ebv4.0/root_storage/ar/eb_list_page/الشروط_الصحية_العامة_لترخيص_المعامل_والمصانع_الغذائية-0.pdf',scope:'المعامل والمصانع الغذائية فقط.',loc:'بنود الموقع والبناء والصالات والغرف والأرضيات والجدران والأسقف والتهوية والإنارة.'},
+  {id:'investment-licensing',title:'دليل التراخيص الأردني',authority:'وزارة الاستثمار',date:'نسخة منشورة 2026',url:'https://invest.jo/sites/default/files/2026-03/%D8%A7%D9%84%D9%86%D8%B3%D8%AE%D8%A9-%D8%A7%D9%84%D8%A7%D9%86%D8%AC%D9%84%D9%8A%D8%B2%D9%8A%D8%A9-%D8%AF%D9%84%D9%8A%D9%84-%D8%A7%D9%84%D8%AA%D8%B1%D8%A7%D8%AE%D9%8A%D8%B5.pdf',scope:'إجراءات وموافقات الاستثمار بحسب النشاط والموقع، وليس مواصفة تشطيب.',loc:'قسم مصانع الأغذية: الموافقة على الموقع ثم خطوط الإنتاج؛ والملاحق الخاصة بالتصنيف البيئي ومصانع مستحضرات التجميل.'}
+];
+const regulatoryQuestions = [
+  {id:'site',text:'هل الموقع حاصل على الموافقات المناسبة لاستخدامه ونشاطه؟',work:'مراجعة ملاءمة الموقع والتوزيع العام ضمن المخطط المعتمد.',src:['jfda-food-gmp','jfda-food-health','investment-licensing'],food:true,cosmetics:true},
+  {id:'pollution',text:'هل الموقع خالٍ من مصادر تلوث دائمة أو روائح/غبار مؤثر؟',work:'تقييم الموقع والعزل ومداخل الهواء ومصادر التلوث.',src:['jfda-food-gmp','jfda-food-health'],food:true},
+  {id:'paths',text:'هل الطرق والساحات الداخلية سليمة وقابلة للتنظيف؟',work:'معالجة الساحات والممرات وتصريف المياه.',src:['jfda-food-gmp','jfda-food-health'],food:true},
+  {id:'rooms',text:'هل توجد مناطق منفصلة ومناسبة للمواد الأولية والإنتاج والمنتج النهائي؟',work:'إعادة توزيع مناطق الاستلام والتصنيع والتعبئة والتخزين.',src:['jfda-food-gmp','jfda-food-health'],food:true},
+  {id:'surfaces',text:'هل الأرضيات والجدران والأسقف سليمة، غير ماصة، سهلة التنظيف ولا تتقشر؟',work:'تجديد الأرضيات والأسطح والفواصل بمواد مناسبة للنشاط.',src:['jfda-food-gmp','jfda-food-health'],food:true,cosmetics:true},
+  {id:'drainage',text:'هل الصرف يمنع تجمع المياه ويخدم المناطق الرطبة؟',work:'دراسة الميول والمصارف والعزل ومعالجة نقاط تجمع المياه.',src:['jfda-food-gmp','jfda-food-health'],food:true},
+  {id:'air',text:'هل التهوية تمنع التكاثف والروائح وتدفق الهواء من المواقع غير النظيفة إلى النظيفة؟',work:'دراسة التهوية والتكييف واتجاهات الهواء.',src:['jfda-food-gmp','jfda-food-health'],food:true},
+  {id:'light',text:'هل الإنارة كافية ومحمية في مناطق العمل؟',work:'توزيع الإنارة وحمايتها حسب طبيعة المكان.',src:['jfda-food-gmp','jfda-food-health'],food:true},
+  {id:'storage',text:'هل التخزين منظم ومرفوع عن الأرض مع ممرات وصول وتنظيف؟',work:'تجهيز المستودعات والأرفف والممرات والعزل عند الحاجة.',src:['jfda-food-gmp','jfda-food-health'],food:true},
+  {id:'cosmetics-site',text:'بالنسبة لمستحضرات التجميل: هل النشاط والموقع مصنفان وموافق عليهما وفق متطلبات الترخيص البيئي والقطاعي؟',work:'مراجعة موقع المنشأة ومخططها مع الجهة المختصة قبل اعتماد التصميم.',src:['investment-licensing'],cosmetics:true}
+];
+function sourceById(id){return regulatorySources.find(s=>s.id===id);}
+function renderRegulatoryReference(){
+  const box=document.getElementById('regulatory-reference'), sector=document.getElementById('sector').value;
+  if(!box)return;
+  const applicable=regulatoryQuestions.filter(q=>q[sector]||(!q.food&&!q.cosmetics));
+  box.replaceChildren();
+  const title=document.createElement('h3');title.textContent='بنود مرجعية لتحليل إجابات العميل';box.append(title);
+  const note=document.createElement('p');note.className='hint';note.textContent='تُحلّل الإجابات كبنود تحتاج تحققًا أو تحسينًا. لا ينتج عنها تصريح أو نسبة مطابقة، وبعض البنود خارج نطاق خدمات الحلول الاحترافية.';box.append(note);
+  applicable.forEach((q,i)=>{const f=document.createElement('fieldset');f.className='question reference-question';const l=document.createElement('legend');l.textContent=`${i+1}. ${q.text}`;f.append(l);const row=document.createElement('div');row.className='answers';[['yes','متوفر'],['partial','جزئي'],['no','غير متوفر'],['unknown','غير معروف']].forEach(([v,t])=>{const lab=document.createElement('label');const inp=document.createElement('input');inp.type='radio';inp.name='ref-'+q.id;inp.value=v;inp.required=true;lab.append(inp,document.createTextNode(t));row.append(lab)});f.append(row);const refs=document.createElement('p');refs.className='reference-source';refs.textContent='المرجع: '+q.src.map(id=>sourceById(id).title).join('؛ ');f.append(refs);box.append(f)});
+  const button=document.createElement('button');button.type='button';button.className='action';button.textContent='تحليل البنود المرجعية';button.onclick=()=>{const gaps=applicable.filter(q=>{const x=document.querySelector(`input[name="ref-${q.id}"]:checked`);return !x||x.value!=='yes'});const out=document.getElementById('regulatory-result');out.replaceChildren();const h=document.createElement('h3');h.textContent='خلاصة التحليل';out.append(h);const p=document.createElement('p');p.textContent=`بنود تحتاج تحققًا أو تحسينًا: ${gaps.length} من ${applicable.length}. النتيجة لا تعني موافقة الجهة الرقابية.`;out.append(p);const ul=document.createElement('ul');gaps.forEach(q=>{const li=document.createElement('li');li.textContent=q.work+' | '+q.src.map(id=>sourceById(id).title).join('، ');ul.append(li)});if(!gaps.length){const li=document.createElement('li');li.textContent='لم تظهر فجوات في الإجابات المدخلة، ويلزم مع ذلك تحقق ميداني ومراجعة الملف الكامل للنشاط.';ul.append(li)}out.append(ul);};box.append(button);
+}
