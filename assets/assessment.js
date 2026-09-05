@@ -41,7 +41,7 @@ function render(){
   });
   updateMode();updateProgress();
 }
-function updateMode(){const regulatory=$('basis').value==='jordan';$('regulatory').hidden=!regulatory;$('questionnaire').hidden=regulatory;document.querySelectorAll('#questions input').forEach(x=>x.disabled=regulatory);$('result').hidden=true;updateContact();}
+function updateMode(){const regulatory=$('basis').value==='jordan';$('regulatory').hidden=!regulatory;$('questionnaire').hidden=regulatory;document.querySelectorAll('#questions input').forEach(x=>x.disabled=regulatory);$('result').hidden=true;if(regulatory&&typeof renderRegulatoryReference==='function')renderRegulatoryReference();updateContact();}
 $('sector').addEventListener('change',render);$('process').addEventListener('change',render);$('basis').addEventListener('change',updateMode);$('authority').addEventListener('change',updateContact);$('questions').addEventListener('change',updateProgress);
 $('assessment-form').addEventListener('submit',event=>{
   event.preventDefault();if($('basis').value==='jordan')return;
