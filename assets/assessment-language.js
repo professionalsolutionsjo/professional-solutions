@@ -1,12 +1,16 @@
 /* Arabic/English presentation guard. assessment-v2.js owns all question language content. */
 'use strict';
 (function(){
-  const NOTICE_AR='تقييم فني مبدئي يساعد على تحديد مستوى جاهزية المنشأة ومتطلبات التجهيز والبنية التحتية، وتحديد أبرز نقاط التحسين التي تحتاج إلى مراجعة.<br><br>هذا تقييم فني مبدئي لجوانب التجهيز والبنية التحتية التي ترتبط بنطاق خدمات Professional Solutions، وليس شهادة مطابقة أو اعتمادًا رقابيًا. المتطلبات النهائية تعتمد على نوع النشاط والجهة المختصة والتحقق الميداني.';
-  const NOTICE_EN='A preliminary technical assessment that helps determine the facility’s level of readiness, fit-out and infrastructure requirements, and identify the key areas for improvement that require further review.<br><br>This is a preliminary technical assessment of fit-out and infrastructure aspects within the scope of Professional Solutions’ services. It is not a compliance certificate or regulatory accreditation. Final requirements depend on the facility type, the competent authority, and field verification.';
+  const INTRO_AR='تقييم فني مبدئي يساعد على تحديد مستوى جاهزية المنشأة ومتطلبات التجهيز والبنية التحتية، وتحديد أبرز نقاط التحسين التي تحتاج إلى مراجعة.';
+  const INTRO_EN='A preliminary technical assessment that helps determine the facility’s level of readiness, fit-out and infrastructure requirements, and identify the key areas for improvement that require further review.';
+  const DISCLAIMER_AR='هذا تقييم فني مبدئي لجوانب التجهيز والبنية التحتية التي ترتبط بنطاق خدمات Professional Solutions، وليس شهادة مطابقة أو اعتمادًا رقابيًا. المتطلبات النهائية تعتمد على نوع النشاط والجهة المختصة والتحقق الميداني.';
+  const DISCLAIMER_EN='This is a preliminary technical assessment of facility fit-out and infrastructure aspects within the scope of Professional Solutions. It is not a compliance certificate or regulatory accreditation. Final requirements depend on the type of activity, the competent authority, and on-site verification.';
   function applyAssessmentLanguage(){
     const lang=document.documentElement.lang==='en'?'en':'ar';
-    const notice=document.querySelector('.notice');
-    if(notice) notice.innerHTML=lang==='en'?NOTICE_EN:NOTICE_AR;
+    const intro=document.getElementById('assessment-intro');
+    const disclaimer=document.getElementById('assessment-disclaimer');
+    if(intro) intro.textContent=lang==='en'?INTRO_EN:INTRO_AR;
+    if(disclaimer) disclaimer.textContent=lang==='en'?DISCLAIMER_EN:DISCLAIMER_AR;
   }
   function cleanArabic(){
     if(document.documentElement.lang!=='ar') return;
