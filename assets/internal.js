@@ -1,4 +1,6 @@
-let currentLanguage=localStorage.getItem('ps-language')==='ar'?'ar':'en';
+const urlLanguage=new URLSearchParams(window.location.search).get('lang');
+let currentLanguage=urlLanguage==='ar'||urlLanguage==='en'?urlLanguage:(localStorage.getItem('ps-language')==='ar'?'ar':'en');
+if(urlLanguage==='ar'||urlLanguage==='en')localStorage.setItem('ps-language',urlLanguage);
 const cleanText=v=>(v||'').replace('أس surfaces','أسطح');
 function applyLanguage(){
   document.querySelectorAll('[data-en]').forEach(el=>{
@@ -11,10 +13,26 @@ function applyLanguage(){
   const b=document.getElementById('langBtn');
   if(b)b.textContent=currentLanguage==='ar'?'EN':'عربي';
 }
+function withLanguage(url){
+  try{
+    const u=new URL(url,window.location.href);
+    if(u.origin!==window.location.origin)return url;
+    u.searchParams.set('lang',currentLanguage);
+    return u.pathname+u.search+u.hash;
+  }catch(e){return url}
+}
+function syncLanguageLinks(){
+  document.querySelectorAll('a[href]').forEach(a=>{
+    const href=a.getAttribute('href');
+    if(!href||href.startsWith('#')||href.startsWith('mailto:')||href.startsWith('tel:')||href.startsWith('javascript:'))return;
+    try{if(new URL(href,window.location.href).origin===window.location.origin)a.setAttribute('href',withLanguage(href));}catch(e){}
+  });
+}
 function toggleLanguage(){
   currentLanguage=currentLanguage==='en'?'ar':'en';
   localStorage.setItem('ps-language',currentLanguage);
   applyLanguage();
+  syncLanguageLinks();
 }
 function imageError(img){
   img.classList.add('missing');
@@ -30,4 +48,5 @@ document.addEventListener('DOMContentLoaded',()=>{
     if(t.includes('insulation')||t.includes('العزل')||src.includes('/insulation/'))a.setAttribute('href','insulation-solutions.html');
   });
   applyLanguage();
+  syncLanguageLinks();
 });
