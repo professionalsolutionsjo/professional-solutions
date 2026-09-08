@@ -2,5 +2,7 @@
 :root{--burg:#7d303b;--burg2:#642630;--cream:#f7f5f1;--ink:#111;--muted:#333;--line:#7d303b}
 body{background:#fff;color:var(--ink)}
 .smart .philosophy-label{font-size:clamp(54px,5.4vw,72px);letter-spacing:5px;font-weight:800;color:var(--burg);margin-bottom:26px;line-height:1.02}
+.smart h2{font-size:clamp(28px,2.5vw,38px);line-height:1.35;font-weight:600;margin-bottom:20px}
+.smart p{font-size:clamp(17px,1.35vw,20px);line-height:1.75;font-weight:400;max-width:980px;margin-left:auto;margin-right:auto}
 .facility-strip .label{color:var(--burg);font-size:clamp(38px,3.8vw,52px);letter-spacing:4px;font-weight:800;line-height:1.05;margin-bottom:20px}
-@media(max-width:700px){.smart .philosophy-label{font-size:44px;letter-spacing:3px;margin-bottom:19px}.facility-strip .label{font-size:36px;letter-spacing:2.5px;margin-bottom:17px}}
+@media(max-width:700px){.smart .philosophy-label{font-size:44px;letter-spacing:3px;margin-bottom:19px}.smart h2{font-size:25px;line-height:1.4}.smart p{font-size:17px;line-height:1.7}.facility-strip .label{font-size:36px;letter-spacing:2.5px;margin-bottom:17px}}
