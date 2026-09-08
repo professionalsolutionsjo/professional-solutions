@@ -1,1 +1,137 @@
-/* placeholder */
+/* GMP Facility Assessment — language-separated, facility-specific version */
+'use strict';
+(function(){
+const FACILITY_TYPES={
+ food:{en:'Food Manufacturing',ar:'تصنيع الأغذية',groups:[
+  ['Facility & Zoning','المنشأة وتقسيم المناطق',[
+   ['zoning','Zoning and process flow','تقسيم المناطق ومسار الإنتاج','Are raw materials, preparation, processing, packaging and finished products arranged in a logical flow that minimizes contamination?','هل المواد الخام والتحضير والتصنيع والتعبئة والمنتج النهائي مرتبة ضمن مسار منطقي يقلل مخاطر التلوث؟'],
+   ['production','Production area separation','فصل مناطق الإنتاج','Is production physically separated from incompatible storage or activities?','هل منطقة الإنتاج منفصلة ماديًا عن مناطق التخزين أو الأنشطة غير المتوافقة؟'],
+   ['storage','Storage arrangement','ترتيب مناطق التخزين','Are raw materials, packaging and finished products provided with suitable dedicated storage areas?','هل توجد مناطق مناسبة ومخصصة لتخزين المواد الخام ومواد التعبئة والمنتجات النهائية؟']
+  ]],
+  ['Floors, Walls & Ceilings','الأرضيات والجدران والأسقف',[
+   ['floor','Production floor','أرضية الإنتاج','Is the production floor smooth, non-absorbent, crack-free, durable and easy to clean?','هل أرضية الإنتاج ملساء وغير ماصة وخالية من التشققات ومتينة وسهلة التنظيف؟'],
+   ['slope','Floor slope','ميول الأرضيات','Does the floor have adequate slope toward drains without standing water?','هل توجد ميول مناسبة للأرضية باتجاه المصارف دون تجمع للمياه؟'],
+   ['walls','Production walls','جدران الإنتاج','Are production walls smooth, water-resistant, non-absorbent and washable?','هل جدران الإنتاج ملساء ومقاومة للماء وغير ماصة وقابلة للغسل؟'],
+   ['ceiling','Production ceiling','أسقف الإنتاج','Is the ceiling cleanable and designed to minimize dust, condensation and contamination?','هل السقف سهل التنظيف ومصمم لتقليل الغبار والتكاثف ومخاطر التلوث؟']
+  ]],
+  ['Drainage & Wet Areas','الصرف والمناطق الرطبة',[
+   ['drain-material','Drain material','مادة المصارف','What is the material of production-area floor drains and channels?','ما مادة تصنيع المصارف والقنوات في مناطق الإنتاج؟'],
+   ['drain-design','Drain design','تصميم المصارف','Are drains hygienically designed, accessible for cleaning and suitable for the required flow?','هل المصارف مصممة صحيًا وسهلة التنظيف ومناسبة لمعدل التصريف المطلوب؟'],
+   ['drain-separation','Drainage separation','فصل شبكات الصرف','Are process/industrial wastewater and sanitary wastewater appropriately separated where required?','هل شبكة الصرف الصناعي/التشغيلي منفصلة عن الصرف الصحي الآدمي حيثما يتطلب ذلك؟'],
+   ['waterproofing','Wet-area waterproofing','عزل المناطق الرطبة','Are wet production and washing areas adequately waterproofed?','هل المناطق الرطبة ومناطق الغسيل معزولة مائيًا بشكل مناسب؟']
+  ]],
+  ['Water Systems','أنظمة المياه',[
+   ['water-source','Process water source','مصدر مياه التصنيع','Is production water from a potable source meeting applicable requirements?','هل مياه التصنيع من مصدر صالح للشرب ومطابق للمتطلبات السارية؟'],
+   ['water-treatment','Water treatment / filtration','معالجة وفلترة المياه','Where the process requires treated water, is an appropriate treatment or filtration system provided?','عندما تتطلب العملية مياهًا معالجة، هل يوجد نظام مناسب للمعالجة أو الفلترة؟'],
+   ['water-pipe','Water pipework','تمديدات المياه','Are process-water pipes and fittings suitable, corrosion-resistant and non-leaching where required?','هل تمديدات ومكونات مياه التصنيع مناسبة ومقاومة للتآكل ولا تؤثر في جودة المياه عند الحاجة؟'],
+   ['water-storage','Water storage','تخزين المياه','If water is stored, is the tank and distribution arrangement suitable to protect water quality?','إذا كانت المياه مخزنة، هل الخزان وترتيب التوزيع مناسبان لحماية جودة المياه؟']
+  ]],
+  ['HVAC, Ventilation & Air','التكييف والتهوية والهواء',[
+   ['ventilation','Ventilation adequacy','كفاءة التهوية','Is ventilation adequate to remove steam, heat, odours and excess condensation?','هل التهوية كافية لإزالة البخار والحرارة والروائح والتكاثف الزائد؟'],
+   ['air-direction','Airflow direction','اتجاه حركة الهواء','Does airflow avoid moving contaminants from dirty areas toward cleaner areas?','هل اتجاه الهواء يمنع انتقال الملوثات من المناطق المتسخة إلى المناطق الأنظف؟'],
+   ['hvac-filtration','HVAC filtration','فلترة نظام HVAC','Are HVAC filtration and air-distribution arrangements suitable for the process risk?','هل فلترة وتوزيع الهواء في نظام HVAC مناسبان لمخاطر العملية؟'],
+   ['compressed-air','Compressed-air piping','تمديدات الهواء المضغوط','Where compressed air contacts product or critical surfaces, are piping, filtration and air quality suitable?','عندما يلامس الهواء المضغوط المنتج أو الأسطح الحرجة، هل التمديدات والفلترة وجودة الهواء مناسبة؟']
+  ]]
+ ]},
+ cosmetics:{en:'Cosmetics & Personal Care Manufacturing',ar:'تصنيع مستحضرات التجميل والعناية الشخصية',groups:[
+  ['Facility & Hygienic Surfaces','المنشأة والأسطح الصحية',[
+   ['layout','Process zoning','تقسيم مناطق العملية','Are receiving, weighing, preparation, manufacturing, filling and packaging areas logically arranged?','هل مناطق الاستلام والوزن والتحضير والتصنيع والتعبئة والتغليف مرتبة منطقيًا؟'],
+   ['floor','Floor finish','تشطيب الأرضيات','Are production floors smooth, non-absorbent, durable and easy to clean?','هل أرضيات الإنتاج ملساء وغير ماصة ومتينة وسهلة التنظيف؟'],
+   ['walls','Wall finish','تشطيب الجدران','Are walls smooth, sealed, washable and resistant to the cleaning regime?','هل الجدران ملساء ومغلقة وقابلة للغسل ومقاومة لعمليات التنظيف؟'],
+   ['ceiling','Ceiling finish','تشطيب الأسقف','Are ceilings cleanable and designed to reduce dust, shedding and condensation?','هل الأسقف سهلة التنظيف ومصممة لتقليل الغبار والتساقط والتكاثف؟']
+  ]],
+  ['Drainage & Water','الصرف والمياه',[
+   ['drain-material','Drain material','مادة المصارف','What is the material of floor drains and channels in wet production areas?','ما مادة تصنيع المصارف والقنوات الأرضية في مناطق الإنتاج الرطبة؟'],
+   ['drain-design','Drain design','تصميم الصرف','Are wet-area drains accessible, cleanable and arranged to avoid standing water?','هل مصارف المناطق الرطبة سهلة الوصول والتنظيف ومصممة لمنع تجمع المياه؟'],
+   ['water-quality','Water quality / filtration','جودة المياه / الفلترة','Is water quality appropriate for the intended cosmetic manufacturing use, with treatment or filtration where required?','هل جودة المياه مناسبة لتصنيع مستحضرات التجميل مع وجود معالجة أو فلترة عند حاجة العملية؟'],
+   ['water-piping','Water distribution pipework','تمديدات توزيع المياه','Are water pipes and fittings suitable and corrosion-resistant for the required water quality?','هل تمديدات ومكونات المياه مناسبة ومقاومة للتآكل وفق جودة المياه المطلوبة؟']
+  ]],
+  ['HVAC & Compressed Air','HVAC والهواء المضغوط',[
+   ['hvac','HVAC conditions','ظروف HVAC','Can HVAC maintain the temperature, humidity, filtration and ventilation required for the process?','هل يستطيع نظام HVAC الحفاظ على الحرارة والرطوبة والترشيح والتهوية المطلوبة للعملية؟'],
+   ['airflow','Airflow direction','اتجاه الهواء','Is airflow arranged to reduce movement of contamination from less-clean to cleaner areas?','هل حركة الهواء مصممة لتقليل انتقال التلوث من المناطق الأقل نظافة إلى الأنظف؟'],
+   ['compressed-air','Compressed air','الهواء المضغوط','Where compressed air contacts product or product-contact surfaces, is suitable filtration and air quality provided?','عندما يلامس الهواء المضغوط المنتج أو الأسطح الملامسة للمنتج، هل تتوفر الفلترة وجودة الهواء المناسبة؟'],
+   ['compressed-pipe','Compressed-air piping','تمديدات الهواء المضغوط','Are compressed-air lines made from suitable hygienic, corrosion-resistant material?','هل تمديدات الهواء المضغوط مصنوعة من مواد صحية ومقاومة للتآكل؟']
+  ]],
+  ['Doors, Lighting & Services','الأبواب والإنارة والخدمات',[
+   ['doors','Production doors','أبواب الإنتاج','Are doors smooth, sealed, easy to clean and suitable for hygienic zoning?','هل الأبواب ملساء ومحكمة وسهلة التنظيف ومناسبة لتقسيم المناطق الصحية؟'],
+   ['lighting','Lighting protection','حماية الإنارة','Are light fittings protected and suitable for production and cleaning areas?','هل وحدات الإنارة محمية ومناسبة لمناطق الإنتاج والتنظيف؟'],
+   ['maintenance','Maintenance access','الوصول للصيانة','Can HVAC, electrical and utility components be maintained without compromising hygienic areas?','هل يمكن صيانة HVAC والكهرباء والخدمات دون الإخلال بالمناطق الصحية؟']
+  ]]
+ ]},
+ pharma:{en:'Pharmaceutical / Medical Manufacturing',ar:'التصنيع الدوائي والطبي',groups:[
+  ['Premises & Zoning','المنشأة وتقسيم المناطق',[
+   ['zoning','Controlled zoning','تقسيم المناطق المنضبطة','Are personnel, material and product flows arranged to minimize mix-ups and cross-contamination?','هل مسارات العاملين والمواد والمنتجات منظمة لتقليل الخلط والتلوث المتبادل؟'],
+   ['airlocks','Airlocks / transitions','مناطق الانتقال والـ Airlocks','Where required, are airlocks, change areas or controlled transitions provided between different zones?','عند الحاجة، هل توجد مناطق انتقال أو Airlocks أو مناطق تغيير مناسبة بين المناطق المختلفة؟'],
+   ['surfaces','Cleanable surfaces','الأسطح القابلة للتنظيف','Are exposed surfaces smooth, sealed, durable and easy to clean without inaccessible gaps?','هل الأسطح المكشوفة ملساء ومغلقة ومتينة وسهلة التنظيف دون فراغات يصعب الوصول إليها؟']
+  ]],
+  ['Floors, Walls, Ceilings & Drains','الأرضيات والجدران والأسقف والمصارف',[
+   ['floor','Floor finish','تشطيب الأرضيات','Is the floor finish seamless or otherwise suitable, non-shedding and compatible with cleaning and disinfection?','هل تشطيب الأرضيات متماسك ومناسب وغير متساقط ومتوافق مع التنظيف والتطهير؟'],
+   ['walls-ceiling','Walls and ceilings','الجدران والأسقف','Are walls and ceilings smooth, sealed and suitable for controlled manufacturing?','هل الجدران والأسقف ملساء ومغلقة ومناسبة للتصنيع المنضبط؟'],
+   ['drain-material','Drain material','مادة المصارف','Where drains are permitted, are they corrosion-resistant, cleanable and suitable for the controlled area?','حيث يسمح بوجود المصارف، هل هي مقاومة للتآكل وقابلة للتنظيف ومناسبة للمنطقة المنضبطة؟'],
+   ['drain-design','Drain hygienic design','التصميم الصحي للمصارف','Where drains are present, do they prevent backflow/contamination and allow cleaning and maintenance?','عند وجود المصارف، هل تمنع الارتداد والتلوث وتسمح بالتنظيف والصيانة؟']
+  ]],
+  ['HVAC & Clean Air','HVAC والهواء النظيف',[
+   ['hvac','HVAC design','تصميم HVAC','Is HVAC designed for the required temperature, humidity, filtration and air-change conditions?','هل نظام HVAC مصمم لتحقيق درجات الحرارة والرطوبة والترشيح ومعدلات تبديل الهواء المطلوبة؟'],
+   ['pressure','Pressure cascade','فروق الضغط','Where required, are pressure differentials arranged to maintain the intended pressure cascade?','عند الحاجة، هل فروق الضغط مرتبة للحفاظ على تدرج الضغط المطلوب؟'],
+   ['air-filtration','Air filtration','فلترة الهواء','Are filtration stages appropriate to the required cleanliness and contamination-control strategy?','هل مراحل فلترة الهواء مناسبة لمستوى النظافة واستراتيجية التحكم بالتلوث؟'],
+   ['air-direction','Airflow direction','اتجاه حركة الهواء','Does airflow prevent less-clean air from entering cleaner areas?','هل اتجاه الهواء يمنع دخول الهواء الأقل نظافة إلى المناطق الأنظف؟']
+  ]],
+  ['Water Systems','أنظمة المياه',[
+   ['water-grade','Water grade / use','درجة ونوع مياه الاستخدام','Is the required water grade identified for each manufacturing use and point of use?','هل تم تحديد درجة ونوع المياه المطلوبة لكل استخدام ونقطة استخدام؟'],
+   ['water-treatment','Water treatment / filtration','معالجة وفلترة المياه','Where purified/process water is required, is an appropriate treatment system provided?','عندما تتطلب العملية مياهًا منقاة أو معالجة، هل يوجد نظام معالجة مناسب؟'],
+   ['water-pipe','Water distribution pipework','تمديدات توزيع المياه','Are pipes, valves, fittings and seals suitable, non-leaching and corrosion-resistant for the required water grade?','هل الأنابيب والصمامات والوصلات والأختام مناسبة وغير مطلقة للمواد ومقاومة للتآكل وفق درجة المياه المطلوبة؟'],
+   ['water-loop','Water storage / distribution','تخزين وتوزيع المياه','Where purified water is stored/distributed, is the arrangement suitable to protect quality?','عند تخزين وتوزيع المياه المنقاة، هل الترتيب مناسب للحفاظ على الجودة؟']
+  ]],
+  ['Compressed Air, Utilities & Lighting','الهواء المضغوط والخدمات والإنارة',[
+   ['compressed-air','Compressed air quality','جودة الهواء المضغوط','Where compressed air contacts product or critical surfaces, is suitable filtration and contamination control provided?','عندما يلامس الهواء المضغوط المنتج أو الأسطح الحرجة، هل تتوفر فلترة مناسبة وتحكم بالتلوث؟'],
+   ['compressed-pipe','Compressed-air piping','تمديدات الهواء المضغوط','Are compressed-air lines made from suitable hygienic, corrosion-resistant material?','هل تمديدات الهواء المضغوط مصنوعة من مواد صحية ومقاومة للتآكل؟'],
+   ['service-access','Service access','الوصول للخدمات','Are HVAC, electrical, water and utility components accessible for maintenance without compromising controlled areas?','هل مكونات HVAC والكهرباء والمياه والخدمات قابلة للصيانة دون الإخلال بالمناطق المنضبطة؟'],
+   ['lighting','Controlled-area lighting','إنارة المناطق المنضبطة','Are light fittings protected, cleanable and suitable for the controlled environment?','هل وحدات الإنارة محمية وسهلة التنظيف ومناسبة للبيئة المنضبطة؟']
+  ]]
+ ]},
+ industrial:{en:'General Industrial Manufacturing',ar:'التصنيع الصناعي العام',groups:[
+  ['Facility Layout & Surfaces','تخطيط المنشأة والأسطح',[
+   ['layout','Production workflow','مسار الإنتاج','Does the layout support a controlled and logical flow of people, materials and products?','هل تخطيط المنشأة يدعم مسارًا منظمًا ومنضبطًا للعاملين والمواد والمنتجات؟'],
+   ['floor','Industrial floor','الأرضية الصناعية','Is the floor suitable for the process, loads, cleaning requirements and environmental conditions?','هل الأرضية مناسبة لطبيعة التشغيل والأحمال ومتطلبات التنظيف والظروف البيئية؟'],
+   ['walls','Walls and partitions','الجدران والفواصل','Are walls and partitions durable and suitable for the operating environment?','هل الجدران والفواصل متينة ومناسبة لبيئة التشغيل؟'],
+   ['ceiling','Ceilings','الأسقف','Are ceilings suitable for the process and designed to control dust and condensation?','هل الأسقف مناسبة لطبيعة التشغيل ومصممة للحد من الغبار والتكاثف؟']
+  ]],
+  ['Drainage & Water','الصرف والمياه',[
+   ['drain-material','Drain material','مادة المصارف','Where wet processes exist, what is the material of floor drains and channels?','عند وجود عمليات رطبة، ما مادة تصنيع المصارف والقنوات الأرضية؟'],
+   ['drain-design','Drain design','تصميم الصرف','Are drains arranged to prevent standing water and allow cleaning and maintenance?','هل المصارف مرتبة لمنع تجمع المياه والسماح بالتنظيف والصيانة؟'],
+   ['water','Process water','مياه التشغيل','Is process water suitable for the intended use, with treatment/filtration where required?','هل مياه التشغيل مناسبة للاستخدام المقصود مع توفير المعالجة أو الفلترة عند الحاجة؟'],
+   ['water-pipes','Water pipework','تمديدات المياه','Are water pipes and fittings suitable and protected against corrosion or contamination?','هل تمديدات ومكونات المياه مناسبة ومحمية من التآكل أو التلوث؟']
+  ]],
+  ['Ventilation & Air Systems','التهوية وأنظمة الهواء',[
+   ['ventilation','Process ventilation','تهوية العملية','Are heat, dust, fumes, vapour and odours adequately extracted or controlled?','هل يتم شفط أو التحكم بالحرارة والغبار والأبخرة والبخار والروائح بشكل كافٍ؟'],
+   ['air-direction','Airflow direction','اتجاه الهواء','Where hygiene zoning is required, does airflow avoid moving contaminants from dirty to cleaner areas?','حيث يتطلب تقسيمًا صحيًا، هل اتجاه الهواء يمنع انتقال الملوثات من المناطق المتسخة إلى الأنظف؟'],
+   ['compressed-air','Compressed air','الهواء المضغوط','Where compressed air is used in the process, is treatment/filtration appropriate to its intended use?','عند استخدام الهواء المضغوط في العملية، هل المعالجة والفلترة مناسبة للاستخدام المقصود؟'],
+   ['compressed-pipe','Compressed-air piping','تمديدات الهواء المضغوط','Are compressed-air lines made from suitable corrosion-resistant material and accessible for inspection?','هل تمديدات الهواء المضغوط مصنوعة من مواد مناسبة ومقاومة للتآكل وقابلة للفحص؟']
+  ]],
+  ['Electrical, Lighting & Maintenance','الكهرباء والإنارة والصيانة',[
+   ['electrical','Electrical installation','التمديدات الكهربائية','Are panels, cables and service points protected, accessible for maintenance and suitable for the environment?','هل اللوحات والكابلات ونقاط الكهرباء محمية وقابلة للصيانة ومناسبة لبيئة التشغيل؟'],
+   ['lighting','Protected lighting','الإنارة المحمية','Are light fittings suitable for the environment and protected where breakage could affect the process?','هل وحدات الإنارة مناسبة للبيئة ومحمية حيث يمكن أن يؤثر الكسر على العملية؟'],
+   ['maintenance','Maintenance access','الوصول للصيانة','Are maintenance routes and service access arranged to avoid unnecessary contamination or safety risks?','هل مسارات الصيانة والوصول للخدمات منظمة لتجنب مخاطر التلوث أو السلامة غير الضرورية؟']
+  ]]
+ ]}
+};
+const LABELS={ar:{yes:'نعم — مستوفى',partial:'مستوفى جزئيًا',no:'غير مستوفى',unknown:'غير معروف — يحتاج تحقق',na:'غير منطبق',other:'أخرى'},en:{yes:'Yes — compliant',partial:'Partially compliant',no:'Not compliant',unknown:'Unknown — verify',na:'Not applicable',other:'Other'}};
+const WEIGHTS={yes:1,partial:.5,no:0,unknown:null,na:null,other:null};
+let lang=document.documentElement.lang==='en'?'en':'ar',active=[];
+const $=id=>document.getElementById(id);
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+function setLanguage(next){lang=next==='en'?'en':'ar';document.documentElement.lang=lang;document.documentElement.dir=lang==='ar'?'rtl':'ltr';document.body.classList.toggle('en',lang==='en');document.body.classList.toggle('ar',lang==='ar');renderQuestions();syncStatic();}
+window.toggleAssessmentLanguage=function(){setLanguage(lang==='ar'?'en':'ar');const b=$('langBtn');if(b)b.textContent=lang==='ar'?'EN':'AR';};
+function currentFacility(){return FACILITY_TYPES[$('sector')?.value||'food'];}
+function facilityOptions(){const s=$('sector');if(!s)return;const old=s.value||'food';s.innerHTML=Object.entries(FACILITY_TYPES).map(([k,d])=>`<option value="${k}">${esc(lang==='ar'?d.ar:d.en)}</option>`).join('');if(FACILITY_TYPES[old])s.value=old;}
+function optionsFor(q){const base=[{v:'yes',ar:'نعم — مستوفى',en:'Yes — compliant'},{v:'partial',ar:'مستوفى جزئيًا',en:'Partially compliant'},{v:'no',ar:'غير مستوفى',en:'Not compliant'},{v:'unknown',ar:'غير معروف — يحتاج تحقق',en:'Unknown — verify'},{v:'na',ar:'غير منطبق',en:'Not applicable'},{v:'other',ar:'أخرى',en:'Other'}];
+ if(q[0]==='drain-material'){return [{v:'ss304',ar:'ستانلس ستيل 304',en:'Stainless steel 304'},{v:'ss316',ar:'ستانلس ستيل 316/316L',en:'Stainless steel 316/316L'},{v:'corrosion',ar:'مادة صحية أخرى مقاومة للتآكل',en:'Other corrosion-resistant hygienic material'},...base.slice(2)];}
+ if(q[0]==='compressed-pipe'||q[0]==='water-pipe'||q[0]==='water-pipes')return [...base];
+ return base;}
+function renderQuestions(){const d=currentFacility();active=[];const box=$('questions');if(!box)return;box.innerHTML='';d.groups.forEach((g,gi)=>{const section=document.createElement('section');section.className='assessment-group';const h=document.createElement('h3');h.textContent=lang==='ar'?g[1]:g[0];section.appendChild(h);g[2].forEach((q,qi)=>{const id=`q_${gi}_${qi}`;const opts=optionsFor(q);active.push({id,key:q[0],en:q[1],ar:q[2],qEn:q[3],qAr:q[4]});const article=document.createElement('article');article.className='assessment-question';article.dataset.id=id;article.innerHTML=`<div class="q-head"><span>${String(active.length).padStart(2,'0')}</span><div><h4>${esc(lang==='ar'?q[2]:q[1])}</h4><p>${esc(lang==='ar'?q[4]:q[3])}</p></div></div><div class="answers">${opts.map(o=>`<label><input type="radio" name="${id}" value="${o.v}"><span>${esc(lang==='ar'?o.ar:o.en)}</span></label>`).join('')}</div><div class="other-wrap" hidden><label>${lang==='ar'?'تفاصيل أخرى':'Additional details'}<textarea data-other="${id}" rows="2" placeholder="${lang==='ar'?'اكتب الحالة الفعلية أو المادة أو المواصفة الموجودة في المنشأة':'Describe the actual condition, material or specification'}"></textarea></label></div>`;section.appendChild(article);article.querySelectorAll('input').forEach(inp=>inp.addEventListener('change',()=>{article.querySelector('.other-wrap').hidden=inp.value!=='other'}));});box.appendChild(section);});const p=$('progress-text');if(p)p.textContent=`${active.length} ${lang==='ar'?'سؤالًا':'questions'}`;}
+function syncStatic(){const ar=lang==='ar';const set=(sel,txt)=>{const e=document.querySelector(sel);if(e)e.textContent=txt;};set('.assessment-nav a[href="index.html"]',ar?'العودة للموقع':'Back to website');set('.intro .label',ar?'الحلول الاحترافية · تقييم مطابقة المنشأة لمتطلبات التصنيع الجيد (GMP)':'Professional Solutions · GMP Facility Compliance Assessment');set('.intro h1',ar?'نموذج تقييم مطابقة المنشأة لمتطلبات التصنيع الجيد (GMP)':'GMP Facility Compliance Assessment');set('.intro>p',ar?'نموذج تقييم مطابقة منشأتك لمتطلبات التصنيع الجيد (GMP).':'Assess your facility against Good Manufacturing Practice (GMP) requirements.');set('.notice',ar?'هذا تقييم فني مبدئي لجوانب التجهيز والبنية التحتية التي ترتبط بنطاق خدمات Professional Solutions، وليس شهادة مطابقة أو اعتمادًا رقابيًا.':'This is a preliminary technical assessment of physical fit-out and infrastructure aspects within the scope of Professional Solutions. It is not a compliance certificate or regulatory accreditation.');const ls=document.querySelectorAll('.settings>label');if(ls[0])ls[0].childNodes[0].nodeValue=(ar?'نوع المنشأة':'Facility type')+' ';if(ls[1])ls[1].childNodes[0].nodeValue=(ar?'طبيعة التشغيل':'Operating conditions')+' ';const p=$('process');if(p){const vals={dry:ar?'تشغيل جاف':'Dry operation',wet:ar?'تشغيل رطب أو غسيل بالماء':'Wet operation or water washing',cold:ar?'تشغيل أو تخزين مبرد':'Cold operation or storage',both:ar?'تشغيل رطب وتبريد':'Wet operation and cooling'};Array.from(p.options).forEach(o=>o.textContent=vals[o.value]||o.textContent);}set('#questionnaire .hint',ar?'اختر الحالة الفعلية لكل بند. «غير معروف» لا يعتبر استيفاءً ويظهر ضمن أولويات التحقق. عند اختيار «أخرى» اكتب وصف الحالة الفعلية.':'Select the actual condition for each item. “Unknown” is not considered compliant and will appear among verification priorities. If you select “Other”, describe the actual condition.');set('#assessment-form .action',ar?'عرض النتيجة':'View results');set('#result-title',ar?'نتيجة تقييم جاهزية المنشأة':'Facility Readiness Assessment Result');set('#result>h3',ar?'أولويات التحسين والتحقق':'Improvement & Verification Priorities');set('#contact-result',ar?'طلب مراجعة فنية عبر واتساب':'Request Technical Review via WhatsApp');set('#print-result',ar?'طباعة النتيجة':'Print result');set('#edit-result',ar?'تعديل الإجابات':'Edit answers');set('#result>.hint',ar?'لا تُرسل الإجابات تلقائيًا إلى خادم. يمكنك مراجعة الملخص قبل إرساله عبر واتساب.':'Your answers are not sent automatically to a server. Review the summary before sharing it via WhatsApp.');const d=document.querySelector('details.panel');if(d){set('details.panel summary',ar?'منهجية وحدود التقييم':'Methodology & Limits');const ps=d.querySelectorAll('p');if(ps[0])ps[0].textContent=ar?'يعتمد النموذج على نوع المنشأة وطبيعة التشغيل ويقيّم فقط جوانب التجهيز التي ترتبط بخدمات Professional Solutions. النتيجة مؤشر أولي وليست شهادة مطابقة أو اعتمادًا رسميًا.':'The model uses facility type and operating conditions and evaluates only physical fit-out aspects related to Professional Solutions. The result is an initial indicator, not a compliance certificate or official accreditation.';if(ps[1])ps[1].textContent=ar?'يجب مراجعة أحدث متطلبات الجهة المختصة والتحقق الميداني قبل التصميم النهائي أو التنفيذ.':'The latest requirements of the competent authority and site conditions should be verified before final design or execution.';}set('.assessment-footer',ar?'الحلول الاحترافية · الأردن · +962 790 390 555 · info@professionalsolutionsjo.com':'Professional Solutions · Jordan · +962 790 390 555 · info@professionalsolutionsjo.com');}
+function calculate(){let points=0,max=0;const results=active.map(q=>{const e=document.querySelector(`input[name="${q.id}"]:checked`);const val=e?e.value:'unknown';if(WEIGHTS[val]!=null){points+=WEIGHTS[val];max++;}const other=val==='other'?(document.querySelector(`[data-other="${q.id}"]`)?.value||'').trim():'';return {...q,val,other};});return{results,score:max?Math.round(points/max*100):0};}
+function makeReport(){const c=calculate(),ar=lang==='ar';const gaps=c.results.filter(x=>['no','partial','unknown'].includes(x.val));const other=c.results.filter(x=>x.val==='other');const priority=v=>v==='no'?(ar?'أولوية عالية':'High priority'):v==='partial'?(ar?'يحتاج تحسين':'Needs improvement'):(ar?'يحتاج تحقق ميداني':'Needs field verification');let html=`<div class="report-summary"><div><strong>${c.score}%</strong><span>${ar?'مؤشر أولي حسب الإجابات':'Preliminary indicator based on answers'}</span></div><div><strong>${gaps.length}</strong><span>${ar?'نقاط تحتاج مراجعة':'Items requiring review'}</span></div></div><div class="report-intro"><p>${ar?'هذا تقرير أولي مبني على المعلومات المدخلة لتحديد أولويات التجهيز والتحسين المادي. لا يمثل شهادة مطابقة أو اعتمادًا رسميًا.':'This preliminary report uses the entered information to identify physical facility improvement priorities. It is not a compliance certificate or official accreditation.'}</p></div><div class="report-list"><h3>${ar?'المتطلبات والأولويات':'Requirements & priorities'}</h3>`;if(!gaps.length)html+=`<p>${ar?'لم تظهر فجوات واضحة من الإجابات المدخلة. يوصى بالتحقق الميداني قبل اعتبار المنشأة جاهزة.':'No clear gaps were identified from the entered answers. Site verification is recommended before considering the facility ready.'}</p>`;gaps.forEach(r=>{const title=ar?r.ar:r.en;const condition=r.val==='no'?(ar?'غير مستوفى':'Not compliant'):r.val==='partial'?(ar?'مستوفى جزئيًا':'Partially compliant'):(ar?'غير معروف — يحتاج تحقق':'Unknown — verify');html+=`<article><div><b>${esc(title)}</b></div><strong>${esc(priority(r.val))}</strong><p>${ar?'الحالة المدخلة: ':'Entered condition: '}${esc(condition)}. ${ar?'تحتاج هذه النقطة إلى مراجعة وتجهيز يتناسب مع طبيعة النشاط والمتطلبات المطبقة.':'Review and upgrade this item according to the activity and applicable requirements.'}</p></article>`});other.forEach(r=>{if(r.other)html+=`<article><div><b>${esc(ar?r.ar:r.en)}</b><small>${ar?'تفاصيل العميل':'Client details'}</small></div><p>${esc(r.other)}</p></article>`});html+=`</div><div class="report-next"><h3>${ar?'الخطوة التالية':'Next step'}</h3><p>${ar?'يمكن استخدام التقرير لتحديد أولويات تجهيز المنشأة قبل التصميم أو التنفيذ.':'Use this report to prioritize facility improvements before design or execution.'}</p></div>`;const result=$('result');if(result){result.innerHTML=html;result.hidden=false;result.scrollIntoView({behavior:'smooth',block:'start'});}}
+function init(){facilityOptions();const s=$('sector');if(s)s.addEventListener('change',renderQuestions);renderQuestions();syncStatic();const form=$('assessment-form');if(form)form.addEventListener('submit',e=>{e.preventDefault();makeReport();});const print=$('print-result');if(print)print.addEventListener('click',()=>window.print());const edit=$('edit-result');if(edit)edit.addEventListener('click',()=>{$('result').hidden=true;document.getElementById('questions')?.scrollIntoView({behavior:'smooth'});});}
+document.addEventListener('DOMContentLoaded',init);
+})();
