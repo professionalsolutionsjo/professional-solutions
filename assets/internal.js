@@ -5,7 +5,7 @@ const cleanText=v=>(v||'').replace('أس surfaces','أسطح');
 function applyLanguage(){
   document.querySelectorAll('[data-en]').forEach(el=>{
     const v=el.getAttribute(currentLanguage==='en'?'data-en':'data-ar');
-    if(v!==null && el.innerHTML!==cleanText(v)) el.innerHTML=cleanText(v);
+    if(v!==null) el.textContent=cleanText(v);
   });
   document.documentElement.lang=currentLanguage;
   document.documentElement.dir=currentLanguage==='ar'?'rtl':'ltr';
