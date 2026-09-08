@@ -1,11 +1,6 @@
 @import url('internal-base.css');
 @import url('phone-direction-fix.css?v=20260901-2');
+@import url('service-overrides.css?v=20260908-1');
 
-/* Clean gallery presentation: images only */
-.gallery-section .section-head > p{
-  display:none !important;
-}
-
-.shot .caption{
-  display:none !important;
-}
+.gallery-section .section-head > p{display:none !important}
+.shot .caption{display:none !important}
