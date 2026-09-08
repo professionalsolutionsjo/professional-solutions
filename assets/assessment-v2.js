@@ -1,1 +1,1 @@
-/* Restoring the prior assessment implementation is required before applying the language-only fix. */
+/* This placeholder will be replaced with the exact prior committed file. */
