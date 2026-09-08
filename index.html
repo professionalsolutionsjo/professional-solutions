@@ -22,7 +22,7 @@
   </ul>
 </header>
 <section class="hero">
-  <video class="hero-video" autoplay muted loop playsinline preload="auto" poster="images/hero.jpg" aria-hidden="true"><source src="videos/hero-video.mp4" type="video/mp4"></video>
+  <video class="hero-video" autoplay muted loop playsinline webkit-playsinline preload="auto" poster="images/hero.jpg" aria-hidden="true"><source src="videos/hero-video.mp4" type="video/mp4"></video>
   <div class="hero-content"><div class="hero-copy">
     <div class="eyebrow" data-en="PROFESSIONAL SOLUTIONS • JORDAN" data-ar="PROFESSIONAL SOLUTIONS • الأردن">PROFESSIONAL SOLUTIONS • JORDAN</div>
     <h1 data-en="Smart Luxury" data-ar="Smart Luxury">Smart Luxury</h1>
@@ -62,4 +62,21 @@
 <footer class="footer"><div><strong>PROFESSIONAL SOLUTIONS</strong><br>SMART LUXURY<br>+962 79 039 0555<br>info@professionalsolutionsjo.com</div><div>© <span data-year></span> Professional Solutions</div></footer>
 <div class="floating"><a class="call" href="tel:+962790390555" aria-label="Call"><span class="float-icon">☎</span><span class="float-label" data-en="Call" data-ar="اتصال">Call</span></a><a class="wa" href="https://wa.me/962790390555" target="_blank" rel="noopener" aria-label="WhatsApp"><span class="float-icon">◉</span><span class="float-label" data-en="WhatsApp" data-ar="واتساب">WhatsApp</span></a></div>
 <script src="assets/internal.js?v=20260908-10"></script>
+<script>
+(function(){
+  var v=document.querySelector('.hero-video');
+  if(!v)return;
+  v.muted=true;
+  v.defaultMuted=true;
+  v.setAttribute('muted','');
+  v.setAttribute('playsinline','');
+  v.setAttribute('webkit-playsinline','');
+  v.removeAttribute('controls');
+  function forcePlay(){var p=v.play();if(p&&p.catch)p.catch(function(){});}
+  forcePlay();
+  v.addEventListener('loadeddata',forcePlay,{once:true});
+  v.addEventListener('canplay',forcePlay);
+  document.addEventListener('visibilitychange',function(){if(!document.hidden)forcePlay();});
+})();
+</script>
 </body></html>
