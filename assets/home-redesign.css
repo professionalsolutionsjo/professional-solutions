@@ -1,15 +1,6 @@
 /* Professional Solutions — homepage visual refinement */
 :root{--burg:#7d303b;--burg2:#642630;--cream:#f7f5f1;--ink:#111;--muted:#333;--line:#7d303b}
 body{background:#fff;color:var(--ink)}
-.smart .philosophy-label{font-size:clamp(64px,7vw,92px);letter-spacing:4px;font-weight:800;color:var(--burg);margin-bottom:22px;line-height:1}
-.smart h2{font-size:clamp(28px,2.5vw,38px);line-height:1.35;font-weight:600;margin-bottom:20px}
-.smart p{font-size:clamp(17px,1.35vw,20px);line-height:1.75;font-weight:400;max-width:980px;margin-left:auto;margin-right:auto}
+.smart .philosophy-label{font-size:clamp(70px,6.5vw,88px);letter-spacing:5px;font-weight:800;color:var(--burg);margin-bottom:26px;line-height:1.02}
 .facility-strip .label{color:var(--burg);font-size:clamp(38px,3.8vw,52px);letter-spacing:4px;font-weight:800;line-height:1.05;margin-bottom:20px}
-.floating{position:fixed;right:20px;bottom:20px;z-index:900;display:flex;flex-direction:column;gap:10px}
-.floating a{box-sizing:border-box;width:132px;height:50px;border-radius:25px;display:flex;align-items:center;justify-content:flex-start;gap:9px;padding:0 16px;color:#fff;box-shadow:0 8px 22px rgba(0,0,0,.2);font-size:15px;font-weight:700;text-decoration:none;border:1px solid rgba(255,255,255,.35);white-space:nowrap;overflow:hidden;transition:transform .2s ease,box-shadow .2s ease}
-.floating a:hover{transform:translateY(-2px);box-shadow:0 10px 25px rgba(0,0,0,.24)}
-.floating .call{background:var(--burg)}
-.floating .wa{background:var(--burg2)}
-.float-icon{width:24px;height:24px;min-width:24px;display:inline-flex;align-items:center;justify-content:center;font-size:17px;line-height:1;border-radius:50%;background:rgba(255,255,255,.16)}
-.float-label{display:inline-block;line-height:1;white-space:nowrap}
-@media(max-width:700px){.smart .philosophy-label{font-size:54px;letter-spacing:2px;margin-bottom:18px}.smart h2{font-size:25px;line-height:1.4}.smart p{font-size:17px;line-height:1.7}.facility-strip .label{font-size:36px;letter-spacing:2.5px;margin-bottom:17px}.floating{right:12px;bottom:14px}.floating a{width:124px;height:46px;padding:0 13px;font-size:14px}.float-icon{width:22px;height:22px;min-width:22px;font-size:16px}}
+@media(max-width:700px){.smart .philosophy-label{font-size:52px;letter-spacing:3px;margin-bottom:19px}.facility-strip .label{font-size:36px;letter-spacing:2.5px;margin-bottom:17px}}
