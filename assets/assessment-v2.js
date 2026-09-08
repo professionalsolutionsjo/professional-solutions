@@ -1,1 +1,1 @@
-/* Recovered assessment-v2.js from the previous committed version. */
+/* Restoring the prior assessment implementation is required before applying the language-only fix. */
