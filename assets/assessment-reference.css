@@ -1,0 +1,25 @@
+/* GMP Assessment — aligned with the Smart Luxury visual system while preserving the assessment workflow */
+.assessment{background:#F4F7FA;color:#17212B}
+.assessment-nav{background:#0B121A;border-bottom:1px solid rgba(121,168,220,.18);box-shadow:0 8px 28px rgba(0,0,0,.12)}
+.assessment-nav>a:first-child{background-image:url('../logo.png?v=20260910-1');background-size:contain;background-repeat:no-repeat;background-position:left center}
+.assessment-nav a{color:#F7F9FC}
+.assessment-nav a:hover{color:#9FC3EB}
+.assessment main{max-width:1120px}
+.assessment .intro h1{color:#0B121A;font-weight:700}
+.assessment .intro .label{color:#5F8FC7}
+.assessment .notice{border-inline-start-color:#79A8DC;background:#E9F0F7;color:#334250}
+.assessment .panel, .assessment fieldset.question{border:1px solid #D8E0E8;background:#fff;box-shadow:0 8px 28px rgba(11,18,26,.045)}
+.assessment h2,.assessment h3{color:#0B121A}
+.assessment select{border-color:#B7C7D7}
+.assessment .answers label{border-color:#D8E0E8;background:#fff}
+.assessment .answers label:has(input:checked){border-color:#79A8DC;background:#E9F0F7}
+.assessment .answers input{accent-color:#5F8FC7}
+.assessment .progress progress{accent-color:#79A8DC}
+.assessment .assessment .action,.assessment button{border-color:#6D91BC}
+.assessment .action{background:#46698F;color:#fff}
+.assessment .action:hover,.assessment button:hover{background:#79A8DC;color:#0B121A}
+.assessment :focus-visible{outline-color:#79A8DC}
+.assessment .score{color:#46698F}
+.assessment .reference-result{background:#E9F0F7;border-inline-start-color:#79A8DC}
+.assessment-footer{background:#070D13;border-top-color:rgba(121,168,220,.18);color:#9AA8B5}
+@media(max-width:700px){.assessment-nav>a:first-child{background-position:left center}}
