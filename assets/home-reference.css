@@ -1,0 +1,100 @@
+/* Professional Solutions — Smart Luxury reference homepage */
+:root{
+  --navy:#0b121a;
+  --navy-2:#111b25;
+  --blue:#79a8dc;
+  --blue-2:#5f8fc7;
+  --blue-soft:#9fc3eb;
+  --white:#f7f9fc;
+  --muted:#b7c2ce;
+  --line:rgba(159,195,235,.22);
+  --panel:#121d27;
+}
+html{background:var(--navy)}
+body{background:#eef2f6;color:#17212b;font-family:Inter,Arial,Helvetica,sans-serif}
+.nav{height:92px;padding:0 6.5%;background:rgba(8,15,23,.97);border-bottom:1px solid rgba(121,168,220,.14);backdrop-filter:blur(14px);box-shadow:0 8px 30px rgba(0,0,0,.18)}
+.nav .brand{height:74px!important;max-width:390px!important;display:flex!important;align-items:center!important}
+.nav .brand img{display:block!important;width:auto!important;height:68px!important;max-width:370px!important;object-fit:contain!important}
+.navlinks{gap:28px}
+.navlinks a{color:#f1f5f9!important;font-size:14px;font-weight:500;transition:.25s}
+.navlinks a:hover,.navlinks a.active{color:var(--blue)!important}
+.navlinks a.active:after{content:"";display:block;width:64px;height:3px;margin:8px auto 0;border-radius:4px;background:var(--blue)}
+.navlinks .language{display:flex;align-items:center;gap:9px;color:#e7edf5}
+.navlinks .language>span{font-size:18px;color:#e7edf5}
+.lang{border:0!important;background:transparent!important;color:#f1f5f9!important;padding:6px 0!important;font-weight:500!important}
+
+.hero{min-height:100vh;padding-top:92px;background:#071019}
+.hero video{filter:saturate(.82) contrast(1.05) brightness(.72)}
+.hero:after{background:linear-gradient(90deg,rgba(5,11,17,.88) 0%,rgba(5,11,17,.62) 46%,rgba(5,11,17,.34) 74%,rgba(5,11,17,.58) 100%),linear-gradient(0deg,rgba(5,11,17,.52),transparent 48%)}
+.hero-content{width:min(1390px,88%);padding-top:34px;display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:70px;align-items:center}
+.hero-copy{max-width:790px}
+.eyebrow{color:var(--blue-soft);font-size:13px;letter-spacing:4px;margin-bottom:18px}
+.hero h1{font-size:clamp(54px,6vw,92px);letter-spacing:-3px;line-height:.98;font-weight:750}
+.hero h2{margin-top:8px;font-size:clamp(34px,4.1vw,62px);line-height:1.04;font-weight:700;color:var(--blue)}
+.hero p{max-width:730px;margin-top:25px;color:#e3e9f0;font-size:18px;line-height:1.75}
+.hero .hero-btn{display:inline-flex;margin-top:28px;min-height:54px;padding:0 30px;align-items:center;justify-content:center;background:var(--blue);border:1px solid var(--blue);color:#08111a;font-weight:700;border-radius:8px;box-shadow:0 10px 28px rgba(72,124,183,.28)}
+.hero .hero-btn:hover{background:#91b9e5;border-color:#91b9e5;transform:translateY(-2px)}
+.hero-signature{position:relative;align-self:center;width:100%;padding-left:30px;color:#fff;text-align:left}
+.hero-signature:before{content:"";position:absolute;left:0;top:0;bottom:0;width:1px;background:linear-gradient(transparent,var(--line),transparent)}
+.hero-signature:after{content:"INNOVATIVE DESIGN\\A Spaces that inspire\\A\\A QUALITY EXECUTION\\A Built to last\\A\\A TURNKEY SOLUTIONS\\A From concept to completion\\A\\A TRUSTED PARTNER\\A Your vision, our commitment";white-space:pre-wrap;display:block;color:#eef4fa;font-size:15px;line-height:1.65;letter-spacing:.2px}
+.hero-signature>div,.hero-signature>span{display:none}
+
+.smart{padding:96px 7%;background:#f8fafc;text-align:center}
+.smart .label{color:var(--blue-2)}
+.smart h2{max-width:1060px;color:#18232e;font-size:clamp(34px,4.2vw,58px);letter-spacing:-1.8px}
+.smart h2 span{color:var(--blue-2)}
+.smart p{max-width:900px;color:#5f6c79;font-size:18px}
+.solutions{padding:96px 7%;background:#eef2f6}
+.solutions .section-head{margin-bottom:38px}
+.solutions .label{color:var(--blue-2)}
+.solutions .title{color:#15202b}
+.grid{grid-template-columns:repeat(3,1fr);gap:18px}
+.card,.card.wide{height:380px;background:#101a24;border-radius:10px}
+.card:after{background:linear-gradient(180deg,rgba(5,10,15,.03),rgba(5,10,15,.9))}
+.card img{filter:saturate(.88)}
+.card-content{left:25px;right:25px;bottom:24px}
+.card h3{font-size:23px}
+.num{color:var(--blue-soft)}
+.why{padding:96px 7%;background:#0e1822;color:#fff}
+.why .label{color:var(--blue-soft)}
+.why-grid{grid-template-columns:repeat(4,1fr);gap:14px}
+.why-card{background:#15222d;border:1px solid rgba(159,195,235,.10);border-top:2px solid rgba(121,168,220,.35);min-height:205px;border-radius:6px}
+.why-card:hover{border-color:var(--blue)}
+.why-card h3{color:#fff}.why-card p{color:#b9c5d0}
+.process{background:#e7edf3;padding:96px 7%}
+.step{border-top-color:var(--blue-2)}
+.step span{color:var(--blue-2)}
+.contact{background:linear-gradient(135deg,#182b3e,#0c1824);padding:94px 7%}
+.contact .label{color:var(--blue-soft)}
+.contact h2{color:#fff}
+.contact .primary{background:var(--blue);border-color:var(--blue);color:#071019}
+.contact .outline{border-color:rgba(255,255,255,.55)}
+.footer{background:#070e15;color:#9eabb8;border-top:1px solid rgba(121,168,220,.14)}
+.footer strong{color:#fff}
+.floating .call{background:#315f91}
+
+.facility-strip{background:#0e1923!important;color:#fff!important;padding:94px 7%!important}
+.facility-strip .label{color:var(--blue-soft)!important}
+.facility-strip h2{color:#fff!important}
+.facility-strip p{color:#bdc9d4!important}
+.facility-strip .hero-btn.dark{background:var(--blue)!important;color:#08111a!important;border-color:var(--blue)!important}
+
+body.ar .hero-content{direction:rtl;grid-template-columns:minmax(0,1fr) 340px}
+body.ar .hero-copy{text-align:right}
+body.ar .hero-signature{padding-left:0;padding-right:30px;text-align:right}
+body.ar .hero-signature:before{left:auto;right:0}
+body.ar .hero h1,body.ar .hero h2{letter-spacing:0}
+
+@media(max-width:1050px){
+  .nav{padding:0 4%}.navlinks{gap:16px}.navlinks li:nth-child(2),.navlinks li:nth-child(3){display:none}
+  .hero-content{grid-template-columns:1fr 280px;gap:35px}
+  .grid{grid-template-columns:repeat(2,1fr)}
+  .why-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:760px){
+  .nav{height:76px}.nav .brand{height:60px!important;max-width:245px!important}.nav .brand img{height:55px!important;max-width:235px!important}
+  .hero{padding-top:76px}.hero-content{width:88%;grid-template-columns:1fr;gap:24px;padding-top:20px}.hero-copy{max-width:none}.hero-signature{display:none}
+  .hero h1{font-size:52px}.hero h2{font-size:35px}.hero p{font-size:16px}
+  .grid,.why-grid{grid-template-columns:1fr}
+  .smart,.solutions,.why,.process,.contact,.facility-strip{padding:74px 6%!important}
+}
