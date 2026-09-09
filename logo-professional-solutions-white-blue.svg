@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 360" role="img" aria-labelledby="title desc">
+  <title id="title">Professional Solutions — Smart Luxury</title>
+  <desc id="desc">Professional Solutions logo in white and Aegean blue.</desc>
+  <defs>
+    <style>
+      .white{fill:#FFFFFF}
+      .blue{fill:#6D91BC}
+      .stroke-blue{stroke:#6D91BC;fill:none;stroke-width:7;stroke-linecap:round}
+      .professional{font-family:Inter,Arial,sans-serif;font-size:91px;font-weight:800;letter-spacing:2px}
+      .solutions{font-family:Inter,Arial,sans-serif;font-size:61px;font-weight:700;letter-spacing:19px}
+      .tag{font-family:Inter,Arial,sans-serif;font-size:25px;font-weight:400;letter-spacing:11px}
+    </style>
+  </defs>
+  <g transform="translate(34 47)">
+    <circle class="blue" cx="72" cy="18" r="17"/>
+    <path class="white" d="M20 72h47c30 0 53 18 53 43 0 17-10 30-27 37l32 56H91l-27-48H48v48H20V72zm28 25v38h17c16 0 26-7 26-19 0-12-10-19-26-19H48z"/>
+    <path class="white" d="M91 72h31v136H91z" opacity=".96"/>
+  </g>
+  <text x="210" y="130" class="professional white">PROFESSIONAL</text>
+  <line x1="210" y1="174" x2="350" y2="174" class="stroke-blue"/>
+  <text x="375" y="205" class="solutions blue">SOLUTIONS</text>
+  <line x1="850" y1="174" x2="1130" y2="174" class="stroke-blue"/>
+  <text x="520" y="270" class="tag white">SMART LUXURY</text>
+</svg>
