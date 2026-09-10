@@ -1,26 +1,20 @@
-/* Professional Solutions — use the original uploaded logo exactly as supplied */
+/* Professional Solutions — corrected white / Aegean-blue Smart Luxury logo */
 .nav .brand{
   display:flex!important;
   align-items:center!important;
   visibility:visible!important;
   opacity:1!important;
-  width:auto!important;
+  width:390px!important;
   height:82px!important;
-  max-width:285px!important;
+  max-width:390px!important;
   position:relative!important;
+  background:url('./professional-solutions-logo.svg?v=20260910-1') left center/contain no-repeat!important;
 }
-.nav .brand img{
-  display:block!important;
-  width:auto!important;
-  height:72px!important;
-  max-width:285px!important;
-  object-fit:contain!important;
-  object-position:left center!important;
-  visibility:visible!important;
-  opacity:1!important;
-}
+.nav .brand img{display:none!important}
 .nav .brand::before{content:none!important;display:none!important}
+@media(max-width:1050px){
+  .nav .brand{width:310px!important;max-width:310px!important}
+}
 @media(max-width:700px){
-  .nav .brand{height:58px!important;max-width:205px!important}
-  .nav .brand img{height:50px!important;max-width:205px!important}
+  .nav .brand{height:58px!important;width:230px!important;max-width:230px!important;background-size:contain!important}
 }
