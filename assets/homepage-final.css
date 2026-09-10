@@ -1,0 +1,8 @@
+/* Final homepage positioning + visual hierarchy */
+.solutions .section-intro{max-width:1180px;margin:0 auto 34px;padding:28px 32px;border:1px solid rgba(121,168,220,.24);border-left:3px solid #79a8dc;background:linear-gradient(135deg,rgba(121,168,220,.08),rgba(255,255,255,.02));border-radius:6px}.solutions .section-intro h2{margin-bottom:10px}.solutions .section-intro p{max-width:900px;color:#c7d2dc!important}
+.solutions .grid .card:nth-child(2){order:-5}.solutions .grid .card:nth-child(4){order:-4}.solutions .grid .card:nth-child(5){order:-3}.solutions .grid .card:nth-child(6){order:-2}.solutions .grid .card:nth-child(7){order:-1}.solutions .grid .card:nth-child(1){order:5}
+.solutions .grid .card{min-height:230px}.solutions .grid .card-content p{color:#d2dce5!important}.solutions .grid .card-content h3{color:#fff!important}
+/* Make the integrated positioning unmistakable without overwhelming the service cards */
+.solutions .section-intro:after{content:'ONE PARTNER  •  PLAN  •  DESIGN  •  EXECUTE  •  EQUIP  •  HANDOVER';display:block;margin-top:22px;color:#9fc9ef;font-size:11px;letter-spacing:.14em;font-weight:700}
+@media(max-width:760px){.solutions .section-intro{padding:24px 20px}.solutions .section-intro:after{line-height:1.8}.solutions .grid .card{min-height:260px}}
+[dir=rtl] .solutions .section-intro{border-left:1px solid rgba(121,168,220,.24);border-right:3px solid #79a8dc;text-align:right}
