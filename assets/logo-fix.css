@@ -1,5 +1,5 @@
-/* Professional Solutions — approved white / Aegean-blue logo lockup */
-.nav .brand{display:flex!important;align-items:center!important;visibility:visible!important;opacity:1!important;width:390px!important;height:74px!important;max-width:390px!important;position:relative!important;background-image:url('./professional-solutions-logo.svg?v=20260910-3')!important;background-repeat:no-repeat!important;background-position:left center!important;background-size:contain!important}
+/* Professional Solutions — exact client-supplied logo */
+.nav .brand{display:flex!important;align-items:center!important;visibility:visible!important;opacity:1!important;width:390px!important;height:74px!important;max-width:390px!important;position:relative!important;background-image:url('./professional-solutions-logo-exact.svg?v=20260910-2')!important;background-repeat:no-repeat!important;background-position:left center!important;background-size:contain!important}
 .nav .brand img{display:none!important}
 .nav .brand::before{content:none!important;display:none!important}
 @media(max-width:760px){.nav .brand{width:245px!important;height:60px!important;max-width:245px!important}.nav .brand img{display:none!important}}
