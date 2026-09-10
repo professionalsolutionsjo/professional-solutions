@@ -1,0 +1,31 @@
+/* English homepage hero: final cache-busted override */
+html[lang="en"] .hero .hero-btn,
+html[lang="en"] .hero .hero-actions,
+html[lang="en"] .hero .video-link,
+body:not(.ar) .hero .hero-btn,
+body:not(.ar) .hero .hero-actions,
+body:not(.ar) .hero .video-link {
+  display: none !important;
+}
+
+html[lang="en"] .hero video.hero-video,
+body:not(.ar) .hero video.hero-video {
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+html[lang="en"] .nav .brand,
+body:not(.ar) .nav .brand {
+  background: transparent !important;
+  background-image: none !important;
+}
+
+html[lang="en"] .nav .brand::before,
+html[lang="en"] .nav .brand::after,
+body:not(.ar) .nav .brand::before,
+body:not(.ar) .nav .brand::after {
+  content: none !important;
+  display: none !important;
+  background: none !important;
+}
