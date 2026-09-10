@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 @import url('assessment-reference.css?v=20260910-4');
 @import url('brand-theme.css?v=20260910-2');
+@import url('arabic-polish.css?v=20260910-1');
 
 .assessment{color:#17212b;font-family:'Inter',Arial,Helvetica,sans-serif}
 .assessment-nav{display:flex;align-items:center;justify-content:space-between;padding:14px max(5%,20px);border-bottom:1px solid var(--line);background:#0B1118;gap:20px}
