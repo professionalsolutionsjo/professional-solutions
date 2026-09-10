@@ -1,0 +1,35 @@
+/* Final accessibility/contrast pass — never allow text to disappear into its background */
+:root{--ps-navy:#0b121a;--ps-navy-2:#101c27;--ps-blue:#7db8e8;--ps-blue-strong:#4f86c9;--ps-ivory:#f7f3ee;--ps-text:#17232e;--ps-muted:#5b6773}
+/* Dark surfaces */
+body{color:var(--ps-text)}
+.solutions,.why,.gmp-section,.complete-solutions-page,.industrial-card{color:#fff}
+.solutions p,.why p,.gmp-section p,.complete-solutions-page p{color:#c7d1db!important}
+.solutions h1,.solutions h2,.solutions h3,.solutions h4,.why h1,.why h2,.why h3,.gmp-section h1,.gmp-section h2,.gmp-section h3{color:#fff!important}
+.solutions .label,.why .label,.gmp-section .label{color:#a9d0f4!important}
+/* Light surfaces */
+.smart,.intro,.contact,.features,.process,.assessment{color:var(--ps-text)}
+.smart h1,.smart h2,.smart h3,.intro h1,.intro h2,.intro h3,.contact h1,.contact h2,.contact h3,.features h1,.features h2,.features h3,.process h1,.process h2,.process h3{color:#17232e!important}
+.smart p,.intro p,.contact p,.features p,.process p,.section-head p,.lead,.feature p,.card p{color:#566574!important}
+.smart .label,.intro .label,.contact .label,.process .label{color:#46698f!important}
+/* Cards */
+.card-content h3,.card-content a{color:#fff!important;text-shadow:0 2px 8px rgba(0,0,0,.5)}
+.why-card{background:#142331!important;color:#fff!important}
+.why-card p{color:#c3ced8!important}
+.gmp-item{background:#142331!important;color:#fff!important}.gmp-item p{color:#c3ced8!important}
+/* CTA and facility strip */
+.facility-strip{background:#101e2a!important;color:#fff!important}.facility-strip h2,.facility-strip h3{color:#fff!important}.facility-strip p{color:#c7d1db!important}
+.cta{background:#46698f!important;color:#fff!important}.cta h2,.cta h3,.cta p{color:#fff!important}
+/* Buttons */
+.hero-btn.primary,.quote-btn,.contact .primary,.hero-btn.dark,.assessment .action{background:#4f86c9!important;color:#fff!important;border-color:#4f86c9!important}
+.hero-btn.primary:hover,.quote-btn:hover,.contact .primary:hover{background:#70a9dd!important;color:#07101a!important}
+.outline{color:#fff!important;border-color:#a9bfd4!important}
+/* Forms / assessment */
+.panel,.assessment-question,fieldset.question{background:#fff!important;color:#17232e!important}.panel h1,.panel h2,.panel h3,.assessment-question h1,.assessment-question h2,.assessment-question h3,fieldset.question legend{color:#17232e!important}.answers label{color:#24313d!important;background:#fff!important}.assessment select{background:#fff!important;color:#17232e!important}
+/* Service detail */
+.service-upgrade article,.spec,.technical-note{color:#17232e!important}.service-upgrade article h1,.service-upgrade article h2,.service-upgrade article h3,.spec h3{color:#17232e!important}.service-upgrade article p,.spec p,.technical-note p{color:#566574!important}
+/* Arabic headings must not inherit low-contrast muted colors */
+[dir=rtl] h1,[dir=rtl] h2,[dir=rtl] h3{color:inherit}
+/* Links remain visible */
+a{color:inherit}.solutions a,.why a,.gmp-section a,.complete-solutions-page a{color:#9fc9ef}.smart a,.intro a,.contact a,.process a{color:#46698f}
+/* Mobile: prevent compact cards from inheriting invisible text */
+@media(max-width:760px){.solutions .card-content h3{color:#fff!important}.solutions .card-content p{color:#eef3f7!important}.facility-strip p,.contact p{color:#d1dbe4!important}}
