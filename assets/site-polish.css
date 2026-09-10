@@ -5,8 +5,8 @@ body{font-weight:400;color:var(--ps-ink)}
 .nav{font-family:'Inter',Arial,Helvetica,sans-serif!important;background:#0b121a!important}
 .navlinks a,.lang{font-family:'Inter',Arial,Helvetica,sans-serif!important;color:#f7f9fc!important;font-weight:500!important}
 .navlinks a:hover,.navlinks a.active{color:var(--ps-blue)!important}.navlinks a.active:after{background:var(--ps-blue)!important}
-/* Approved logo lockup: hide the legacy logo.png everywhere this stylesheet is loaded. */
-.nav .brand{background-image:url('./professional-solutions-logo.svg?v=20260910-3')!important;background-repeat:no-repeat!important;background-position:left center!important;background-size:contain!important;width:390px!important;height:74px!important;max-width:390px!important}
+/* Approved logo supplied by the client — used without redrawing or substituting the artwork. */
+.nav .brand{background-image:url('./professional-solutions-logo-exact.svg?v=20260910-1')!important;background-repeat:no-repeat!important;background-position:left center!important;background-size:contain!important;width:390px!important;height:74px!important;max-width:390px!important}
 .nav .brand img{display:none!important}
 .hero,.hero *,.solutions,.solutions *,.smart,.smart *,.why,.why *,.process,.process *,.contact,.contact *,.facility-strip,.facility-strip *{font-family:'Inter',Arial,Helvetica,sans-serif!important}
 .hero h1{font-weight:700!important;letter-spacing:-2.5px!important;color:#f7f9fc!important}.hero h2{font-weight:700!important;color:#79a8dc!important}.hero p{font-weight:400!important;color:#e3e9f0!important}.eyebrow,.label{font-weight:600!important;color:#9fc3eb!important}
