@@ -1,0 +1,15 @@
+/* Arabic homepage hero cleanup */
+html[lang="ar"] .nav .brand,
+body.ar .nav .brand{background:none!important;background-image:none!important}
+html[lang="ar"] .nav .brand:before,
+html[lang="ar"] .nav .brand:after,
+body.ar .nav .brand:before,
+body.ar .nav .brand:after{content:none!important;display:none!important;background:none!important}
+html[lang="ar"] .hero .hero-btn,
+html[lang="ar"] .hero .hero-actions,
+html[lang="ar"] .hero .video-link,
+body.ar .hero .hero-btn,
+body.ar .hero .hero-actions,
+body.ar .hero .video-link{display:none!important}
+.hero .hero-video{display:block!important;visibility:visible!important;opacity:1!important}
+.hero .hero-video[autoplay]{pointer-events:none}
