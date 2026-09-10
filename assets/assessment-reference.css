@@ -1,25 +1,20 @@
-/* GMP Assessment — aligned with the Smart Luxury visual system while preserving the assessment workflow */
-.assessment{background:#F4F7FA;color:#17212B}
-.assessment-nav{background:#0B121A;border-bottom:1px solid rgba(121,168,220,.18);box-shadow:0 8px 28px rgba(0,0,0,.12)}
-.assessment-nav>a:first-child{background-image:url('../logo.png?v=20260910-1');background-size:contain;background-repeat:no-repeat;background-position:left center}
-.assessment-nav a{color:#F7F9FC}
-.assessment-nav a:hover{color:#9FC3EB}
-.assessment main{max-width:1120px}
-.assessment .intro h1{color:#0B121A;font-weight:700}
-.assessment .intro .label{color:#5F8FC7}
-.assessment .notice{border-inline-start-color:#79A8DC;background:#E9F0F7;color:#334250}
-.assessment .panel, .assessment fieldset.question{border:1px solid #D8E0E8;background:#fff;box-shadow:0 8px 28px rgba(11,18,26,.045)}
-.assessment h2,.assessment h3{color:#0B121A}
-.assessment select{border-color:#B7C7D7}
-.assessment .answers label{border-color:#D8E0E8;background:#fff}
-.assessment .answers label:has(input:checked){border-color:#79A8DC;background:#E9F0F7}
-.assessment .answers input{accent-color:#5F8FC7}
-.assessment .progress progress{accent-color:#79A8DC}
-.assessment .assessment .action,.assessment button{border-color:#6D91BC}
-.assessment .action{background:#46698F;color:#fff}
-.assessment .action:hover,.assessment button:hover{background:#79A8DC;color:#0B121A}
-.assessment :focus-visible{outline-color:#79A8DC}
-.assessment .score{color:#46698F}
-.assessment .reference-result{background:#E9F0F7;border-inline-start-color:#79A8DC}
-.assessment-footer{background:#070D13;border-top-color:rgba(121,168,220,.18);color:#9AA8B5}
-@media(max-width:700px){.assessment-nav>a:first-child{background-position:left center}}
+/* Professional Solutions — GMP Assessment premium visual system */
+:root{--gmp-navy:#0B121A;--gmp-navy-2:#111D29;--gmp-blue:#79A8DC;--gmp-blue-2:#5F8FC7;--gmp-soft:#EAF1F7;--gmp-white:#F8FAFC;--gmp-paper:#F4F7FA;--gmp-ink:#17212B;--gmp-muted:#687581;--gmp-line:#D8E1EA;--gmp-shadow:0 18px 55px rgba(11,18,26,.09)}
+.assessment{background:var(--gmp-paper);color:var(--gmp-ink)}
+.assessment-nav{position:sticky;top:0;z-index:1000;min-height:82px;padding:8px 6%;background:rgba(11,18,26,.96);border-bottom:1px solid rgba(121,168,220,.2);box-shadow:0 10px 30px rgba(0,0,0,.14);backdrop-filter:blur(18px)}
+.assessment-nav>a:first-child{width:245px;height:64px;background-image:url('../logo.png?v=20260910-2')!important;background-size:contain;background-repeat:no-repeat;background-position:left center}
+.assessment-nav>a:first-child img{display:none!important}
+.assessment-nav-actions{display:flex;align-items:center;gap:12px}.assessment-nav-actions a{padding:9px 14px;border:1px solid rgba(159,195,235,.55);color:#F7F9FC;border-radius:2px;transition:.25s}.assessment-nav-actions a:hover{background:var(--gmp-blue);border-color:var(--gmp-blue);color:var(--gmp-navy);text-decoration:none}
+.assessment main{max-width:1180px;margin:0 auto;padding:64px 24px 90px}
+.assessment .intro{position:relative;padding:54px 54px 48px;margin:0 0 18px;background:linear-gradient(135deg,var(--gmp-navy),var(--gmp-navy-2));color:var(--gmp-white);border-radius:4px;overflow:hidden;box-shadow:var(--gmp-shadow)}
+.assessment .intro:after{content:'GMP';position:absolute;right:5%;bottom:-32px;font-size:150px;font-weight:800;line-height:1;color:rgba(121,168,220,.055);pointer-events:none}body.ar .assessment .intro:after{right:auto;left:5%}
+.assessment .intro .label{position:relative;z-index:1;color:#9FC3EB;font-size:12px;letter-spacing:2.6px}.assessment .intro h1{position:relative;z-index:1;max-width:850px;margin-top:12px;font-size:clamp(34px,5vw,62px);line-height:1.13;letter-spacing:-1.5px;color:#fff;font-weight:700}body.ar .assessment .intro h1{letter-spacing:0;line-height:1.35}
+.assessment .notice{margin:0 0 22px;padding:23px 26px;background:#fff;border:1px solid var(--gmp-line);border-inline-start:4px solid var(--gmp-blue);box-shadow:0 8px 28px rgba(11,18,26,.045);color:#4F5D69}.assessment .notice #assessment-intro{font-size:17px;font-weight:700;color:var(--gmp-ink)}.assessment .notice #assessment-disclaimer{font-size:14px;line-height:1.85;color:var(--gmp-muted)}
+.assessment .panel,.assessment fieldset.question{border:1px solid var(--gmp-line);border-radius:3px;box-shadow:0 8px 25px rgba(11,18,26,.035)}.assessment .settings{background:#fff;padding:26px}.assessment select{border-color:#B9C9D8;border-radius:2px;min-height:52px;background:#fff}
+.assessment .progress{padding:20px 22px;background:var(--gmp-navy);color:#fff;border-radius:3px;margin-top:22px}.assessment .progress progress{accent-color:var(--gmp-blue)}.assessment .hint{padding:0 4px;color:var(--gmp-muted)}
+.assessment-group h3{color:var(--gmp-navy);font-size:22px;border-inline-start:3px solid var(--gmp-blue);padding-inline-start:12px}.assessment-question{background:#fff!important;border-color:var(--gmp-line)!important;box-shadow:0 6px 22px rgba(11,18,26,.035)}.q-head>span{color:var(--gmp-blue-2)!important}.q-head h4{color:var(--gmp-navy)}
+.answers label{background:#fff;border-color:#CBD7E2;transition:.2s}.answers label:hover{border-color:var(--gmp-blue);background:#F5F9FC}.answers label:has(input:checked){border-color:var(--gmp-blue)!important;background:var(--gmp-soft)!important;box-shadow:inset 3px 0 0 var(--gmp-blue)}body.ar .answers label:has(input:checked){box-shadow:inset -3px 0 0 var(--gmp-blue)}
+.assessment .action,.assessment button{border-radius:2px}.assessment .action{background:var(--gmp-blue-2);border-color:var(--gmp-blue-2);color:#fff;box-shadow:0 8px 20px rgba(95,143,199,.2)}.assessment .action:hover{background:var(--gmp-navy);border-color:var(--gmp-navy);text-decoration:none}.assessment form>.action{margin-top:22px;min-width:210px}
+#result{position:relative;overflow:hidden;border:1px solid #BFD0E0;background:#fff;box-shadow:var(--gmp-shadow);padding:32px}#result:before{content:'';display:block;height:5px;margin:-32px -32px 28px;background:linear-gradient(90deg,var(--gmp-blue-2),var(--gmp-blue))}#result h2{color:var(--gmp-navy);font-size:30px}#summary{margin:18px 0;padding:22px;background:var(--gmp-soft);border:1px solid #D3E0EB}#summary .score{font-size:48px;color:var(--gmp-blue-2)}#result h3{color:var(--gmp-navy)}
+.assessment details.panel{background:#fff}.assessment details summary{color:var(--gmp-navy)}.assessment-footer{background:var(--gmp-navy);border-top:1px solid rgba(121,168,220,.18);color:#AAB8C5}
+@media(max-width:700px){.assessment-nav{padding:8px 14px;min-height:68px}.assessment-nav>a:first-child{width:180px;height:50px}.assessment-nav-actions{gap:6px}.assessment-nav-actions a{padding:7px 9px;font-size:12px}.assessment main{padding:20px 12px 55px}.assessment .intro{padding:34px 22px 30px;margin-bottom:12px}.assessment .intro:after{font-size:100px;bottom:-20px}.assessment .intro h1{font-size:31px;line-height:1.25}body.ar .assessment .intro h1{font-size:29px;line-height:1.4}.assessment .notice{padding:17px 16px}.assessment .notice #assessment-intro{font-size:15px}.assessment .notice #assessment-disclaimer{font-size:13px}.assessment .settings{padding:16px 13px}.assessment .progress{padding:15px}.assessment form>.action{width:100%;margin-top:16px}#result{padding:20px 16px}#result:before{margin:-20px -16px 20px}#summary .score{font-size:40px}}
