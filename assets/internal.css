@@ -1,8 +1,3 @@
 @import url('internal-base.css');
-@import url('phone-direction-fix.css?v=20260901-2');
-@import url('service-overrides.css?v=20260908-1');
-@import url('brand-theme.css?v=20260909-1');
-@import url('internal-reference.css?v=20260910-1');
-
-.gallery-section .section-head > p{display:none !important}
-.shot .caption{display:none !important}
+@import url('internal-reference.css?v=20260910-2');
+@import url('brand-theme.css?v=20260910-2');
