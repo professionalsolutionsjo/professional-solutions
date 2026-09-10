@@ -14,7 +14,7 @@
 }
 body{background:var(--ps-paper);color:var(--ps-ink)}
 .nav{height:86px;padding:0 6%;background:rgba(11,18,26,.94);border-bottom:1px solid rgba(121,168,220,.18);backdrop-filter:blur(18px);box-shadow:0 8px 30px rgba(0,0,0,.14)}
-.nav .brand{display:flex;align-items:center;min-height:70px;width:320px;max-width:320px;background:url('./professional-solutions-logo.svg?v=20260910-1') left center/contain no-repeat}
+.nav .brand{display:flex;align-items:center;min-height:70px;width:320px;max-width:320px;background:url('./professional-solutions-logo-exact.svg?v=20260910-1') left center/contain no-repeat}
 .nav .brand img{display:none!important}
 .navlinks{gap:24px}.navlinks a{color:rgba(247,249,252,.88);font-size:13px;letter-spacing:.35px;transition:.25s}.navlinks a:hover{color:var(--ps-blue-soft)}
 .lang{border-color:var(--ps-blue);color:var(--ps-white);background:rgba(121,168,220,.08);transition:.25s}.lang:hover{background:var(--ps-blue);color:var(--ps-navy)}
