@@ -1,0 +1,22 @@
+/* Industrial Facility page — final Aegean Blue contrast correction */
+.industrial-page .industrial-intro,
+.industrial-page .industrial-solutions,
+.industrial-page .industrial-gallery,
+.industrial-page .category,
+.industrial-page .stainless-section{color:#17212B!important}
+.industrial-page .industrial-intro h1,.industrial-page .industrial-intro h2,.industrial-page .industrial-intro h3,
+.industrial-page .industrial-solutions h1,.industrial-page .industrial-solutions h2,.industrial-page .industrial-solutions h3,
+.industrial-page .industrial-gallery h1,.industrial-page .industrial-gallery h2,.industrial-page .industrial-gallery h3,
+.industrial-page .category h1,.industrial-page .category h2,.industrial-page .category h3,
+.industrial-page .stainless-section h1,.industrial-page .stainless-section h2,.industrial-page .stainless-section h3{color:#17212B!important}
+.industrial-page .industrial-intro p,.industrial-page .industrial-solutions p,.industrial-page .industrial-gallery p,
+.industrial-page .category p,.industrial-page .stainless-section p{color:#536270!important;opacity:1!important}
+.industrial-page .industrial-card{background:#fff!important;color:#17212B!important;border-top:3px solid #6D91BC!important}
+.industrial-page .industrial-card h3,.industrial-page .industrial-card .number{color:#46698F!important}
+.industrial-page .industrial-card p,.industrial-page .industrial-card li{color:#536270!important}
+.industrial-page .industrial-solutions,.industrial-page .industrial-gallery{background:#F4F7FA!important}
+.industrial-page .category:nth-of-type(even){background:#E8EFF6!important}
+.industrial-page .gmp-section{background:#0B121A!important;color:#fff!important}
+.industrial-page .gmp-section h2,.industrial-page .gmp-section h3,.industrial-page .gmp-section p{color:#fff!important}
+.industrial-page .gmp-section p{color:#C8D3DE!important}
+.industrial-page .stainless-section{background:#fff!important}
