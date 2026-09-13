@@ -1,31 +1,16 @@
-/* FINAL VISIBILITY PASS v3 — deterministic contrast */
-/* Explicit light surfaces */
+/* FINAL VISIBILITY PASS v4 — deterministic contrast */
 .intro,.features,.process,.contact,.assessment,.category,.industrial-intro,.industrial-card,.stainless-section,.service-upgrade{background-color:#fff!important;color:#17232e!important}
-.intro h1,.intro h2,.intro h3,.intro h4,.features h1,.features h2,.features h3,.features h4,.process h1,.process h2,.process h3,.contact h1,.contact h2,.contact h3,.contact h4,.assessment h1,.assessment h2,.assessment h3,.assessment h4,.category h1,.category h2,.category h3,.category h4,.industrial-intro h1,.industrial-intro h2,.industrial-intro h3,.industrial-intro h4,.industrial-card h3,.industrial-card h4,.stainless-section h1,.stainless-section h2,.stainless-section h3,.stainless-section h4,.service-upgrade h1,.service-upgrade h2,.service-upgrade h3,.service-upgrade h4{color:#17232e!important}
-.intro p,.features p,.process p,.contact p,.assessment p,.category p,.industrial-intro p,.industrial-card p,.industrial-card li,.stainless-section p,.service-upgrade p,.service-upgrade li{color:#536270!important}
-/* Explicit light cards */
-.feature,.spec,.service-upgrade-grid article{background:#f7f9fb!important;color:#17232e!important}
-.feature h3,.feature h4,.spec h3,.spec h4,.service-upgrade-grid article h3,.service-upgrade-grid article h4{color:#17232e!important}
-.feature p,.spec p,.service-upgrade-grid article p{color:#536270!important}
-.service-upgrade-head .label,.service-upgrade .label{color:#46698f!important}
-/* Dark surfaces */
-.solutions,.why,.gmp-section,.complete-solutions-page,.industrial-solutions,.gallery-section{color:#fff!important}
-.solutions h1,.solutions h2,.solutions h3,.solutions h4,.why h1,.why h2,.why h3,.why h4,.gmp-section h1,.gmp-section h2,.gmp-section h3,.gmp-section h4,.complete-solutions-page h1,.complete-solutions-page h2,.complete-solutions-page h3,.complete-solutions-page h4,.industrial-solutions h1,.industrial-solutions h2,.industrial-solutions h3,.industrial-solutions h4,.gallery-section h1,.gallery-section h2,.gallery-section h3,.gallery-section h4{color:#fff!important}
-.solutions p,.why p,.gmp-section p,.complete-solutions-page p,.industrial-solutions p,.gallery-section p{color:#c7d1db!important}
-/* Dark cards */
-.solutions .card,.why .card,.gmp-section .gmp-item,.industrial-solutions .industrial-card{color:#fff!important}
-.solutions .card-content,.solutions .card-content *,.card-content,.card-content *{color:#fff!important}
-.solutions .card-content p,.card-content p{color:#eef3f7!important}
-.gmp-section .gmp-item{background:#343235!important}
-.gmp-section .gmp-item h3{color:#fff!important}.gmp-section .gmp-item p{color:#cec9cb!important}
-/* Image captions */
-.shot .caption{color:#fff!important;text-shadow:0 1px 3px rgba(0,0,0,.7)!important}
-/* CTA/footer */
-.cta{color:#fff!important}.cta h1,.cta h2,.cta h3,.cta h4,.cta p{color:#fff!important}.footer{color:#b9c3cc!important}.footer strong{color:#fff!important}
-/* Navigation */
-.nav a,.nav button{color:#fff!important}.nav a:hover{color:#9fc9ef!important}
-/* Form controls */
+.intro h1,.intro h2,.intro h3,.intro h4,.features h1,.features h2,.features h3,.features h4,.process h1,.process h2,.process h3,.process h4,.contact h1,.contact h2,.contact h3,.contact h4,.assessment h1,.assessment h2,.assessment h3,.assessment h4,.category h1,.category h2,.category h3,.category h4,.industrial-intro h1,.industrial-intro h2,.industrial-intro h3,.industrial-intro h4,.industrial-card h3,.industrial-card h4,.stainless-section h1,.stainless-section h2,.stainless-section h3,.stainless-section h4,.service-upgrade h1,.service-upgrade h2,.service-upgrade h3,.service-upgrade h4{color:#17232e!important}
+.intro p,.features p,.process p,.process li,.contact p,.assessment p,.category p,.industrial-intro p,.industrial-card p,.industrial-card li,.stainless-section p,.service-upgrade p,.service-upgrade li{color:#536270!important;opacity:1!important}
+.feature,.spec,.service-upgrade-grid article{background:#f7f9fb!important;color:#17232e!important}.feature h3,.feature h4,.spec h3,.spec h4,.service-upgrade-grid article h3,.service-upgrade-grid article h4{color:#17232e!important}.feature p,.spec p,.service-upgrade-grid article p{color:#536270!important}.service-upgrade-head .label,.service-upgrade .label{color:#46698f!important}
+.solutions,.why,.gmp-section,.complete-solutions-page,.industrial-solutions,.gallery-section{color:#fff!important}.solutions h1,.solutions h2,.solutions h3,.solutions h4,.why h1,.why h2,.why h3,.why h4,.gmp-section h1,.gmp-section h2,.gmp-section h3,.gmp-section h4,.complete-solutions-page h1,.complete-solutions-page h2,.complete-solutions-page h3,.complete-solutions-page h4,.industrial-solutions h1,.industrial-solutions h2,.industrial-solutions h3,.industrial-solutions h4,.gallery-section h1,.gallery-section h2,.gallery-section h3,.gallery-section h4{color:#fff!important}.solutions p,.why p,.gmp-section p,.complete-solutions-page p,.industrial-solutions p,.gallery-section p{color:#c7d1db!important;opacity:1!important}
+.solutions .card,.why .card,.gmp-section .gmp-item,.industrial-solutions .industrial-card{color:#fff!important}.solutions .card-content,.solutions .card-content *,.card-content,.card-content *{color:#fff!important}.solutions .card-content p,.card-content p{color:#eef3f7!important}.gmp-section .gmp-item{background:#343235!important}.gmp-section .gmp-item h3{color:#fff!important}.gmp-section .gmp-item p{color:#cec9cb!important}.shot .caption{color:#fff!important;text-shadow:0 1px 3px rgba(0,0,0,.7)!important}
+.cta{color:#fff!important}.cta h1,.cta h2,.cta h3,.cta h4,.cta p{color:#fff!important}.footer{color:#b9c3cc!important}.footer strong{color:#fff!important}.nav a,.nav button{color:#fff!important}.nav a:hover{color:#9fc9ef!important}
 input,textarea,select{color:#17232e!important;background:#fff!important}.contact input::placeholder,.contact textarea::placeholder{color:#687783!important;opacity:1!important}
-/* RTL */
-html[dir="rtl"] .service-upgrade-grid article h3,html[dir="rtl"] .service-upgrade-grid article p{color:inherit!important}html[dir="rtl"] .service-upgrade-grid article h3{color:#17232e!important}html[dir="rtl"] .service-upgrade-grid article p{color:#536270!important}
-@media(max-width:760px){.service-upgrade-grid article{padding:22px!important}.service-upgrade-grid article h3{font-size:20px!important}.service-upgrade-grid article p{font-size:15px!important;line-height:1.8!important}}
+/* Quality + warranty commitment strip */
+.trust-strip{background:#f4f7fa!important;color:#17232e!important;border-top:1px solid #d8e0e7!important;border-bottom:1px solid #d8e0e7!important}.trust-strip .trust-item{background:#fff!important;color:#17232e!important;border:1px solid #d8e0e7!important;box-shadow:0 8px 24px rgba(23,35,46,.06)!important}.trust-strip .trust-item span{color:#46698f!important;font-weight:800!important}.trust-strip .trust-item strong{color:#17232e!important;font-weight:800!important}.trust-strip .trust-item small{color:#536270!important;opacity:1!important}
+/* Smart / philosophy */
+.smart{background:#fff!important;color:#17232e!important}.smart .label{color:#46698f!important}.smart h2{color:#17232e!important}.smart p{color:#536270!important;opacity:1!important}
+/* Prevent generic opacity from washing out light copy */
+.trust-strip *,.smart *{opacity:1!important}
+@media(max-width:760px){.service-upgrade-grid article{padding:22px!important}.service-upgrade-grid article h3{font-size:20px!important}.service-upgrade-grid article p{font-size:15px!important;line-height:1.8!important}.trust-strip .trust-item{padding:20px!important}.trust-strip .trust-item strong{font-size:18px!important}.trust-strip .trust-item small{font-size:14px!important;line-height:1.7!important}.smart p{line-height:1.8!important}}
