@@ -1,0 +1,24 @@
+/* FINAL VISIBILITY PASS — keep text readable regardless of legacy cascade */
+/* Light surfaces */
+.intro,.features,.process,.contact,.assessment,.category,.industrial-intro,.industrial-card,.stainless-section,.service-upgrade{color:#17232e!important}
+.intro h1,.intro h2,.intro h3,.intro h4,.features h1,.features h2,.features h3,.features h4,.process h1,.process h2,.process h3,.contact h1,.contact h2,.contact h3,.assessment h1,.assessment h2,.assessment h3,.category h1,.category h2,.category h3,.industrial-intro h1,.industrial-intro h2,.industrial-intro h3,.industrial-card h3,.stainless-section h1,.stainless-section h2,.stainless-section h3,.service-upgrade h1,.service-upgrade h2,.service-upgrade h3{color:#17232e!important}
+.intro p,.features p,.process p,.contact p,.assessment p,.category p,.industrial-intro p,.industrial-card p,.industrial-card li,.stainless-section p,.service-upgrade p{color:#536270!important}
+.service-upgrade-head .label,.service-upgrade .label{color:#46698f!important}
+.service-upgrade-grid article{background:#fff!important;color:#17232e!important;border:1px solid #d8e0e7!important;border-top:3px solid #7db8e8!important;padding:26px!important}
+.service-upgrade-grid article span{color:#46698f!important;font-weight:800!important}
+.service-upgrade-grid article h3{color:#17232e!important}
+.service-upgrade-grid article p{color:#536270!important}
+/* Dark surfaces */
+.solutions,.why,.gmp-section,.complete-solutions-page,.industrial-solutions,.gallery-section{color:#fff!important}
+.solutions h1,.solutions h2,.solutions h3,.solutions h4,.why h1,.why h2,.why h3,.why h4,.gmp-section h1,.gmp-section h2,.gmp-section h3,.gmp-section h4,.complete-solutions-page h1,.complete-solutions-page h2,.complete-solutions-page h3,.industrial-solutions h1,.industrial-solutions h2,.industrial-solutions h3,.gallery-section h1,.gallery-section h2,.gallery-section h3{color:#fff!important}
+.solutions p,.why p,.gmp-section p,.complete-solutions-page p,.industrial-solutions p,.gallery-section p{color:#c7d1db!important}
+/* Cards with images: readable overlay text */
+.solutions .card-content,.solutions .card-content *,.card-content,.card-content *{color:#fff!important}
+.solutions .card-content p,.card-content p{color:#eef3f7!important}
+/* CTA/footer */
+.cta{color:#fff!important}.cta h1,.cta h2,.cta h3,.cta p{color:#fff!important}.footer{color:#b9c3cc!important}.footer strong{color:#fff!important}
+/* Navigation */
+.nav a,.nav button{color:#fff!important}.nav a:hover{color:#9fc9ef!important}
+/* RTL must follow the same contrast rules */
+html[dir="rtl"] .service-upgrade-grid article h3,html[dir="rtl"] .service-upgrade-grid article p{color:inherit!important}html[dir="rtl"] .service-upgrade-grid article h3{color:#17232e!important}html[dir="rtl"] .service-upgrade-grid article p{color:#536270!important}
+@media(max-width:760px){.service-upgrade-grid article{padding:22px!important}.service-upgrade-grid article h3{font-size:20px!important}.service-upgrade-grid article p{font-size:15px!important;line-height:1.8!important}}
