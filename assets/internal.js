@@ -1,18 +1,42 @@
-const urlLanguage=new URLSearchParams(window.location.search).get('lang');
-let currentLanguage=urlLanguage==='ar'||urlLanguage==='en'?urlLanguage:(localStorage.getItem('ps-language')==='ar'?'ar':'en');
+const params=new URLSearchParams(window.location.search);
+const urlLanguage=params.get('lang');
+let currentLanguage=urlLanguage==='ar'||urlLanguage==='en'?urlLanguage:'en';
 if(urlLanguage==='ar'||urlLanguage==='en')localStorage.setItem('ps-language',urlLanguage);
 const cleanText=v=>(v||'').replace('أس surfaces','أسطح');
+
 function applyLanguage(){
   document.querySelectorAll('[data-en]').forEach(el=>{
     const v=el.getAttribute(currentLanguage==='en'?'data-en':'data-ar');
-    if(v!==null) el.textContent=cleanText(v);
+    if(v!==null)el.textContent=cleanText(v);
   });
   document.documentElement.lang=currentLanguage;
   document.documentElement.dir=currentLanguage==='ar'?'rtl':'ltr';
   document.body.classList.toggle('ar',currentLanguage==='ar');
   const b=document.getElementById('langBtn');
   if(b)b.textContent=currentLanguage==='en'?'العربية':'EN';
+  if(currentLanguage==='ar')applyArabicProcessCopy();
 }
+
+function applyArabicProcessCopy(){
+  const process=document.querySelector('.process');
+  if(!process)return;
+  const title=process.querySelector('h2');
+  if(title)title.textContent='نعمل بمنهجية واضحة تبدأ بفهم احتياجات المشروع وتنتهي بمنشأة مكتملة وجاهزة للاستخدام.';
+  const items=[
+    ['01 — نفهم','نبدأ بفهم طبيعة النشاط، احتياجات المستخدمين، متطلبات التشغيل، الأولويات والميزانية.'],
+    ['02 — نخطط','نحوّل الاحتياجات إلى مخطط عملي ونطاق عمل واضح، مع تنسيق التخصصات والخدمات المطلوبة.'],
+    ['03 — نصمم','نطوّر التصميم والخامات والتفاصيل الفنية بما يحقق الوظيفة والجودة والمظهر المتناسق.'],
+    ['04 — ننفذ','ننّفذ الأعمال وفق نطاق المشروع مع تنسيق فرق العمل ومتابعة التفاصيل لضمان جودة التنفيذ.'],
+    ['05 — نسلّم','نسلّم بيئة مكتملة ومنظمة وجاهزة للاستخدام، مع دعم الضمان وفق نطاق وشروط المشروع.']
+  ];
+  process.querySelectorAll('.feature').forEach((el,i)=>{
+    if(!items[i])return;
+    const h=el.querySelector('h3'),p=el.querySelector('p');
+    if(h)h.textContent=items[i][0];
+    if(p)p.textContent=items[i][1];
+  });
+}
+
 function withLanguage(url){
   try{
     const u=new URL(url,window.location.href);
@@ -21,24 +45,47 @@ function withLanguage(url){
     return u.pathname+u.search+u.hash;
   }catch(e){return url}
 }
+
 function syncLanguageLinks(){
   document.querySelectorAll('a[href]').forEach(a=>{
     const href=a.getAttribute('href');
     if(!href||href.startsWith('#')||href.startsWith('mailto:')||href.startsWith('tel:')||href.startsWith('javascript:'))return;
-    try{if(new URL(href,window.location.href).origin===window.location.origin)a.setAttribute('href',withLanguage(href));}catch(e){}
+    try{
+      if(new URL(href,window.location.href).origin===window.location.origin)a.setAttribute('href',withLanguage(href));
+    }catch(e){}
   });
 }
+
 function toggleLanguage(){
   currentLanguage=currentLanguage==='en'?'ar':'en';
   localStorage.setItem('ps-language',currentLanguage);
+  const u=new URL(window.location.href);
+  u.searchParams.set('lang',currentLanguage);
+  history.replaceState({},'',u.pathname+u.search+u.hash);
   applyLanguage();
   syncLanguageLinks();
 }
+
+function forceVideoAutoplay(){
+  document.querySelectorAll('video').forEach(video=>{
+    video.muted=true;
+    video.setAttribute('muted','');
+    video.setAttribute('playsinline','');
+    video.setAttribute('autoplay','');
+    const play=()=>{const p=video.play();if(p&&typeof p.catch==='function')p.catch(()=>{});};
+    if(video.readyState>=2)play();
+    video.addEventListener('loadedmetadata',play,{once:true});
+    video.addEventListener('canplay',play,{once:true});
+    document.addEventListener('visibilitychange',()=>{if(!document.hidden&&video.paused)play();});
+  });
+}
+
 function imageError(img){
   img.classList.add('missing');
   const s=img.closest('.shot');
   if(s)s.style.display='none';
 }
+
 function setupHomepageReferenceDesign(){
   const isHome=window.location.pathname.endsWith('/')||window.location.pathname.endsWith('/index.html')||window.location.pathname==='/index.html';
   if(!isHome)return;
@@ -51,34 +98,11 @@ function setupHomepageReferenceDesign(){
       '<li><a href="#projects" data-en="Projects" data-ar="المشاريع">Projects</a></li>'+
       '<li><a href="facility-assessment.html?lang=en" data-en="GMP" data-ar="GMP">GMP</a></li>'+
       '<li><a href="#contact" data-en="Contact Us" data-ar="تواصل معنا">Contact Us</a></li>'+
-      '<li class="language"><span class="globe" aria-hidden="true">◎</span><button class="lang" id="langBtn" onclick="toggleLanguage()">العربية</button><span class="chevron" aria-hidden="true">⌄</span></li>'+
+      '<li class="language"><button class="lang" id="langBtn" onclick="toggleLanguage()">العربية</button></li>'+
       '<li class="quote-item"><a class="quote-btn" href="#contact" data-en="Get a Quote" data-ar="اطلب عرض سعر">Get a Quote</a></li>';
   }
-  const copy=document.querySelector('.hero-copy');
-  if(copy){
-    copy.innerHTML=''+
-      '<div class="eyebrow" data-en="SMART LUXURY" data-ar="SMART LUXURY">SMART LUXURY</div>'+
-      '<h1 data-en="Design Today" data-ar="صمّم اليوم">Design Today</h1>'+
-      '<h2 data-en="A Better Tomorrow" data-ar="لغدٍ أفضل">A Better Tomorrow</h2>'+
-      '<p data-en="Integrated solutions in design, execution, fit-out, custom furniture, HVAC, signage and turnkey projects." data-ar="حلول متكاملة في التصميم والتنفيذ والتجهيز والأثاث المخصص والتكييف والتهوية واللوحات والمشاريع المتكاملة.">Integrated solutions in design, execution, fit-out, custom furniture, HVAC, signage and turnkey projects.</p>'+
-      '<div class="hero-actions"><a class="hero-btn primary" href="#solutions" data-en="Our Services →" data-ar="خدماتنا ←">Our Services →</a><a class="hero-btn video-link" href="#projects" data-en="Watch Video" data-ar="شاهد الفيديو"><span class="play-icon">▶</span> Watch Video</a></div>';
-  }
-  const sig=document.querySelector('.hero-signature');
-  if(sig){
-    sig.innerHTML=''+
-      '<div class="benefit"><span class="benefit-icon">▦</span><div><strong data-en="Innovative Design" data-ar="تصميم مبتكر">Innovative Design</strong><small data-en="Spaces that inspire" data-ar="مساحات تلهمك">Spaces that inspire</small></div></div>'+
-      '<div class="benefit"><span class="benefit-icon">⚙</span><div><strong data-en="Quality Execution" data-ar="تنفيذ بجودة عالية">Quality Execution</strong><small data-en="Built to last" data-ar="مصمم ليدوم">Built to last</small></div></div>'+
-      '<div class="benefit"><span class="benefit-icon">✓</span><div><strong data-en="Turnkey Solutions" data-ar="حلول متكاملة">Turnkey Solutions</strong><small data-en="From concept to completion" data-ar="من الفكرة حتى التسليم">From concept to completion</small></div></div>'+
-      '<div class="benefit"><span class="benefit-icon">♧</span><div><strong data-en="Trusted Partner" data-ar="شريك موثوق">Trusted Partner</strong><small data-en="Your vision, our commitment" data-ar="رؤيتك التزامنا">Your vision, our commitment</small></div></div>';
-  }
-  const solutions=document.querySelector('.solutions');
-  if(solutions&&!solutions.querySelector('.reference-section-head')){
-    const head=document.createElement('div');
-    head.className='reference-section-head';
-    head.innerHTML='<div><div class="label" data-en="OUR SERVICES" data-ar="خدماتنا">OUR SERVICES</div><h2 data-en="Comprehensive Solutions" data-ar="حلول متكاملة">Comprehensive Solutions</h2><p data-en="From concept to completion, we provide integrated solutions for all your space needs." data-ar="من الفكرة حتى التسليم، نقدم حلولاً متكاملة لمختلف احتياجات منشأتك.">From concept to completion, we provide integrated solutions for all your space needs.</p></div><a href="#solutions" data-en="View All Services →" data-ar="عرض جميع الخدمات ←">View All Services →</a>';
-    solutions.insertBefore(head,solutions.firstElementChild);
-  }
 }
+
 document.addEventListener('DOMContentLoaded',()=>{
   document.querySelectorAll('[data-year]').forEach(e=>e.textContent=new Date().getFullYear());
   document.querySelectorAll('a.card').forEach(a=>{
@@ -90,4 +114,5 @@ document.addEventListener('DOMContentLoaded',()=>{
   setupHomepageReferenceDesign();
   applyLanguage();
   syncLanguageLinks();
+  forceVideoAutoplay();
 });
