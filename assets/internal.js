@@ -14,20 +14,28 @@ function applyLanguage(){
   document.body.classList.toggle('ar',currentLanguage==='ar');
   const b=document.getElementById('langBtn');
   if(b)b.textContent=currentLanguage==='en'?'العربية':'EN';
-  if(currentLanguage==='ar')applyArabicProcessCopy();
+  applyProcessCopy();
 }
 
-function applyArabicProcessCopy(){
+function applyProcessCopy(){
   const process=document.querySelector('.process');
   if(!process)return;
   const title=process.querySelector('h2');
-  if(title)title.textContent='نعمل بمنهجية واضحة تبدأ بفهم احتياجات المشروع وتنتهي بمنشأة مكتملة وجاهزة للاستخدام.';
-  const items=[
-    ['01 — نفهم','نبدأ بفهم طبيعة النشاط، احتياجات المستخدمين، متطلبات التشغيل، الأولويات والميزانية.'],
-    ['02 — نخطط','نحوّل الاحتياجات إلى مخطط عملي ونطاق عمل واضح، مع تنسيق التخصصات والخدمات المطلوبة.'],
-    ['03 — نصمم','نطوّر التصميم والخامات والتفاصيل الفنية بما يحقق الوظيفة والجودة والمظهر المتناسق.'],
-    ['04 — ننفذ','ننّفذ الأعمال وفق نطاق المشروع مع تنسيق فرق العمل ومتابعة التفاصيل لضمان جودة التنفيذ.'],
-    ['05 — نسلّم','نسلّم بيئة مكتملة ومنظمة وجاهزة للاستخدام، مع دعم الضمان وفق نطاق وشروط المشروع.']
+  if(title)title.textContent=currentLanguage==='ar'
+    ?'نعمل بمنهجية واضحة تبدأ بفهم احتياجات المشروع وتنتهي بمنشأة مكتملة وجاهزة للاستخدام.'
+    :'A clear process that starts with understanding your requirements and ends with a finished, ready-to-use environment.';
+  const items=currentLanguage==='ar' ? [
+    ['نفهم','نفهم النشاط والاحتياجات والأولويات والميزانية.'],
+    ['نخطط','نحوّل الاحتياجات إلى مخطط عملي ونطاق عمل واضح.'],
+    ['نصمم','نطوّر التصميم والخامات والتفاصيل الفنية المناسبة.'],
+    ['ننّفذ','ننفذ الأعمال بتنسيق دقيق ومتابعة مستمرة للجودة.'],
+    ['نسلّم','نسلّم منشأة مكتملة وجاهزة للاستخدام وفق نطاق المشروع.']
+  ] : [
+    ['Understand','We understand the activity, needs, priorities and budget.'],
+    ['Plan','We turn requirements into a clear plan and scope of work.'],
+    ['Design','We develop the design, materials and technical details.'],
+    ['Execute','We deliver coordinated works with focused quality control.'],
+    ['Handover','We hand over a finished, ready-to-use environment within the agreed scope.']
   ];
   process.querySelectorAll('.feature').forEach((el,i)=>{
     if(!items[i])return;
