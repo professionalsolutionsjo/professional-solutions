@@ -1,0 +1,40 @@
+/* Process section — Aegean Blue identity */
+.process .feature{
+  position:relative;
+  border-top:1px solid rgba(109,145,188,.28);
+  padding:18px 18px 18px 34px;
+}
+.process .feature:before{
+  content:"";
+  position:absolute;
+  left:12px;
+  top:25px;
+  width:8px;
+  height:8px;
+  border-radius:50%;
+  background:#6D91BC;
+  box-shadow:0 0 0 4px rgba(109,145,188,.12);
+}
+.process .feature h3{
+  margin:0 0 5px;
+  color:#46698F;
+  font-size:1.02rem;
+  line-height:1.35;
+}
+.process .feature p{
+  margin:0;
+  line-height:1.55;
+}
+html[dir="rtl"] .process .feature{
+  padding:18px 34px 18px 18px;
+}
+html[dir="rtl"] .process .feature:before{
+  left:auto;
+  right:12px;
+}
+@media(max-width:700px){
+  .process .feature{padding:14px 14px 14px 30px}
+  html[dir="rtl"] .process .feature{padding:14px 30px 14px 14px}
+  .process .feature:before{top:21px;left:9px}
+  html[dir="rtl"] .process .feature:before{left:auto;right:9px}
+}
