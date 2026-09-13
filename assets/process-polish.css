@@ -1,10 +1,10 @@
-/* Process section: concise single-line points with burgundy markers */
+/* Process section — concise one-line points using the Aegean Blue identity */
 .process .grid{display:flex;flex-direction:column;gap:0}
-.process .feature{display:flex;align-items:baseline;gap:10px;padding:11px 0;border-bottom:1px solid rgba(140,74,90,.18)}
+.process .feature{display:flex;align-items:baseline;gap:10px;padding:11px 0;border-bottom:1px solid rgba(109,145,188,.22)}
 .process .feature:last-child{border-bottom:0}
 .process .feature h3{font-size:0;line-height:1.45;margin:0;white-space:nowrap;flex:0 0 auto;font-weight:700}
-.process .feature h3::before{content:'•';font-size:25px;line-height:0;color:#8C4A5A;vertical-align:-2px;margin-inline-end:8px}
-.process .feature h3::after{content:attr(data-en);font-size:15px;line-height:1.45;color:inherit}
+.process .feature h3::before{content:'•';font-size:25px;line-height:0;color:#6D91BC;vertical-align:-2px;margin-inline-end:8px}
+.process .feature h3::after{content:attr(data-en);font-size:15px;line-height:1.45;color:#46698F}
 .process .feature p{margin:0;font-size:14px;line-height:1.45;color:inherit;white-space:nowrap}
 body.ar .process .feature h3::after{content:attr(data-ar)}
 body.ar .process .feature{flex-direction:row}
