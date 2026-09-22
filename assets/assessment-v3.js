@@ -99,8 +99,8 @@
   async function verifyOtp(){
     const email=pendingEmail||$('contact-email').value.trim().toLowerCase();
     const token=$('otp-code').value.trim();
-    if(!email||!/^\d{6}$/.test(token)){
-      setAuthStatus('أدخل رمز التحقق المكوّن من 6 أرقام.','Enter the 6-digit verification code.',true); return;
+    if(!email||!/^\d{8}$/.test(token)){
+      setAuthStatus('أدخل رمز التحقق المكوّن من 8 أرقام.','Enter the 8-digit verification code.',true); return;
     }
     const btn=$('verify-otp');
     if(btn.disabled)return;
