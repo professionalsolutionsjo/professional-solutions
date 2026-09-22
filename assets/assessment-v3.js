@@ -335,7 +335,7 @@
       '<p><b>'+text('رقم التحليل','Analysis No.')+'</b>: '+d.number+'</p>'+
       '<p><b>'+text('المنشأة','Facility')+'</b>: '+d.facility+'</p>'+
       '<p><b>'+text('العنوان / الموقع','Address / Location')+'</b>: '+(d.address||'—')+'</p>'+
-      '<p><b>'+text('نوع الصناعة','Industry')+'</b>: '+d.sector+'</p>'+
+      '<p><b>'+text('نوع الصناعة','Industry')+'</b>: '+text(d.sector,d.sectorEn)+'</p>'+
       '<p><b>'+text('تاريخ التقييم','Assessment Date')+'</b>: '+d.date+'</p>'+
       '<p><b>'+text('المقيّم / الجهة','Assessor / Organization')+'</b>: '+d.assessor+'</p>'+
       '<p><b>'+text('نطاق التقييم','Scope')+'</b>: '+(d.scope||'—')+'</p>'+
