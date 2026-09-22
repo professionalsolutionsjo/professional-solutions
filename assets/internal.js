@@ -14,3 +14,6 @@ document.querySelectorAll('.solutions .card').forEach(card=>{const t=(card.textC
 const contact=document.querySelector('.contact');if(contact&&!contact.querySelector('.homepage-contact-actions')){const box=document.createElement('div');box.className='homepage-contact-actions';box.innerHTML='<a class="hero-btn primary" href="tel:+962790390555" data-en="Call Us" data-ar="اتصل بنا">Call Us</a><a class="hero-btn contact-whatsapp" href="https://wa.me/962790390555" target="_blank" rel="noopener" data-en="WhatsApp" data-ar="واتساب">WhatsApp</a><a class="hero-btn outline" href="mailto:info@professionalsolutionsjo.com" data-en="Email Us" data-ar="راسلنا">Email Us</a>';contact.appendChild(box)}}
 function imageError(img){img.classList.add('missing');const s=img.closest('.shot');if(s)s.style.display='none'}
 document.addEventListener('DOMContentLoaded',()=>{document.querySelectorAll('[data-year]').forEach(e=>e.textContent=new Date().getFullYear());restoreHomepage();applyLanguage();syncLanguageLinks();forceVideoAutoplay()});
+
+function loadContactFloat(){if(document.querySelector('script[data-contact-float]'))return;var s=document.createElement('script');s.src='assets/contact-float.js?v=20260922-1';s.dataset.contactFloat='1';document.head.appendChild(s)}
+document.addEventListener('DOMContentLoaded',loadContactFloat);
