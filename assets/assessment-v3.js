@@ -66,6 +66,8 @@
   }
 
   async function sendOtp(){
+    const btn=$('send-otp');
+    if(btn.disabled)return;
     const facilityName=$('facility-name').value.trim();
     const contactName=$('contact-name').value.trim();
     const email=$('contact-email').value.trim().toLowerCase();
@@ -74,6 +76,9 @@
       setAuthStatus('يرجى إدخال اسم المنشأة واسم المسؤول والبريد الإلكتروني.','Please enter facility name, contact name and email.',true); return;
     }
     pendingEmail=email;
+    btn.disabled=true;
+    const originalLabel=btn.textContent;
+    btn.textContent=text('جارٍ إرسال الرمز...','Sending code...');
     const {error}=await supabase.auth.signInWithOtp({
       email,
       options:{
@@ -81,9 +86,14 @@
         data:{facility_name:facilityName,contact_name:contactName,phone}
       }
     });
-    if(error){setAuthStatus('تعذر إرسال رمز التحقق: '+error.message,'Could not send verification code: '+error.message,true);return;}
+    btn.disabled=false;
+    btn.textContent=originalLabel;
+    if(error){
+      setAuthStatus('تعذر إرسال رمز التحقق: '+error.message,'Could not send verification code: '+error.message,true);
+      return;
+    }
     $('otp-area').hidden=false;
-    setAuthStatus('تم إرسال رمز التحقق إلى البريد الإلكتروني. أدخل رمز التحقق المكوّن من 6 أرقام للمتابعة.','A 6-digit verification code has been sent to your email. Enter the code to continue.');
+    setAuthStatus('تم إرسال رمز جديد. استخدم آخر رمز وصل إلى بريدك فقط. إذا طلبت رمزًا آخر، تجاهل الرموز السابقة.','A new code was sent. Use only the latest code you received. If you requested another code, ignore previous codes.');
   }
 
   async function verifyOtp(){
@@ -92,8 +102,20 @@
     if(!email||!/^\d{6}$/.test(token)){
       setAuthStatus('أدخل رمز التحقق المكوّن من 6 أرقام.','Enter the 6-digit verification code.',true); return;
     }
+    const btn=$('verify-otp');
+    if(btn.disabled)return;
+    btn.disabled=true;
+    const originalLabel=btn.textContent;
+    btn.textContent=text('جارٍ التحقق...','Verifying...');
     const {data,error}=await supabase.auth.verifyOtp({email,token,type:'email'});
-    if(error){setAuthStatus('رمز التحقق غير صحيح أو منتهي.','The verification code is invalid or expired.',true);return;}
+    btn.disabled=false;
+    btn.textContent=originalLabel;
+    if(error){
+      const detail=(error.code?error.code+': ':'')+error.message;
+      setAuthStatus('فشل التحقق: '+detail,'Verification failed: '+detail,true);
+      console.error('Supabase verifyOtp error:',error);
+      return;
+    }
     const user=data.user;
     const payload={
       auth_user_id:user.id,
