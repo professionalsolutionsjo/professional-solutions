@@ -11,3 +11,23 @@
 @media(max-width:700px){html,body{width:100%;max-width:100%;overflow-x:hidden}.assessment-nav{padding:10px 16px;gap:12px;min-height:64px}.assessment-nav>a:first-child{width:190px;height:50px}.assessment-nav a:last-child{font-size:13px;white-space:nowrap}.assessment main{max-width:none;width:100%;box-sizing:border-box;padding:0 14px;margin:22px auto}.intro{margin-bottom:18px}.intro .label{font-size:11px;line-height:1.5}.intro h1{font-size:28px;line-height:1.25;margin:8px 0 12px}.notice{padding:14px 15px;margin-bottom:18px;font-size:14px;line-height:1.7}.panel,fieldset.question{padding:16px 13px;margin:14px 0;border-radius:8px}.settings{display:grid;grid-template-columns:1fr;gap:14px}.assessment label{font-size:15px;line-height:1.5}.assessment select{min-height:50px;margin-top:7px;padding:8px 10px;font-size:16px;border-radius:5px}.progress{gap:10px;margin:18px 0 8px}.progress progress{min-width:100%;height:11px;order:2}.assessment .hint{font-size:13px;line-height:1.65}.assessment-group{margin:18px 0}.assessment-group h3{font-size:18px;line-height:1.4;margin:18px 0 10px}.assessment-question{padding:14px 12px!important;margin:10px 0!important;border:1px solid #C9D7E5;border-radius:8px;background:#fff}.q-head{display:flex;gap:9px;align-items:flex-start}.q-head>span{flex:0 0 auto;font-size:12px;color:#46698F;font-weight:700;padding-top:2px}.q-head h4{font-size:15px;line-height:1.45;margin:0;color:#17212b}.q-head p{font-size:13px;line-height:1.6;margin:5px 0 0;color:#3f4d59}.answers{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px}.answers label{width:100%;box-sizing:border-box;min-height:46px;padding:7px 9px;font-size:13px;line-height:1.35;gap:6px;border-radius:5px}.answers input{width:17px;height:17px;flex:0 0 17px}.assessment .action,.assessment button{width:100%;min-height:50px;padding:12px 16px;font-size:15px;border-radius:5px}.result-actions{display:grid;grid-template-columns:1fr;gap:9px}.result-actions>*{width:100%;box-sizing:border-box}.score{font-size:34px}.assessment h2{font-size:23px;line-height:1.35}.assessment h3{font-size:19px;line-height:1.45}.assessment li{font-size:14px;line-height:1.65}.assessment-footer{padding:22px 14px;font-size:13px;line-height:1.7}}
 @media(min-width:701px){.assessment-question{margin:14px 0;padding:18px;border:1px solid #C9D7E5}.q-head{display:flex;gap:12px;align-items:flex-start}.q-head>span{color:#46698F;font-weight:700}.q-head h4{margin:0;font-size:17px}.q-head p{margin:6px 0 0}.assessment-group{margin:22px 0}}
 @media print{.assessment-nav,form,.result-actions,details,.assessment-footer{display:none!important}.assessment main{max-width:none;margin:0}.panel{border:0}.assessment{background:#fff}.notice{background:#fff}}
+/* GMP template-aligned assessment UI */
+.assessment input,.assessment textarea{display:block;width:100%;box-sizing:border-box;margin-top:8px;background:#fff;color:#17202A;border:1px solid #9EB3C8;padding:10px;font:inherit;font-size:16px;border-radius:4px}
+.auth-grid .full{grid-column:1/-1}
+.assessment-section{margin:30px 0 10px;padding:12px 16px;border-inline-start:4px solid #5F8FC7;background:#F4F7FA}
+.assessment-section h2{margin:0;font-size:21px}
+.question{border-radius:6px}
+.question-head{display:flex;align-items:flex-start;gap:12px}
+.question-head .q-code{flex:0 0 auto;font-weight:800;color:#46698F;min-width:58px}
+.question-head h3{flex:1;margin:0;font-size:18px;line-height:1.55}
+.question-head .weight{flex:0 0 auto;font-size:13px;color:#5B6773;white-space:nowrap}
+.q-reference{font-size:13px;color:#5B6773!important}
+.choices{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin:16px 0}
+.choices label{font-weight:500;padding:10px;border:1px solid #C9D7E5;border-radius:4px;cursor:pointer}
+.choices label:has(input:checked){border-color:#79A8DC;background:#EAF1F7}
+.choices input{display:inline-block;width:auto;margin:0 6px 0 0;vertical-align:middle}
+.details-grid{display:grid;grid-template-columns:2fr 2fr 1fr;gap:12px}
+.score-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:18px 0}
+.score-grid>div{border:1px solid #C9D7E5;padding:12px;background:#F8FAFC}
+.score-grid strong{display:block;font-size:24px;margin-top:5px;color:#46698F}
+@media(max-width:700px){.question-head{display:grid;grid-template-columns:auto 1fr}.question-head .weight{grid-column:2}.choices{grid-template-columns:1fr 1fr}.details-grid{grid-template-columns:1fr}.score-grid{grid-template-columns:1fr 1fr}.auth-grid .full{grid-column:auto}}
