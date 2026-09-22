@@ -8,3 +8,5 @@
 @import url('industrial-final.css?v=20260913-1');
 @import url('mechanical-page-fix.css?v=20260913-1');
 @import url('contact-float.css?v=20260922-1');
+
+.navlinks .nav-wa{padding:9px 14px;border:1px solid var(--b);background:var(--b);color:#fff!important;border-radius:3px}.navlinks .nav-wa:hover{background:var(--bl);border-color:var(--bl)}
