@@ -130,12 +130,14 @@
     return v==='ready-high'?'Ready — High Compliance Level':
       v==='ready-notes'?'Ready with Items Requiring Attention':
       v==='needs-improvement'?'Needs Significant Improvement Before Inspection':
+      v==='not-ready-critical'?'Not Ready — Critical Non-Conformity':
       'Not Ready — Significant Gaps';
   }
   function classificationArabic(v){
     return v==='ready-high'?'جاهز — مستوى مطابقة عالٍ':
       v==='ready-notes'?'جاهز مع ملاحظات تحتاج معالجة':
       v==='needs-improvement'?'يحتاج تحسينات جوهرية قبل التفتيش':
+      v==='not-ready-critical'?'غير جاهز — توجد حالة حرجة غير مطابقة':
       'غير جاهز — فجوات كبيرة';
   }
   function englishRequirement(q){
