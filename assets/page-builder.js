@@ -70,7 +70,7 @@ const page=P[document.body.dataset.page];
 const esc=s=>s||'';
 const dual=(en,ar,tag='span',cls='')=>`<${tag}${cls?` class="${cls}"`:''} data-en="${esc(en)}" data-ar="${esc(ar)}">${esc(en)}</${tag}>`;
 function shots(images,label,labelAr){return `<div class="gallery">${images.map((src,i)=>`<div class="shot ${i===0?'large':''}"><img src="${src}" alt="${label} ${i+1}" loading="lazy" onerror="imageError(this)"><div class="caption" data-en="${label} ${String(i+1).padStart(2,'0')}" data-ar="${labelAr} ${String(i+1).padStart(2,'0')}">${label} ${String(i+1).padStart(2,'0')}</div></div>`).join('')}</div>`}
-function nav(){return `<header class="nav"><a class="brand" href="index.html"><img src="logo.png" alt="Professional Solutions"></a><ul class="navlinks"><li><a href="index.html" data-en="Home" data-ar="الرئيسية">Home</a></li><li><a href="#gallery" data-en="Gallery" data-ar="الصور">Gallery</a></li><li><a href="#contact" data-en="Contact" data-ar="تواصل معنا">Contact</a></li><li><button class="lang" id="langBtn" onclick="toggleLanguage()">عربي</button></li></ul></header>`}
+function nav(){return `<header class="nav"><a class="brand" href="index.html"><img src="logo-professional-solutions-white-blue.svg" alt="Professional Solutions"></a><ul class="navlinks"><li><a href="index.html" data-en="Home" data-ar="الرئيسية">Home</a></li><li><a href="#gallery" data-en="Gallery" data-ar="الصور">Gallery</a></li><li><a href="#contact" data-en="Contact" data-ar="تواصل معنا">Contact</a></li><li><button class="lang" id="langBtn" onclick="toggleLanguage()">عربي</button></li></ul></header>`}
 function render(){
  if(!page)return;
  document.title=`${page.title} | Professional Solutions Jordan`;
