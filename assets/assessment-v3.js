@@ -7,7 +7,7 @@
   const SUPABASE_URL='https://cwyhmexttaubbgvetbmg.supabase.co';
   const SUPABASE_KEY='sb_publishable_Qa71TY1HaEycczCXcm6lMw_WHdEWrsA';
   const supabase=window.supabase.createClient(SUPABASE_URL,SUPABASE_KEY);
-  const AUTH_REDIRECT=window.location.origin+window.location.pathname;
+  const AUTH_REDIRECT='https://professionalsolutionsjo.github.io/professional-solutions/facility-assessment.html';
 
   const sectors={
     food:['تصنيع الأغذية','Food Manufacturing'],cosmetics:['مستحضرات التجميل','Cosmetics'],pharma:['الأدوية','Pharmaceuticals'],supplements:['المكملات الغذائية','Food Supplements'],medical:['الأجهزة الطبية','Medical Devices'],warehouse:['المستودعات','Warehouses'],general:['منشأة تصنيع أخرى','Other Manufacturing']
