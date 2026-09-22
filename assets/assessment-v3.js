@@ -45,24 +45,12 @@
   }
 
   async function loadSession(){
-    const {data,error}=await supabase.auth.getSession();
-    if(error){
-      setAuthStatus('تعذر استعادة جلسة التحقق. يمكنك طلب رمز جديد.','Could not restore the verification session. You can request a new code.',true);
-      return;
-    }
-    if(data.session){
-      const {data:facilities}=await supabase.from('facilities').select('*').eq('auth_user_id',data.session.user.id).limit(1);
-      if(facilities && facilities[0]){
-        currentFacility=facilities[0];
-        $('facility-name').value=currentFacility.facility_name;
-        $('contact-name').value=currentFacility.contact_name;
-        $('contact-email').value=currentFacility.email;
-        $('contact-phone').value=currentFacility.phone||'';
-      }
-      showAssessment();
-    }else{
-      $('assessment-form').hidden=true;
-    }
+    // Require a fresh email verification whenever the assessment page is opened.
+    // This prevents a previously authenticated Supabase browser session from
+    // bypassing the verification gate on a later visit or refresh.
+    await supabase.auth.signOut();
+    $('assessment-form').hidden=true;
+    $('auth-gate').hidden=false;
   }
 
   async function sendOtp(){
