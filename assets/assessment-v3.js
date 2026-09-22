@@ -7,6 +7,7 @@
   const SUPABASE_URL='https://cwyhmexttaubbgvetbmg.supabase.co';
   const SUPABASE_KEY='sb_publishable_Qa71TY1HaEycczCXcm6lMw_WHdEWrsA';
   const supabase=window.supabase.createClient(SUPABASE_URL,SUPABASE_KEY);
+  const AUTH_REDIRECT=window.location.origin+window.location.pathname;
 
   const sectors={
     food:['تصنيع الأغذية','Food Manufacturing'],cosmetics:['مستحضرات التجميل','Cosmetics'],pharma:['الأدوية','Pharmaceuticals'],supplements:['المكملات الغذائية','Food Supplements'],medical:['الأجهزة الطبية','Medical Devices'],warehouse:['المستودعات','Warehouses'],general:['منشأة تصنيع أخرى','Other Manufacturing']
@@ -46,7 +47,11 @@
   }
 
   async function loadSession(){
-    const {data}=await supabase.auth.getSession();
+    const {data,error}=await supabase.auth.getSession();
+    if(error){
+      setAuthStatus('تعذر استعادة جلسة التحقق. يمكنك طلب رمز جديد.','Could not restore the verification session. You can request a new code.',true);
+      return;
+    }
     if(data.session){
       const {data:facilities}=await supabase.from('facilities').select('*').eq('auth_user_id',data.session.user.id).limit(1);
       if(facilities && facilities[0]){
@@ -73,11 +78,15 @@
     pendingEmail=email;
     const {error}=await supabase.auth.signInWithOtp({
       email,
-      options:{shouldCreateUser:true,data:{facility_name:facilityName,contact_name:contactName,phone}}
+      options:{
+        shouldCreateUser:true,
+        emailRedirectTo:AUTH_REDIRECT,
+        data:{facility_name:facilityName,contact_name:contactName,phone}
+      }
     });
     if(error){setAuthStatus('تعذر إرسال رمز التحقق: '+error.message,'Could not send verification code: '+error.message,true);return;}
     $('otp-area').hidden=false;
-    setAuthStatus('تم إرسال رمز التحقق إلى البريد الإلكتروني.','A verification code has been sent to the email.');
+    setAuthStatus('تم إرسال رسالة التحقق إلى البريد الإلكتروني. يمكنك الضغط على رابط التأكيد في الرسالة أو إدخال رمز التحقق إذا ظهر.','A verification email has been sent. You can click the confirmation link or enter the OTP if your email contains a code.');
   }
 
   async function verifyOtp(){
