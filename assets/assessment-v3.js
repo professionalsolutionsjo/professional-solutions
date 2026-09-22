@@ -123,6 +123,21 @@
   function inProfessionalScope(q){
     return INCLUDED_SECTIONS.includes(q.section) && !EXCLUDED_TERMS.some(term=>String(q.req||'').includes(term));
   }
+  function importanceEnglish(v){
+    return v==='حرج'?'Critical':v==='رئيسي'?'Major':'Minor';
+  }
+  function classificationEnglish(v){
+    return v==='ready-high'?'Ready — High Compliance Level':
+      v==='ready-notes'?'Ready with Items Requiring Attention':
+      v==='needs-improvement'?'Needs Significant Improvement Before Inspection':
+      'Not Ready — Significant Gaps';
+  }
+  function classificationArabic(v){
+    return v==='ready-high'?'جاهز — مستوى مطابقة عالٍ':
+      v==='ready-notes'?'جاهز مع ملاحظات تحتاج معالجة':
+      v==='needs-improvement'?'يحتاج تحسينات جوهرية قبل التفتيش':
+      'غير جاهز — فجوات كبيرة';
+  }
   function englishRequirement(q){
     const exact={
       'الموقع والمبنى بعيدان عن مصادر التلوث (غبار، دخان، أنشطة مجاورة، مياه راكدة)، وتصميم المبنى يحمي المنتج من التلوث الخارجي.':'The site and building are located away from contamination sources, and the building design protects the product from external contamination.',
@@ -174,7 +189,7 @@
       card.className='question panel';
       card.innerHTML=
         '<div class="question-head"><span class="q-code">'+q.code+'</span><h3>'+text(q.req,englishRequirement(q))+'</h3><span class="weight">'+text('الوزن','Weight')+': '+q.weight+'</span></div>'+
-        '<p class="q-reference"><b>'+text('المرجع','Reference')+':</b> '+q.ref+' &nbsp; <b>'+text('الأهمية','Importance')+':</b> '+q.importance+'</p>'+
+        '<p class="q-reference"><b>'+text('المرجع','Reference')+':</b> '+q.ref+' &nbsp; <b>'+text('الأهمية','Importance')+':</b> '+text(q.importance,importanceEnglish(q.importance))+'</p>'+
         '<div class="choices">'+
           '<label><input required type="radio" name="q'+i+'" value="compliant"> '+text('مطابق','Compliant')+'</label>'+
           '<label><input required type="radio" name="q'+i+'" value="partial"> '+text('مطابق جزئياً','Partially compliant')+'</label>'+
@@ -209,11 +224,11 @@
     });
     const pct=possible?Math.round((earned/possible)*10000)/100:0;
     let classification;
-    if(critical>0) classification='غير جاهز — توجد حالة حرجة غير مطابقة';
-    else if(pct>=90) classification='جاهز — مستوى مطابقة عالٍ';
-    else if(pct>=75) classification='جاهز مع ملاحظات تحتاج معالجة';
-    else if(pct>=60) classification='يحتاج تحسينات جوهرية قبل التفتيش';
-    else classification='غير جاهز — فجوات كبيرة';
+    if(critical>0) classification='not-ready-critical';
+    else if(pct>=90) classification='ready-high';
+    else if(pct>=75) classification='ready-notes';
+    else if(pct>=60) classification='needs-improvement';
+    else classification='not-ready-gaps';
     return {earned,possible,pct,non,partial,compliant,na,critical,evaluated,classification,findings};
   }
 
@@ -267,7 +282,7 @@
       assessment_id:assessment.id,
       question_code:r.q.code,
       title_ar:r.q.req,
-      title_en:r.q.req,
+      title_en:englishRequirement(r.q),
       section_ar:r.q.section,
       reference:r.q.ref,
       importance:r.q.importance,
@@ -331,7 +346,7 @@
       '<div><b>'+text('لا ينطبق','Not applicable')+'</b><strong>'+d.na+'</strong></div>'+
       '<div><b>'+text('حرج غير مطابق','Critical non-compliance')+'</b><strong>'+d.critical+'</strong></div>'+
       '</div>'+
-      '<p><b>'+text('التقييم العام','Overall assessment')+'</b>: '+d.classification+'</p>'+
+      '<p><b>'+text('التقييم العام','Overall assessment')+'</b>: '+text(classificationArabic(d.classification),classificationEnglish(d.classification))+'</p>'+
       '<h4>'+text('البنود التي تحتاج معالجة','Items requiring attention')+'</h4>'+
       (nonRows.length?'<ol>'+nonRows.map(r=>'<li><b>'+r.q.code+' — '+text(r.q.req,englishRequirement(r.q))+'</b><br>'+text('الحالة','Status')+': '+(r.choice==='partial'?text('مطابق جزئياً','Partially compliant'):text('غير مطابق','Non-compliant'))+'</li>').join('')+'</ol>':'<p>'+text('لا توجد حالات غير مطابقة أو جزئية.','No non-compliant or partially compliant items were recorded.')+'</p>')+
       '<p class="disclaimer">'+text('هذه شهادة تحليل مهني صادرة عن Professional Solutions وليست شهادة GMP رسمية أو اعتماداً رقابياً. التقييم هنا محصور في الجوانب الإنشائية وتجهيزات البنية التحتية الداخلة ضمن نطاق أعمالنا.','This is a professional analysis issued by Professional Solutions, not an official GMP certificate or regulatory accreditation. The assessment is limited to construction, fit-out and infrastructure aspects within our scope of work.')+'</p>'+
