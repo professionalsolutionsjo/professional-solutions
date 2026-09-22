@@ -7,8 +7,6 @@
   const SUPABASE_URL='https://cwyhmexttaubbgvetbmg.supabase.co';
   const SUPABASE_KEY='sb_publishable_Qa71TY1HaEycczCXcm6lMw_WHdEWrsA';
   const supabase=window.supabase.createClient(SUPABASE_URL,SUPABASE_KEY);
-  const AUTH_REDIRECT='https://professionalsolutionsjo.github.io/professional-solutions/facility-assessment.html';
-
   const sectors={
     food:['تصنيع الأغذية','Food Manufacturing'],cosmetics:['مستحضرات التجميل','Cosmetics'],pharma:['الأدوية','Pharmaceuticals'],supplements:['المكملات الغذائية','Food Supplements'],medical:['الأجهزة الطبية','Medical Devices'],warehouse:['المستودعات','Warehouses'],general:['منشأة تصنيع أخرى','Other Manufacturing']
   };
@@ -80,13 +78,12 @@
       email,
       options:{
         shouldCreateUser:true,
-        emailRedirectTo:AUTH_REDIRECT,
         data:{facility_name:facilityName,contact_name:contactName,phone}
       }
     });
     if(error){setAuthStatus('تعذر إرسال رمز التحقق: '+error.message,'Could not send verification code: '+error.message,true);return;}
     $('otp-area').hidden=false;
-    setAuthStatus('تم إرسال رسالة التحقق إلى البريد الإلكتروني. يمكنك الضغط على رابط التأكيد في الرسالة أو إدخال رمز التحقق إذا ظهر.','A verification email has been sent. You can click the confirmation link or enter the OTP if your email contains a code.');
+    setAuthStatus('تم إرسال رمز التحقق إلى البريد الإلكتروني. أدخل رمز التحقق المكوّن من 6 أرقام للمتابعة.','A 6-digit verification code has been sent to your email. Enter the code to continue.');
   }
 
   async function verifyOtp(){
