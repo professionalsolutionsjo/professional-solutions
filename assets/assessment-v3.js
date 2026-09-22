@@ -101,9 +101,65 @@
     showAssessment();
   }
 
+  const INCLUDED_SECTIONS=[
+    'الموقع والمبنى',
+    'الأرضيات',
+    'الجدران والأسقف والأبواب',
+    'الإنارة والكهرباء',
+    'التهوية والتكييف (HVAC)',
+    'المياه والصرف',
+    'المرافق الميكانيكية والغازات',
+    'مسارات الأفراد والمواد والنفايات'
+  ];
+  const EXCLUDED_TERMS=[
+    'مكافحة الآفات','مكافحة آفات','مكافحة الحشرات','التطهير','المراقبة','معايرة',
+    'تأهيل','Validation','Qualification','تحقق من الفعالية','مراقبة ميكرو',
+    'مراقبة دورية','برنامج','سجلات','توثيق','موثق','تراخيص','استيفاء تراخيص',
+    'الشكاوى','السحب','التذكر','إدارة التغيير','نظام إدارة الجودة','QMS','SMF',
+    'ملف رئيسي','ملفات تصنيع','دفعات','اختبارات','فحوصات دورية','جودة مياه',
+    'مياه صالحة للشرب','مياه نقية','موصلية','TOC','ميكروبيولوج','تحليل',
+    'نتائج','حدود إنذار','حدود تنبيه','تعقيم دوري'
+  ];
+  function inProfessionalScope(q){
+    return INCLUDED_SECTIONS.includes(q.section) && !EXCLUDED_TERMS.some(term=>String(q.req||'').includes(term));
+  }
+  function englishRequirement(q){
+    const exact={
+      'الموقع والمبنى بعيدان عن مصادر التلوث (غبار، دخان، أنشطة مجاورة، مياه راكدة)، وتصميم المبنى يحمي المنتج من التلوث الخارجي.':'The site and building are located away from contamination sources, and the building design protects the product from external contamination.',
+      'تخطيط المنشأة يتيح تسلسلاً منطقياً للعمليات ويقلل خطر الاختلاط والتلوث المتبادل.':'The facility layout provides a logical process flow and minimizes mix-up and cross-contamination risks.',
+      'أرضيات مستمرة غير مسامية وملساء، خالية من الشقوق والفواصل غير المغلقة في مناطق الإنتاج.':'Continuous, non-porous and smooth floors, free from cracks and unsealed joints in production areas.',
+      'الأرضية مقاومة للمطهرات والمواد الكيميائية المستخدمة وللتآكل والأحمال والصدمات.':'Flooring is resistant to the disinfectants and chemicals used, as well as wear, loads and impact.',
+      'ميل مناسب نحو المصارف في المناطق الرطبة، ولا يوجد تجمع للمياه.':'Suitable falls are provided toward drains in wet areas, with no standing water.',
+      'الأسقف مغلقة وملساء، ومنافذ الخدمات (إنارة، مجاري هواء، أنابيب) محكمة الإغلاق.':'Ceilings are closed and smooth, with service penetrations for lighting, air ducts and pipes properly sealed.',
+      'الأبواب والنوافذ والإطارات مسطحة (Flush) وقابلة للتنظيف، والنوافذ الزجاجية محكمة.':'Doors, windows and frames are flush and cleanable, with sealed glazed windows.',
+      'الأبواب بين المناطق ذات الضغوط المختلفة تُغلق ذاتياً ولا تُترك مفتوحة.':'Doors between areas with different pressure levels are self-closing and are not left open.',
+      'إنارة طوارئ ومخارج طوارئ مؤشَّر عليها ونظام كشف حريق وإنذار.':'Emergency lighting, marked emergency exits, and fire detection and alarm provisions are available.',
+      'المصابيح محمية ضد الكسر أو غير زجاجية في مناطق تعرض المنتج المكشوف.':'Light fittings are shatter-protected or non-glass in areas where exposed product is present.',
+      'نظام HVAC مصمم وفق درجة النظافة المطلوبة لكل منطقة (URS/DQ) وليس بشكل عام لكل المبنى.':'The HVAC system is designed according to the required cleanliness level of each area (URS/DQ), rather than as a generic building-wide system.',
+      'ضبط الحرارة والرطوبة ضمن حدود محددة بحسب المنتج (إرشادياً 20–25°م ورطوبة 30–60%).':'Temperature and humidity are controlled within product-specific limits.',
+      'استخلاص موضعي للغبار عند نقاط توليده (الوزن، الخلط، الكبس، التغليف) مع ترشيح العادم.':'Local dust extraction is provided at dust-generating points such as weighing, mixing, compression and packaging, with exhaust filtration.',
+      'لا إعادة تدوير للهواء من مناطق المنتجات عالية الخطورة (بنسلين، هرمونات، سامة للخلايا)، والأنظمة منفصلة.':'Air is not recirculated from high-risk product areas, and dedicated systems are provided where required.',
+      'ترشيح متعدد المراحل مناسب لكل منطقة، وHEPA حيث يلزم (عزل، هواء معاد، عادم مواد خطرة).':'Multi-stage filtration is provided as appropriate for each area, with HEPA filtration where required.',
+      'شدة إضاءة كافية لطبيعة العمل (إرشادياً 300–500 لوكس عاماً، وأعلى عند الفحص والمختبر).':'Lighting levels are adequate for the work performed, with higher levels where inspection or laboratory work requires them.',
+      'وحدات إنارة مسطحة أو محكمة (إرشادياً IP65) سهلة التنظيف، ويفضّل صيانتها من خارج منطقة الإنتاج.':'Lighting fixtures are flush or sealed, easy to clean, and preferably serviceable from outside production areas.'
+    };
+    if(exact[q.req]) return exact[q.req];
+    const fallback={
+      'الموقع والمبنى':'Facility site and building requirement',
+      'الأرضيات':'Flooring requirement',
+      'الجدران والأسقف والأبواب':'Walls, ceilings and doors requirement',
+      'الإنارة والكهرباء':'Lighting and electrical requirement',
+      'التهوية والتكييف (HVAC)':'HVAC and ventilation requirement',
+      'المياه والصرف':'Water and drainage infrastructure requirement',
+      'المرافق الميكانيكية والغازات':'Mechanical utilities and service piping requirement',
+      'مسارات الأفراد والمواد والنفايات':'Personnel, material and waste flow / layout requirement'
+    };
+    return (fallback[q.section]||'Facility infrastructure requirement')+' — applicable to the facility fit-out scope under '+q.ref+'.';
+  }
+
   function build(){
     const key=$('sector').value||Object.keys(sectorLabels)[0];
-    questions=requirements[key]||[];
+    questions=(requirements[key]||[]).filter(inProfessionalScope);
     const root=$('questions'); root.innerHTML='';
     let lastSection='';
     questions.forEach((q,i)=>{
@@ -117,18 +173,12 @@
       const card=document.createElement('article');
       card.className='question panel';
       card.innerHTML=
-        '<div class="question-head"><span class="q-code">'+q.code+'</span><h3>'+text(q.req,q.req)+'</h3><span class="weight">'+text('الوزن','Weight')+': '+q.weight+'</span></div>'+
+        '<div class="question-head"><span class="q-code">'+q.code+'</span><h3>'+text(q.req,englishRequirement(q))+'</h3><span class="weight">'+text('الوزن','Weight')+': '+q.weight+'</span></div>'+
         '<p class="q-reference"><b>'+text('المرجع','Reference')+':</b> '+q.ref+' &nbsp; <b>'+text('الأهمية','Importance')+':</b> '+q.importance+'</p>'+
         '<div class="choices">'+
           '<label><input required type="radio" name="q'+i+'" value="compliant"> '+text('مطابق','Compliant')+'</label>'+
           '<label><input required type="radio" name="q'+i+'" value="partial"> '+text('مطابق جزئياً','Partially compliant')+'</label>'+
           '<label><input required type="radio" name="q'+i+'" value="non-compliant"> '+text('غير مطابق','Non-compliant')+'</label>'+
-          '<label><input required type="radio" name="q'+i+'" value="not-applicable"> '+text('لا ينطبق','Not applicable')+'</label>'+
-        '</div>'+
-        '<div class="details-grid">'+
-          '<label class="details">'+text('الملاحظات / الأدلة','Observations / Evidence')+'<textarea id="obs'+i+'" rows="2"></textarea></label>'+
-          '<label class="details">'+text('الإجراء التصحيحي','Corrective Action')+'<textarea id="action'+i+'" rows="2"></textarea></label>'+
-          '<label class="details">'+text('الموعد المستهدف','Target Date')+'<input id="due'+i+'" type="date"></label>'+
         '</div>';
       root.appendChild(card);
     });
@@ -149,18 +199,13 @@
     const findings=[];
     questions.forEach((q,i)=>{
       const choice=document.querySelector('input[name=q'+i+']:checked').value;
-      const obs=$('obs'+i).value.trim();
-      const action=$('action'+i).value.trim();
-      const due=$('due'+i).value||null;
-      if(choice==='not-applicable'){na++;}
-      else{
-        evaluated++;
-        possible+=Number(q.weight);
-        if(choice==='compliant'){earned+=Number(q.weight);compliant++;}
-        else if(choice==='partial'){earned+=Number(q.weight)*0.5;partial++;}
-        else{non++;if(q.importance==='حرج')critical++;}
-      }
-      findings.push({q,choice,obs,action,due,index:i});
+      
+      evaluated++;
+      possible+=Number(q.weight);
+      if(choice==='compliant'){earned+=Number(q.weight);compliant++;}
+      else if(choice==='partial'){earned+=Number(q.weight)*0.5;partial++;}
+      else{non++;if(q.importance==='حرج')critical++;}
+      findings.push({q,choice,index:i});
     });
     const pct=possible?Math.round((earned/possible)*10000)/100:0;
     let classification;
@@ -212,7 +257,7 @@
       evaluated_count:ev.evaluated,
       compliant_count:ev.compliant,
       partial_count:ev.partial,
-      not_applicable_count:ev.na,
+      not_applicable_count:0,
       assessor_name:$('assessor-name').value.trim()||'Professional Solutions',
       scope_notes:$('scope-notes').value.trim()||null
     }).select().single();
@@ -228,9 +273,9 @@
       importance:r.q.importance,
       weight:r.q.weight,
       status:r.choice,
-      observation:r.obs||null,
-      corrective_action:r.action||null,
-      target_date:r.due,
+      observation:null,
+      corrective_action:null,
+      target_date:null,
       critical:r.q.importance==='حرج'
     }));
     const {error:fError}=await supabase.from('gmp_findings').insert(findingRows);
@@ -264,6 +309,10 @@
   function render(d){
     const nonRows=d.findings.filter(r=>r.choice==='non-compliant'||r.choice==='partial');
     $('summary').innerHTML=
+      '<div class="print-branding">'+
+      '<div class="print-brand-copy"><img src="assets/professional-solutions-logo-exact.svg" alt="Professional Solutions"><div><strong>'+text('تحليل فني لمتطلبات البنية التحتية والتجهيز','Technical Fit-Out & Infrastructure Assessment')+'</strong><p>'+text('هذا التقييم خاص بجزئيات المتطلبات الإنشائية وتجهيزات البنية التحتية التي تدخل ضمن نطاق أعمال Professional Solutions، ولا يمثل تقييمًا للتشغيل أو الجودة أو مكافحة الآفات أو التوثيق الرقابي.','This assessment covers only construction, fit-out and infrastructure requirements within the scope of Professional Solutions. It does not assess operations, quality systems, pest control, regulatory documentation, or services outside our execution scope.')+'</p></div></div>'+
+      '<div class="print-qr"><img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https%3A%2F%2Fprofessionalsolutionsjo.github.io%2Fprofessional-solutions%2Ffacility-assessment.html" alt="QR code"><small>'+text('رمز QR للوصول إلى صفحة التقييم','QR code to access the assessment page')+'</small></div>'+
+      '</div>'+
       '<div class="certificate-summary">'+
       '<h3>'+text('شهادة تحليل وتقييم جاهزية المنشأة لمتطلبات GMP','GMP Facility Readiness Analysis')+'</h3>'+
       '<p><b>'+text('رقم التحليل','Analysis No.')+'</b>: '+d.number+'</p>'+
@@ -283,9 +332,9 @@
       '<div><b>'+text('حرج غير مطابق','Critical non-compliance')+'</b><strong>'+d.critical+'</strong></div>'+
       '</div>'+
       '<p><b>'+text('التقييم العام','Overall assessment')+'</b>: '+d.classification+'</p>'+
-      '<h4>'+text('الفجوات والملاحظات التي تحتاج معالجة','Gaps and findings requiring action')+'</h4>'+
-      (nonRows.length?'<ol>'+nonRows.map(r=>'<li><b>'+r.q.code+' — '+r.q.req+'</b><br>'+text('الحالة','Status')+': '+(r.choice==='partial'?text('مطابق جزئياً','Partially compliant'):text('غير مطابق','Non-compliant'))+'<br>'+text('الملاحظة','Observation')+': '+(r.obs||'—')+'<br>'+text('الإجراء التصحيحي','Corrective action')+': '+(r.action||'—')+'<br>'+text('الموعد المستهدف','Target date')+': '+(r.due||'—')+'</li>').join('')+'</ol>':'<p>'+text('لا توجد حالات غير مطابقة أو جزئية.','No non-compliant or partially compliant items were recorded.')+'</p>')+
-      '<p class="disclaimer">'+text('هذه شهادة تحليل مهني صادرة عن Professional Solutions وليست شهادة GMP رسمية أو اعتماداً رقابياً. المرجع النهائي هو المتطلبات المعتمدة لدى الجهة الرقابية والمراجع السارية وقت التقييم.','This is a professional analysis issued by Professional Solutions, not an official GMP certificate or regulatory accreditation. Final requirements are those applicable from the competent authority and current references at the time of assessment.')+'</p>'+
+      '<h4>'+text('البنود التي تحتاج معالجة','Items requiring attention')+'</h4>'+
+      (nonRows.length?'<ol>'+nonRows.map(r=>'<li><b>'+r.q.code+' — '+text(r.q.req,englishRequirement(r.q))+'</b><br>'+text('الحالة','Status')+': '+(r.choice==='partial'?text('مطابق جزئياً','Partially compliant'):text('غير مطابق','Non-compliant'))+'</li>').join('')+'</ol>':'<p>'+text('لا توجد حالات غير مطابقة أو جزئية.','No non-compliant or partially compliant items were recorded.')+'</p>')+
+      '<p class="disclaimer">'+text('هذه شهادة تحليل مهني صادرة عن Professional Solutions وليست شهادة GMP رسمية أو اعتماداً رقابياً. التقييم هنا محصور في الجوانب الإنشائية وتجهيزات البنية التحتية الداخلة ضمن نطاق أعمالنا.','This is a professional analysis issued by Professional Solutions, not an official GMP certificate or regulatory accreditation. The assessment is limited to construction, fit-out and infrastructure aspects within our scope of work.')+'</p>'+
       '</div>';
     $('result').hidden=false;
     $('questionnaire').style.display='none';
@@ -305,7 +354,7 @@
   $('assessment-form').addEventListener('submit',e=>{
     e.preventDefault();
     if(!$('assessment-form').checkValidity()){
-      $('form-error').textContent=text('يرجى تحديد حالة كل بند. يمكنك اختيار «لا ينطبق» عند الحاجة.','Please select a status for every item. Choose “Not applicable” where appropriate.');
+      $('form-error').textContent=text('يرجى تحديد حالة كل بند.','Please select a status for every item.');
       return;
     }
     result();
