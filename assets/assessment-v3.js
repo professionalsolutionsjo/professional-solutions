@@ -128,7 +128,7 @@
       email_verified_at:new Date().toISOString(),
       updated_at:new Date().toISOString()
     };
-    const {data:fac,error:facError}=await supabase.from('facilities').upsert(payload,{onConflict:'email'}).select().single();
+    const {data:fac,error:facError}=await supabase.from('facilities').upsert(payload,{onConflict:'auth_user_id'}).select().single();
     if(facError){setAuthStatus('تم التحقق من البريد لكن تعذر حفظ بيانات المنشأة: '+facError.message,'Email verified, but facility data could not be saved: '+facError.message,true);return;}
     currentFacility=fac;
     setAuthStatus('تم التحقق وحفظ بيانات المنشأة. يمكنك بدء التقييم.','Email verified and facility data saved. You can start the assessment.');
@@ -171,7 +171,7 @@
       email_verified_at:currentFacility?.email_verified_at||new Date().toISOString(),
       updated_at:new Date().toISOString()
     };
-    const {data:fac,error:facError}=await supabase.from('facilities').upsert(facilityPayload,{onConflict:'email'}).select().single();
+    const {data:fac,error:facError}=await supabase.from('facilities').upsert(facilityPayload,{onConflict:'auth_user_id'}).select().single();
     if(facError){$('form-error').textContent=text('تعذر حفظ بيانات المنشأة: '+facError.message,'Could not save facility data: '+facError.message);return;}
     currentFacility=fac;
     const number='PS-GMP-'+new Date().getFullYear()+'-'+String(Date.now()).slice(-6);
