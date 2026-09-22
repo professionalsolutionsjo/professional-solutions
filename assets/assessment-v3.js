@@ -83,7 +83,6 @@
       email,
       phone:$('contact-phone').value.trim()||null,
       address:$('facility-address').value.trim()||null,
-      assessor_name:$('assessor-name').value.trim()||'Professional Solutions',
       sector:$('sector').value||Object.keys(sectorLabels)[0],
       process:'GMP facility readiness',
       email_verified_at:new Date().toISOString(),
@@ -248,7 +247,6 @@
       email:$('contact-email').value.trim().toLowerCase(),
       phone:$('contact-phone').value.trim()||null,
       address:$('facility-address').value.trim()||null,
-      assessor_name:$('assessor-name').value.trim()||'Professional Solutions',
       sector,
       process:'GMP facility readiness',
       email_verified_at:currentFacility?.email_verified_at||new Date().toISOString(),
@@ -273,7 +271,6 @@
       compliant_count:ev.compliant,
       partial_count:ev.partial,
       not_applicable_count:0,
-      assessor_name:$('assessor-name').value.trim()||'Professional Solutions',
       scope_notes:$('scope-notes').value.trim()||null
     }).select().single();
     if(aError){$('form-error').textContent=text('تعذر حفظ التقييم: '+aError.message,'Could not save assessment: '+aError.message);return;}
