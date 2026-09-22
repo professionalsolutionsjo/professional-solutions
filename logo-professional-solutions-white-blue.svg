@@ -4,8 +4,8 @@
   <defs>
     <style>
       .white{fill:#FFFFFF}
-      .blue{fill:#6D91BC}
-      .stroke-blue{stroke:#6D91BC;fill:none;stroke-width:7;stroke-linecap:round}
+      .blue{fill:#2D69A5}
+      .stroke-blue{stroke:#2D69A5;fill:none;stroke-width:7;stroke-linecap:round}
       .professional{font-family:Inter,Arial,sans-serif;font-size:91px;font-weight:800;letter-spacing:2px}
       .solutions{font-family:Inter,Arial,sans-serif;font-size:61px;font-weight:700;letter-spacing:19px}
       .tag{font-family:Inter,Arial,sans-serif;font-size:25px;font-weight:400;letter-spacing:11px}
