@@ -164,3 +164,23 @@ body{font-family:"Cairo","Inter",Arial,sans-serif!important;background:#F7F5F1!i
 [dir=rtl] .ps-action small{direction:rtl}
 @media(max-width:850px){.ps-service-grid{grid-template-columns:1fr}.ps-project-grid{grid-template-columns:1fr 1fr}.ps-project-grid a:first-child{grid-column:span 2}.ps-process-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:600px){.ps-card-nav{position:relative!important}.ps-card-nav .navlinks li:nth-child(n+5){display:none}.ps-hero{min-height:620px}.ps-hero-inner{padding:70px 0}.ps-hero-logo img{width:86%;max-height:90px}.ps-profile,.ps-section,.ps-process,.ps-gmp,.ps-contact{padding:62px 18px}.ps-contact-actions,.ps-actions{flex-direction:column}.ps-action,.ps-btn{width:100%}.ps-project-grid{grid-template-columns:1fr}.ps-project-grid a:first-child{grid-column:auto}.ps-project-grid a{height:230px}.ps-process-grid{grid-template-columns:1fr}.ps-contact-grid{grid-template-columns:1fr}}
+
+/* Final header/contact corrections */
+.ps-card-nav{background:#163A5F!important;display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:center!important;padding:14px 20px 10px!important}
+.ps-card-nav .brand{display:flex!important;justify-content:center!important;align-items:center!important;width:100%!important}
+.ps-card-nav .brand img{width:min(300px,72vw)!important;height:auto!important;max-height:62px!important;object-fit:contain}
+.ps-card-nav .navlinks{justify-content:center!important;flex-wrap:wrap!important;margin:8px 0 0!important;padding:0!important}
+.ps-card-nav .navlinks li{list-style:none!important}
+.ps-hero-inner{padding-top:105px!important}
+.ps-profile .ps-contact-actions{display:none!important}
+.ps-contact-grid a span{direction:ltr;unicode-bidi:embed}
+.ps-contact-grid a:nth-child(2) span{direction:ltr;unicode-bidi:isolate}
+[dir=rtl] .ps-contact-grid a:nth-child(2) span{direction:ltr!important;text-align:center!important}
+[dir=rtl] .ps-contact-grid a:nth-child(3) span{direction:ltr!important;text-align:center!important}
+@media(max-width:600px){
+ .ps-card-nav .brand img{width:min(280px,78vw)!important;max-height:55px!important}
+ .ps-card-nav .navlinks{gap:6px!important}
+ .ps-card-nav .navlinks li:nth-child(n+5){display:list-item!important}
+ .ps-card-nav .navlinks li:nth-child(5){display:none!important}
+ .ps-hero-inner{padding-top:75px!important}
+}
