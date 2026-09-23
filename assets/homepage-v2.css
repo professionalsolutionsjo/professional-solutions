@@ -184,3 +184,6 @@ body{font-family:"Cairo","Inter",Arial,sans-serif!important;background:#F7F5F1!i
  .ps-card-nav .navlinks li:nth-child(5){display:none!important}
  .ps-hero-inner{padding-top:75px!important}
 }
+
+/* Header color matched to logo background */
+.ps-card-nav{background:#000!important;background-color:#000!important;border-bottom:1px solid rgba(255,255,255,.12)!important}
