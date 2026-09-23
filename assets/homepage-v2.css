@@ -218,3 +218,20 @@ html body header.ps-card-nav .navlinks a{font-size:11px!important}
 html body header.ps-card-nav .header-language{right:7px!important;left:auto!important;top:14px!important;transform:none!important;width:43px!important;height:32px!important;font-size:10px!important}
 html[dir=rtl] body header.ps-card-nav .header-language{right:auto!important;left:7px!important}
 }
+/* HEADER FINAL CLEANUP v19 */
+html body header.ps-card-nav{background:#000!important;min-height:125px!important;padding:8px 90px!important;position:sticky!important;top:0!important}
+html body header.ps-card-nav .brand img{width:min(430px,82vw)!important;max-width:430px!important;max-height:88px!important}
+html body header.ps-card-nav .navlinks{display:flex!important;gap:34px!important;align-items:center!important;justify-content:center!important;flex-wrap:nowrap!important;margin:5px auto 0!important}
+html body header.ps-card-nav .navlinks li{display:list-item!important}
+html body header.ps-card-nav .navlinks a{display:inline-block!important;color:#fff!important;font-size:14px!important;font-weight:700!important;padding:4px 2px!important}
+html body header.ps-card-nav .header-language{position:absolute!important;right:18px!important;left:auto!important;top:50%!important;transform:translateY(-50%)!important;width:64px!important;height:40px!important;display:flex!important;align-items:center!important;justify-content:center!important;background:#000!important;color:#fff!important;border:1px solid #fff!important;border-radius:8px!important}
+html[dir=rtl] body header.ps-card-nav .header-language{right:auto!important;left:18px!important}
+html body header.ps-card-nav .language,html body header.ps-card-nav .lang:not(.header-language){display:none!important}
+@media(max-width:700px){
+html body header.ps-card-nav{min-height:118px!important;padding:7px 50px!important}
+html body header.ps-card-nav .brand img{width:min(350px,78vw)!important;max-height:72px!important}
+html body header.ps-card-nav .navlinks{gap:10px!important;flex-wrap:wrap!important}
+html body header.ps-card-nav .navlinks a{font-size:11px!important}
+html body header.ps-card-nav .header-language{right:6px!important;left:auto!important;top:12px!important;transform:none!important;width:40px!important;height:30px!important;font-size:10px!important}
+html[dir=rtl] body header.ps-card-nav .header-language{right:auto!important;left:6px!important}
+}
