@@ -195,3 +195,9 @@ body{font-family:"Cairo","Inter",Arial,sans-serif!important;background:#F7F5F1!i
 .ps-card-nav .navlinks .language .lang{background:transparent!important;border:1px solid rgba(255,255,255,.35)!important;color:#fff!important;border-radius:8px!important;padding:7px 11px!important;font-weight:800!important;cursor:pointer!important}
 .ps-card-nav .navlinks .language .lang:hover{background:rgba(255,255,255,.1)!important}
 @media(max-width:600px){.ps-card-nav .navlinks .language{position:relative!important;inset-inline-end:auto!important;top:auto!important;transform:none!important}.ps-card-nav .navlinks{padding-inline-end:0!important}}
+
+/* Definitive header layout */
+.ps-card-nav{background:#000!important;background-color:#000!important;position:sticky!important;top:0!important;z-index:1000!important;width:100%!important;box-sizing:border-box!important}
+.ps-card-nav .header-language{position:absolute!important;right:22px!important;top:50%!important;transform:translateY(-50%)!important;display:block!important;background:#000!important;color:#fff!important;border:1px solid rgba(255,255,255,.5)!important;border-radius:8px!important;padding:8px 12px!important;font-size:13px!important;font-weight:800!important;cursor:pointer!important;z-index:10!important}
+[dir=rtl] .ps-card-nav .header-language{right:auto!important;left:22px!important}
+@media(max-width:600px){.ps-card-nav .header-language{right:10px!important;left:auto!important;top:18px!important;transform:none!important;padding:7px 9px!important}[dir=rtl] .ps-card-nav .header-language{right:auto!important;left:10px!important}}
