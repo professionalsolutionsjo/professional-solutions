@@ -201,3 +201,20 @@ body{font-family:"Cairo","Inter",Arial,sans-serif!important;background:#F7F5F1!i
 .ps-card-nav .header-language{position:absolute!important;right:22px!important;top:50%!important;transform:translateY(-50%)!important;display:block!important;background:#000!important;color:#fff!important;border:1px solid rgba(255,255,255,.5)!important;border-radius:8px!important;padding:8px 12px!important;font-size:13px!important;font-weight:800!important;cursor:pointer!important;z-index:10!important}
 [dir=rtl] .ps-card-nav .header-language{right:auto!important;left:22px!important}
 @media(max-width:600px){.ps-card-nav .header-language{right:10px!important;left:auto!important;top:18px!important;transform:none!important;padding:7px 9px!important}[dir=rtl] .ps-card-nav .header-language{right:auto!important;left:10px!important}}
+
+/* FINAL HEADER v18 */
+html body header.ps-card-nav{background:#000!important;background-color:#000!important;min-height:118px!important;padding:10px 80px!important;display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:center!important}
+html body header.ps-card-nav .brand img{width:min(390px,78vw)!important;max-width:390px!important;max-height:82px!important;height:auto!important}
+html body header.ps-card-nav .navlinks{display:flex!important;flex-direction:row!important;justify-content:center!important;align-items:center!important;gap:30px!important;width:auto!important;margin:6px 0 0!important}
+html body header.ps-card-nav .navlinks a{color:#fff!important;font-size:14px!important;font-weight:700!important;white-space:nowrap!important}
+html body header.ps-card-nav .header-language{position:absolute!important;right:22px!important;left:auto!important;top:50%!important;transform:translateY(-50%)!important;width:58px!important;height:38px!important;padding:0!important;background:#000!important;color:#fff!important;border:1px solid rgba(255,255,255,.6)!important;border-radius:8px!important;font-size:12px!important;font-weight:800!important;z-index:20!important}
+html[dir=rtl] body header.ps-card-nav .header-language{right:auto!important;left:22px!important}
+.ps-philosophy-anchor{scroll-margin-top:130px}
+@media(max-width:700px){
+html body header.ps-card-nav{min-height:112px!important;padding:8px 52px!important}
+html body header.ps-card-nav .brand img{width:min(330px,76vw)!important;max-height:68px!important}
+html body header.ps-card-nav .navlinks{gap:9px!important;margin-top:4px!important;flex-wrap:wrap!important}
+html body header.ps-card-nav .navlinks a{font-size:11px!important}
+html body header.ps-card-nav .header-language{right:7px!important;left:auto!important;top:14px!important;transform:none!important;width:43px!important;height:32px!important;font-size:10px!important}
+html[dir=rtl] body header.ps-card-nav .header-language{right:auto!important;left:7px!important}
+}
